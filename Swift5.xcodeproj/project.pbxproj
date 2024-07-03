@@ -61,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DF377FB52C350C75002974C4 /* while.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = while.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DF4030AB2C34555F00241BE4 /* test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DF59F2462C34F2AC00CFBA35 /* for.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = for.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DF82C61B2C3451D400D675CF /* Swift5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Swift5; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -280,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				DF59F2462C34F2AC00CFBA35 /* for.playground */,
+				DF377FB52C350C75002974C4 /* while.playground */,
 			);
 			path = SwiftGrammer;
 			sourceTree = "<group>";
