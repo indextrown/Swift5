@@ -277,6 +277,7 @@
 		DF93DA472C358D0300769D78 /* 00-변수와상수.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "00-변수와상수.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DF93DA4D2C35949100769D78 /* 02-기본연산자.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "02-기본연산자.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DF93DA4E2C35997400769D78 /* 03-프로그래밍기본원리와조건문_if_switch.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "03-프로그래밍기본원리와조건문_if_switch.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DFD865BA2C35CF0B00881939 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +315,7 @@
 		DF82C6122C3451D400D675CF = {
 			isa = PBXGroup;
 			children = (
+				DFD865BA2C35CF0B00881939 /* test.swift */,
 				DF44FC272C35CC8E005FF748 /* .gitignore */,
 				DF59F2402C34F29400CFBA35 /* SwiftGrammer */,
 				DF82C6252C3452CF00D675CF /* SwiftMaster */,
