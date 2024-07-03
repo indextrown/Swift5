@@ -59,6 +59,7 @@ for i in 1...number {
 var sum: Int = 0
 for i in 1...10 {
     sum += i
+    print(sum)
 }
-print(sum)
+ 
 
