@@ -68,6 +68,8 @@
 		DF377FD22C352AA1002974C4 /* 16-함수의응용.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "16-함수의응용.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DF377FD82C352FE5002974C4 /* 17-함수사용시주의점.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "17-함수사용시주의점.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DF4030AB2C34555F00241BE4 /* test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DF44FC122C359D7C005FF748 /* 04-튜플.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "04-튜플.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DF44FC182C35A3F4005FF748 /* 05-삼항연산자와패턴매칭연산자.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "05-삼항연산자와패턴매칭연산자.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DF59F2462C34F2AC00CFBA35 /* 11-for.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "11-for.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DF5F0B6A2C35373C00EB740A /* 18-함수의표기법.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "18-함수의표기법.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DF5F0B712C353B8000EB740A /* 19-함수오버로딩.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "19-함수오버로딩.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -302,6 +304,8 @@
 				DF5F0B6A2C35373C00EB740A /* 18-함수의표기법.playground */,
 				DF5F0B712C353B8000EB740A /* 19-함수오버로딩.playground */,
 				DF93DA4E2C35997400769D78 /* 03-프로그래밍기본원리와조건문_if_switch.playground */,
+				DF44FC122C359D7C005FF748 /* 04-튜플.playground */,
+				DF44FC182C35A3F4005FF748 /* 05-삼항연산자와패턴매칭연산자.playground */,
 			);
 			path = SwiftGrammer;
 			sourceTree = "<group>";
