@@ -1,2 +1,6 @@
-Swift5
+# Ignore Swift5 folder
+Swift5/
+
+# 기타 무시할 항목들
+.DS_Store
 
