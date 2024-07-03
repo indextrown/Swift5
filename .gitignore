@@ -1,6 +1,17 @@
+### Xcode ###
 # Ignore Swift5 folder
 Swift5/
 
 # 기타 무시할 항목들
 .DS_Store
 
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+# End of https://www.toptal.com/developers/gitignore/api/xcode
