@@ -5,6 +5,21 @@ import UIKit
  * 튜플의 매칭(Mathching)
  ---
  */
+
+var point = (10, 0)
+
+switch point {
+case(let distance, 0), (0, let distance):
+    print("X축 또는 Y축 위에 위치한다. ")
+default:
+    print("축 위에 있지 않다. ")
+}
+
+
+
+
+
+
 let iOS = (language: "Swift", version: "5")
 
 
