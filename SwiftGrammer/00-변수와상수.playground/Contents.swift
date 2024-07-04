@@ -133,6 +133,13 @@ var d: Name = "hello"
 
 
 
-
-
-
+var num = 10
+switch num {
+// num 변수를 상수 x에 바인딩 한 후, where 조건절에서 조건에 해당하는지 여부 확인
+case let x where x % 2 == 0:
+    print("짝수 숫자: \(x)")
+case let x where x % 2 == 1:
+    print("홀수 숫자: \(x)")
+default:
+    print("test")
+}
