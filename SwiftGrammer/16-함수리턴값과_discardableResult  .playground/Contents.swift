@@ -73,46 +73,100 @@ func randString2(_ inp: String) -> String {
 // randString2("안녕하세요")
 
 
-// 연습문제2: 소수(prime number)를 판별하는 함수를 만들어보자
-func primeNumber(_ inp: Int) {
+//// 연습문제2: 소수(prime number)를 판별하는 함수를 만들어보자
+//func primeNumber(_ inp: Int) {
+////    for i in 1..<inp {
+////        if inp % i == 0 {
+////           print("\(i)는 소인수 입니다. ")
+////        }
+////    }
+//    var cnt = 0 
 //    for i in 1..<inp {
+//        
 //        if inp % i == 0 {
-//           print("\(i)는 소인수 입니다. ")
+//            cnt += 1
 //        }
 //    }
-    var cnt = 0
-    for i in 1..<inp {
-        
-        if inp % i == 0 {
-            cnt += 1
-        }
-    }
-    if cnt == 1 {
-        print("소수입니다. ")
-    } else {
-        print("소수가 아닙니다. ")
-    }
-}
+//    if cnt == 1 {
+//        print("소수입니다. ")
+//    } else {
+//        print("소수가 아닙니다. ")
+//    }
+//}
 
 //primeNumber(7)
 
 
 // gpt: 소수(prime number)를 판별하는 함수에서 몇 가지 개선할 점이 있습니다. 우선, 소수는 1과 자기 자신으로만 나눠지는 수입니다. 현재 함수에서는 1부터 inp - 1까지의 수로 나누어지는지를 체크하고 있습니다. 하지만 이는 비효율적입니다. 실제로는 inp의 제곱근까지만 검사하면 충분합니다. 또한, 함수는 입력값이 2일 때도 소수로 제대로 판별되지 않습니다.
-func primeNumber2(_ inp: Int) {
-    if inp <= 1 {
-        print("소수가 아닙니다.")
-        return
-    }
-    
-    for i in 2...Int(Double(inp).squareRoot()) {
-        if inp % i == 0 {
-            print("소수가 아닙니다.")
-            return
-        }
-    }
-    
-    print("소수입니다.")
-}
+//func primeNumber2(_ inp: Int) {
+//    if inp <= 1 {
+//        print("소수가 아닙니다.")
+//        return
+//    }
+//    
+//    for i in 2...Int(Double(inp).squareRoot()) {
+//        if inp % i == 0 {
+//            print("소수가 아닙니다.")
+//            return
+//        }
+//    }
+//    
+//    print("소수입니다.")
+//}
 
 // 소수: 1과 자기자신으로만 나누어 떨어질 수 있는 수
+// string은 인덱스로 정수 타입을 사용하지 않고 string.indexfmf tkdydgksek
+//func randString(_ inp: String) -> String {
+//    var randIdx = inp.index(inp.startIndex, offsetBy: Int.random(in: 0..<inp.count))
+//    return String(inp[randIdx])
+//}
 
+// print(randString("안녕하세요"))
+
+
+// 연습문제 2
+// 동영상 정답
+// 소수: primeNumber: 1과 자기자신만으로 나누어 떨어지는 1보다 큰 양의 정수
+// ex) 2, 3, 5, 7, 11
+// 97은 1과 자기자신만 97로만 나누어 지므로 소수이다
+// 소수 여부를 알려주는 함수
+func myPrimeNumber(num: Int) -> Bool {
+    if num <= 1 { return false }
+        
+    for i in 2..<num {
+        if num % i == 0 {
+            return false
+        }
+    }
+    return true
+}
+
+if myPrimeNumber(num: 2) {
+    print("소수입니다")
+} else {
+    print("소수가 아닙니다")
+}
+
+
+// 연습문제3 팩토리얼 함수 만들기
+@discardableResult
+func factorial(_ num: Int) -> Int {
+    var res = 1
+    for i in 1...num {
+        res *= i
+    }
+    return res
+}
+print(factorial(5))
+
+
+// 팩토리얼 재귀함수 버전
+// 자기자신을 반복해서 호출하는 함수
+@discardableResult
+func factorialRecv(_ num: Int) -> Int {
+    if num <= 1 {
+        return 1
+    }
+    return num * factorialRecv(num - 1)
+}
+print(factorialRecv(5))
