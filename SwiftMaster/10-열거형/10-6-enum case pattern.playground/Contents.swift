@@ -83,13 +83,13 @@ chip = Computer.hardDisk(gb: 128)    // 256
 
 
 // if문에서도 스위치문에서 사용하는 case문과 같이 사용 가능 ⭐️
-
+//_ 할당한다, 이전의 switch문과 완전히 동일함
 if case Computer.hardDisk(gb: let gB) = chip {
     print("\(gB)기가 바이트 하드디스크임")
 }
 
 
-
+// if문에서 컴마로 조건을 추가 가능
 if case Computer.hardDisk(gb: let gB) = chip, gB == 256 {    // 처리를 다양하게 활용 가능
     print("256기가 바이트 하드디스크임")
 }
@@ -135,8 +135,9 @@ for chip in chiplists {
 // 옵셔널 타입을 포함하는 배열에서 반복문을 사용하는 경우
 
 let arrays: [Int?] = [nil, 2, 3, nil, 5]
+print(arrays)
 
-
+//_ nil은 버림
 for case .some(let number) in arrays {
     print("Found a \(number)")
 }
