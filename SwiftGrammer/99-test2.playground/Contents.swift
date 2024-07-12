@@ -37,3 +37,12 @@ func isPrime(_ num: Int) -> Bool {
 
 print(isPrime(1) ? "소수입니다" : "소수가 아닙니다")
 
+func randString(_ inp: String) -> String {
+    var rand = Int.random(in: 0..<inp.count)
+    // 시작 인덱스에서 rand 만큼의 offset을 가진 인덱스를 계산한다
+    // 즉 inp 문자열 내의 rand 번째 문자의 위치를 나타낸다
+    let index = inp.index(inp.startIndex, offsetBy: rand)
+    return String(inp[index])
+}
+
+print(randString("안녕하세요"))
