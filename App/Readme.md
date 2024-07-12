@@ -57,26 +57,19 @@
 -->
 
 
-
 <table style="width: 100%;">
     <tr>
         <td style="text-align: center; vertical-align: top;">
-            <figure style="display: inline-block; text-align: center;">
-                <img src="https://github.com/user-attachments/assets/c8c6815a-b3e9-4a22-b77b-b9eef06dd61b" alt="Simulator Screen Recording - iPhone 15 Pro Max - 2024-07-12 at 20 07 43" style="width: 200px;">
-                <figcaption>1. 앱 만들기 기초</figcaption>
-            </figure>
+            <img src="https://github.com/user-attachments/assets/c8c6815a-b3e9-4a22-b77b-b9eef06dd61b" alt="Simulator Screen Recording - iPhone 15 Pro Max - 2024-07-12 at 20 07 43" style="width: 200px;">
+            <p style="text-align: center;">1. 앱 만들기 기초</p>
         </td>
         <td style="text-align: center; vertical-align: top;">
-            <figure style="display: inline-block; text-align: center;">
-                <img src="https://github.com/user-attachments/assets/19f6dd1b-2ec8-42e7-99ea-d75072aba3fe" alt="Simulator Screen Recording - iPhone 15 Pro Max - 2024-07-12 at 17 58 27" style="width: 200px;">
-                <figcaption>2. DiceGame(주사위 게임) 앱</figcaption>
-            </figure>
+            <img src="https://github.com/user-attachments/assets/19f6dd1b-2ec8-42e7-99ea-d75072aba3fe" alt="Simulator Screen Recording - iPhone 15 Pro Max - 2024-07-12 at 17 58 27" style="width: 200px;">
+            <p style="text-align: center;">2. DiceGame(주사위 게임) 앱</p>
         </td>
         <td style="text-align: center; vertical-align: top;">
-            <figure style="display: inline-block; text-align: center;">
-                <img src="https://github.com/user-attachments/assets/b687a148-7f5f-4685-acb2-a972ae672429" alt="Simulator Screen Recording - iPhone 15 Pro Max - 2024-07-12 at 19 58 14" style="width: 200px;">
-                <figcaption>3. 가위바위보 게임 앱</figcaption>
-            </figure>
+            <img src="https://github.com/user-attachments/assets/b687a148-7f5f-4685-acb2-a972ae672429" alt="Simulator Screen Recording - iPhone 15 Pro Max - 2024-07-12 at 19 58 14" style="width: 200px;">
+            <p style="text-align: center;">3. 가위바위보 게임 앱</p>
         </td>
     </tr>
 </table>
