@@ -1,3 +1,4 @@
+<!---
 <table>
     <tr>
         <td align="center">
@@ -17,6 +18,7 @@
         </td>
     </tr>
 </table>  
+--->
 
 <table style="width: 60%; margin: auto;">
     <tr>
