@@ -20,7 +20,7 @@
 </table>  
 --->
 
-<table style="width: 10%; margin: auto;">
+<table style="width: 60%; margin: auto;">
     <tr>
         <td align="center">
             <img src="https://github.com/user-attachments/assets/c8c6815a-b3e9-4a22-b77b-b9eef06dd61b" alt="Simulator Screen Recording - iPhone 15 Pro Max - 2024-07-12 at 20 07 43" style="width: 100px;">
