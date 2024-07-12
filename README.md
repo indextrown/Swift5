@@ -1,5 +1,5 @@
 #### App
-- Storyboard를 이용한 앱개발 실습입니다
+- UIKit을 이용한 앱개발 실습입니다
 
 #### SwiftGrammer
 - 문법 요약 정리본 입니다
