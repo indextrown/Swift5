@@ -16,6 +16,11 @@
             <br>
             <figcaption>3. 가위바위보 게임 앱</figcaption>
         </td>
+        <td align="center">
+            <img src="https://github.com/user-attachments/assets/9620a87e-c8b5-47f1-8704-15cb96bdacb7" alt="Simulator Screen Recording - iPhone 15 Pro Max - 2024-07-12 at 19 58 14" style="width: 200px;">
+            <br>
+            <figcaption>4. 업다운 게임 앱</figcaption>
+        </td>
     </tr>
 </table>  
 
