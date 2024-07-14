@@ -9,17 +9,17 @@
         <td align="center">
             <img src="https://github.com/user-attachments/assets/19f6dd1b-2ec8-42e7-99ea-d75072aba3fe" alt="Simulator Screen Recording - iPhone 15 Pro Max - 2024-07-12 at 17 58 27" style="width: 200px;">
             <br>
-            <figcaption>2. 주사위 게임 앱</figcaption>
+            <figcaption>2. 주사위 게임</figcaption>
         </td>
         <td align="center">
             <img src="https://github.com/user-attachments/assets/b687a148-7f5f-4685-acb2-a972ae672429" alt="Simulator Screen Recording - iPhone 15 Pro Max - 2024-07-12 at 19 58 14" style="width: 200px;">
             <br>
-            <figcaption>3. 가위바위보 게임 앱</figcaption>
+            <figcaption>3. 가위바위보 게임</figcaption>
         </td>
         <td align="center">
             <img src="https://github.com/user-attachments/assets/9620a87e-c8b5-47f1-8704-15cb96bdacb7" alt="Simulator Screen Recording - iPhone 15 Pro Max - 2024-07-12 at 19 58 14" style="width: 200px;">
             <br>
-            <figcaption>4. 업다운 게임 앱</figcaption>
+            <figcaption>4. 업다운 게임</figcaption>
         </td>
     </tr>
 </table>  
