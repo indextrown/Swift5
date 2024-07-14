@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  UpDownGame
 //
-//  Created by 김동현 on 7/14/24.
+//  Created by Allen H on 2021/05/20.
 //
 
 import UIKit
