@@ -1,3 +1,2 @@
-import Cocoa
+// kdh
 
-var greeting = "Hello, playground"
