@@ -34,6 +34,7 @@
 
 
 class Dog {
+    // 타입 저장속성
     static var species = "Dog"
     var name: String
     var weight: Double
@@ -68,7 +69,7 @@ class Dog {
         self.sit()  // self키워드는 명확하게 지칭하는 역할일 뿐
         print()
     }
-    
+    // 오버라이딩
     func sit(a: String) {
         print("\(a)")
     }
