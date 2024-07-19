@@ -17,7 +17,22 @@
  base클래스
  - 어떤 클래스도 상속하지 않은 클래스
  
+  서브클래스는 슈퍼클래스로부터 멤버를 상속함
  
+ final
+ - 클래스의 상속 금지의 키워드
+ - final을 각 멤버 앞에 붙인 경우, 해당 멤버 재정의 불가라는 뜻
+ 
+ 재정의
+ - 하위 클래스에서 상위 클래스에 존재하는 멤버를 변형하는 것을 재정의라고 함
+ - 재정의 하려는 멤버에는 override 키워드 붙여야함
+ - 저장속성은 재정의 불가 -> 무조건 건들일 수 없음
+ 
+ uikit상속구조
+ - 코코아터치 프레임워크중에 ui를 담당하는 것
+ - 클래스를 아주 고도화해서 작성되있음
+ - 많은 상속 구조로 이루어짐
+ - 스티브잡스->Next Step회사->objective-C -> uikit
  
  */
 
@@ -52,4 +67,19 @@ person1.email
 person1.studentId
 person1.major
 
+
+class Aclass {
+    // 해당멤버는 재정의 불가
+    final var name = "이름"
+}
+
+// 더이상 상속 즉 재정의 불가
+final class Bclass: Aclass {
+    var id = 0
+}
+
+let b = Bclass()
+
+
+b.name
 
