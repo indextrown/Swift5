@@ -134,6 +134,7 @@ dog4.weight
 // 클래스의 상속과 지정/편의 생성자 사용예시
 
 class Aclass {
+    // 저장속성
     var x: Int
     var y: Int
     
@@ -151,12 +152,35 @@ class Aclass {
 }
 
 class Bclass: Aclass {
+    // 저장속성
     var z: Int
     
+    // 지정생성자 새로 정의
+    // 지정생성자는 반드시 재정의해야함
     init(x: Int, y: Int, z: Int) {
         self.z = z             // (필수)
-        // self.y = y          // 불가능
+        // self.y = y          // 불가능 -> 메모리에 찍어내지 않음 -> 찍어내는건 지정생성자에서 진행한다
         super.init(x: x, y: y) // (필수) 상위의 지정생성자 호출
+        self.y = 7             // 가능
+        self.doSomething()     // 잘안쓰지만 가능
+    }
+    
+    // 편의생성자 다시 정의. ---> 지정생성자를 호출하도록 만듬
+    // 편의생성자는 상속이 되지 않는다->
+    // 상속이 되었으면 override붙여야했음
+    // 재정의됨
+    convenience init(z: Int) {
+        self.init(x: 0, y: 0, z: 0)
+    }
+    
+    // 재정의됨
+    convenience init() {
+        self.init(z: 0)
+    }
+    
+    func doSomething() {
+        print("Do something")
     }
 }
+
 
