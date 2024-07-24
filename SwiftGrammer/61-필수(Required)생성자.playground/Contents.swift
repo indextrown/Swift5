@@ -55,38 +55,38 @@ class Cclass: Aclass {
 
 
 // 필수생성자 사용예시 UIView(네모상자)
-class AView: UIView {
-    // 다른 지정생성자 구현 안했기 때문에 자동상속이 되는 경우다
-    //    required init?(coder: NSCoder) {         // 구현을 안해도 자동상속
-    //        fatalError("init(coder:) has not been implemented")
-    //    }
-    
-    // 만약 생성자 구현하면 필수생성자 구현헤라고 에러뜸
-    init() {
-        
-    }
-    
-    // 직접 구현해야함
-    required init?(coder: NSCoder) {         // 구현을 안해도 자동상속
-        fatalError("init(coder:) has not been implemented")
-    }
-}
+//class AView: UIView {
+//    // 다른 지정생성자 구현 안했기 때문에 자동상속이 되는 경우다
+//    //    required init?(coder: NSCoder) {         // 구현을 안해도 자동상속
+//    //        fatalError("init(coder:) has not been implemented")
+//    //    }
+//    
+//    // 만약 생성자 구현하면 필수생성자 구현헤라고 에러뜸
+//    init() {
+//        
+//    }
+//    
+//    // 직접 구현해야함
+////    required init?(coder: NSCoder) {         // 구현을 안해도 자동상속
+////        fatalError("init(coder:) has not been implemented")
+////    }
+//}
 
 
 
-class BView: UIView {
-    // 지정생성자 구현했음으로 필수생성자 자동상속 안됨 -> 직접 구현해야함
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    // 필수 생성자 직접 구현
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-
-
+//class BView: UIView {
+//    // 지정생성자 구현했음으로 필수생성자 자동상속 안됨 -> 직접 구현해야함
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//    }
+//    
+//    // 필수 생성자 직접 구현
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//}
+//
+//
+//
 
 
