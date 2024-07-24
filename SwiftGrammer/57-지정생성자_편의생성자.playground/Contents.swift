@@ -34,6 +34,7 @@ class Bclass: Aclass {
         //self.y = 7
         //self.doSomething()
     }
+
     
     convenience init(z: Int) {
         //self.z = 7     //==========> self에 접근불가

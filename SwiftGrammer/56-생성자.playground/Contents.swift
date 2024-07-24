@@ -148,7 +148,6 @@ class Aclass {
     convenience init() {
         self.init(x: 0, y: 0)
     }
-    
 }
 
 class Bclass: Aclass {

@@ -13,7 +13,7 @@
  재정의(override)
  - 똑같은 이름이 생성자를 또 구현하는것
  
- 
+
  저장속성을 옵셔널로 설정하면?
  - 자동으로 nil초기화됨
  - 데이터 값이 없어도됨
@@ -49,6 +49,7 @@ class Bclass: Aclass {
     // 상속을 해서 상위에서 정의한 x, y도 가지고 z가 추가된다는 의미다
     var z: Int
     
+    // 지정생성자
     init(x: Int, y: Int, z: Int) {
         // swift에서는 자기단계를 먼저 설정해야함 <---> java와 반대개념
         // java는 차례대로 메모리 공간을 생성 swift는 반대로 아래서부터 공간을 만듬
@@ -59,7 +60,7 @@ class Bclass: Aclass {
         super.init(x: x, y: y)
     }
     
-    // 지정생성자로 재정의 ==> 상위 지정생성자와 같은 이름
+    // 지정생성자로 재정의 ==> 상위 지정생성자와 같은 이름으로
 //    override init(x: Int, y: Int) {
 //        self.z = 0
 //        super.init(x: x, y: y)
