@@ -70,6 +70,6 @@ let ppt: Undergraduate? = person as? Undergraduate
 
 
 
-let str: String = "hello"
-let otherStr = str as NSString // 가끔 사용해야함
-
+//let str: String = "hello"
+//let otherStr = str as NSString // 가끔 사용해야함
+//
