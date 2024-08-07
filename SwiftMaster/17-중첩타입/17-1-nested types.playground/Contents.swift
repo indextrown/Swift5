@@ -173,28 +173,28 @@ struct DateFormatters {
     //var style: DateFormatters.Style
     
     // 중첩타입으로 선언
-//    enum Style {
-//        case full
-//        case long
-//        case medium
-//        case none
-//    }
+    enum Style {
+        case full
+        case long
+        case medium
+        case none
+    }
 }
 
 
-var dateStyle1 = DateFormatters(style: .full)
-dateStyle1 = DateFormatters(style: Style.full)
-dateStyle1.style = Style.full
-dateStyle1.style = .full
+//var dateStyle1 = DateFormatters(style: .full)
+//dateStyle1 = DateFormatters(style: Style.full)
+//dateStyle1.style = Style.full
+//dateStyle1.style = .full
 
 
 
 // 중첩타입으로 선언했을때 사용법 (타입을 쓸려면 전체 중첩타입을 다 써야함)
-
-//var dateStyle2 = DateFormatters(style: .full)
-//dateStyle2 = DateFormatters(style: DateFormatters.Style.full)
-//dateStyle2.style = DateFormatters.Style.full
-//dateStyle2.style = .long
+// DateFormatters와 관련이 있다는 명확해짐을 알 수 있음
+var dateStyle2 = DateFormatters(style: .full)
+dateStyle2 = DateFormatters(style: DateFormatters.Style.full)
+dateStyle2.style = DateFormatters.Style.full
+dateStyle2.style = .long
 
 
 

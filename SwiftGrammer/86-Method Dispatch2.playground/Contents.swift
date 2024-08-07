@@ -1,140 +1,110 @@
-import UIKit
 /*
+ (138강)
+ 중첩타입(Nested Types)
  
- (137강)
- 메서드 디스패치
+ 사용하는 이유
+ - 특정 타입 내에서만 사용하기 위함
+ - 타입 간의 연관성을 명확히 구분하고, 내부 구조 디테일하게 설계 가능
 
- 
  */
+import UIKit
 
-struct Mystruct {
-    // method1()은 컴파일 시점에 cpu가 읽을 수 있는 컴퓨터 언어로 바뀐다
-    // method1()은 cpu가 실행될 수 있는 명령어 형태로 바뀐다
-    // ex) 실제로 나의 눈에는 print() 한줄이지만 메모리 주소가 90번부터 9줄로 이루어져있다고 가정
-    // memory: 90 ~ 99
-    func method1() {
-        print("Struct - Direct method1")
+class Aclass {
+    struct Bstruct {
+        enum Cenum {
+            case aCase
+            case bCase
+            
+            struct Dstruct {
+                
+            }
+        }
+        var name: Cenum
+        
+        // 멤버와이즈 이니셜라이저로 자동으로 생성됨
+//        init(name: Cenum) {
+//            self.name = name
+//        }
+    }
+}
+
+// 중첩타입 사용시 명시적으로 타입을 적어줘야함
+let aClass: Aclass = Aclass()
+let bStruct: Aclass.Bstruct = Aclass.Bstruct(name: .bCase)// 멤버와이즈 이니셜라이저
+let cEnum: Aclass.Bstruct.Cenum = Aclass.Bstruct.Cenum.aCase
+let dStruct: Aclass.Bstruct.Cenum.Dstruct = Aclass.Bstruct.Cenum.Dstruct()
+
+
+
+struct BlackjackCard {
+
+    // 중첩으로 선언 타입 ==============================================
+    // Suit(세트) 열거형
+    enum Suit: Character {     // 원시값(rawValue)사용
+        case spades = "♠", hearts = "♡", diamonds = "♢", clubs = "♣"
+    }
+
+    // 순서(숫자) 열거형
+    enum Rank: Int {     // 원시값(rawValue)사용
+        case two = 2, three, four, five, six, seven, eight, nine, ten
+        case jack, queen, king, ace   // (원시값 존재하지만 사용하지 않고자 함 ===> values)
+        
+        // Values 타입정의 (두개의 값을 사용) //===> 열거형 값(순서)을 이용 새로운 타입을 반환하기 위함
+        struct Values {
+            let first: Int, second: Int?
+        }
+        
+        // (읽기) 계산 속성 (열거형 내부에 저장 속성은 선언 불가)
+        var values: Values {
+            // 실제로 get{}이 생략 되어있음
+            switch self {   // enum타입 내부에 선언되있어서 self는 Rank타입중하나
+            case Rank.ace:
+                // Value타입을 다시 만들어서 리턴하고있음
+                // ace때문에 Value타입을 다시 만들어서 리턴하는듯?
+                return Values(first: 1, second: 11)    // 에이스 카드는 1 또는 11 로 쓰임
+            case .jack, .queen, .king:
+                return Values(first: 10, second: nil)  // 10으로 쓰임
+            default:
+                return Values(first: self.rawValue, second: nil)    // 2 ~ 10까지의 카드는 원시값으로 쓰임
+            }
+        }
     }
     
-    // memory: 100 ~ 109
-    func method2() {
-        print("Struct - Direct method2")
-    }
-}
-
-let myStruct = Mystruct()
-// 이코드가 컴파일 되는 시점에 메모리 주소가 각각 90, 100이 들어가게된다
-// 즉 구조체인 경우 메서드를 실행하는 코드를 넣으면 실제로 메모리 주소를 삽입해버린다 = direct dispatch
-myStruct.method1()  // 90
-myStruct.method2()  // 100
-
-
-// class는 조금 다름
-// table dispatch = 동적 디스패치
-// virtual table를 사용한다
-// 데이터 영역에 테이블을 만들어서 메모리 주소를 저장한다
-class FireClass {
-    func method1() { print("Class - Table method1") }   // 110 ~ 119
-    func method2() { print("Class - Table method2") }   // 120 ~ 129
-}
-
-// 실제로 컴퓨터에 실행되는 명령어 동작은 코드 영역에 저장됨
-// 데이터 영역에서 클래스를 상속하는 구조들을 만들어서 이 구조들이 코드의 명령어를 가리키고 있다
-// 이러한 테이블은 데이터 영역에 생성되고 110번째 메모리 주소가 들어있다
-// ###########################################################
-// 110
-// func method1() { print("Class - Table method1") }
-// 129
-// func method2() { print("Class - Table method2") }
-// ###########################################################
-
-// 자식클래스에서 테이블을 따로 보유
-class SecondClass: FireClass {
-    override func method2() { print("Class - Table method2-2") } // 130 ~ 139   // 재정의
-    func method3() { print("Class - Table method3") }            // 140 ~ 149   // 새로운 메서드 정의
-}
-
-// ###########################################################
-// 110
-// func method1() { print("Class - Table method1") }   // 재정의 안해서 메모리주소 그대로 실행하면됨 즉 메모리주소만 복사
-// 130(재정의된 메서드주소)
-// func method2() { print("Class - Table method2-2") } // 재정의된 메서드주소 저장한다
-// 140(새롭게 정의된 주소)
-// func method3() { print("Class - Table method3") }
-// ###########################################################
-
-
-
-
-class ParentClass {
-    @objc dynamic func method1() { print("Class - Message method1") }
-    @objc dynamic func method2() { print("Class - Message method2") }
-}
-
-// ###########################################################
-// func method1() { print("Class - Message method1") }
-// func method2() { print("Class - Message method2") }
-// ###########################################################
-
-class ChildClass: ParentClass {
-    @objc dynamic override func method2() { print("Class - Message method2-2") }
-    @objc dynamic func method3() { print("Class - Message method3") }
-}
-
-// ###########################################################
-// super class
-// func method2() { print("Class - Message method2-2") } // 재정의한 메서드는 다시 주소가짐
-// func method3() { print("Class - Message method2") }
-// ###########################################################
-
-
-protocol MyProtocol {
-    func method1()    // 요구사항 - Witness Table
-    func method2()    // 요구사항 - Witness Table
-}
-
-
-extension MyProtocol {
-    // 요구사항의 기본 구현 제공 ==> 프로토콜 withness table만듬
-    // 이때 우선순위 고려 !
-    func method1() { print("Protocol - Witness Table method1") }
-    func method2() { print("Protocol - Witness Table method2") }
+    // 블랙잭 카드 속성 / 메서드  =======================================
+    // 어떤 카드도, 순서(숫자)와 세트(Suit)를 가짐
+    // 저장속성인데 타입이 열거형인 상황
+    let rank: Rank, suit: Suit
     
-    // 필수 요구사항은 아님 테이블을 만들지 않는다 ==> Direct Dispatch
-    func anotherMothod() {
-        print("Protocol Extension - Direct method")
+    // (읽기) 계산속성
+    var description: String {
+        get {
+            var output = "\(suit.rawValue) 세트,"
+            output += " 숫자 \(rank.values.first)"
+            
+            if let second = rank.values.second {   // 두번째 값이 있다면 (ace만 있음)
+                output += " 또는 \(second)"
+            }
+            
+            return output
+        }
     }
 }
 
-class FirstClass: MyProtocol {
-    // 다 실제로 구현해버림
-    func method1() { print("Class - Virtual Table method1") }
-    func method2() { print("Class - Virtual Table method2") }
-    func anotherMothod() { print("Class - Virtual Table method3") }
-}
+// A - 스페이드
 
-/**==============================================================
-[Class Virtual Table]
-- func method1() { print("Class - Virtual Table method1") }
-- func method2() { print("Class - Virtual Table method2") }
-- func anotherMothod() { print("Class - Virtual Table method3") }
-=================================================================**/
-
-/**==============================================================
-[Protocol Witness Table]
-- func method1() { print("Class - Virtual Table method1") }   // 요구사항 - 우선순위 반영⭐️
-- func method2() { print("Class - Virtual Table method2") }   // 요구사항 - 우선순위 반영⭐️
- =================================================================**/
+let card1 = BlackjackCard(rank: .ace, suit: .spades) // fullname: BlackjackCard.Suit.spades
+print("1번 카드: \(card1.description)")
 
 
-let first = FirstClass()
-first.method1()           // Class - Virtual Table method1
-first.method2()           // Class - Virtual Table method2
-first.anotherMothod()     // Class - Virtual Table method3
+
+// 5 - 다이아몬드
+
+let card2 = BlackjackCard(rank: .five, suit: .diamonds)
+print("2번 카드: \(card2.description)")
+
+//let card2 = BlackjackCard(rank: <#T##BlackjackCard.Rank#>, suit: <#T##BlackjackCard.Suit#>)
 
 
-let proto: MyProtocol = FirstClass()
-proto.method1()           // Class - Virtual Table method1  (Witness Table)
-proto.method2()           // Class - Virtual Table method2  (Witness Table)
-proto.anotherMothod()     // Protocol Extension - Direct method
+
+
 
