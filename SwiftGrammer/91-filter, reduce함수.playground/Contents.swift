@@ -43,7 +43,7 @@ var aaa = names.filter { str in
     // 참이 나오는 아이템들을 필터링해서 다시 뽑아서 배열로 저장하겠다 라는 의미
     return str.contains("B")
 }
-//print(aaa)
+print(aaa)
 
 
 
@@ -72,7 +72,7 @@ var enevNumberArray4 = array.filter {
 }
 
 
-//print(enevNumberArray)
+print(enevNumberArray)
 //print(enevNumberArray2)
 //print(enevNumberArray3)
 //print(enevNumberArray4)

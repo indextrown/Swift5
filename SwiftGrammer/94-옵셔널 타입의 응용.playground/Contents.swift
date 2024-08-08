@@ -47,7 +47,7 @@ class Human {
 // 붕어빵 찍어내는 코드
 // choco변수는 stack에, 붕어빵 Dog(name: "초코", weight: 15)는 heap영역에 존재
 var choco = Dog(name: "초코", weight: 15)
-choco.name     // 옵셔널 초코
+print(choco.name)     // 옵셔널 초코
 choco.sit()
 
 // 물음표가 붙는다 = 옵셔널 체이닝과 관련된 문법이다
