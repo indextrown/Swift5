@@ -79,3 +79,23 @@ class ViewController: UIViewController {
     
 }
 
+
+
+// 볼수있음
+import SwiftUI
+
+// SwiftUI Preview using #Preview
+#Preview {
+    ViewControllerWrapper()
+        .edgesIgnoringSafeArea(.all)
+}
+
+struct ViewControllerWrapper: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> ViewController {
+        return ViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: ViewController, context: Context) {
+        // 필요시 업데이트
+    }
+}
