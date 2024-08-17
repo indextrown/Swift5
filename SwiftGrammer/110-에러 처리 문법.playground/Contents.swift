@@ -63,11 +63,26 @@ func doSomething(_ num: Int) throws -> Bool {
     
 }
 
-//doSomething(7)
+// 3)함수 실행
+
+// 1) try
+// 모든 에러발생의 예외적인 경우를 디테일하게 처리 가능
+do {
+    let data = try doSomething(7)
+} catch {
+    print("에러 처리")
+}
+
+// 2) try? (Optional try)
+let data = try? doSomething(7)
+
+
+// 3) try! (Forced try)
+// 에러가 발생할 가능성이 없는 경우 제한적으로 사용
+let data2 = try! doSomething(7)
+//let data3 = try! doSomething(-7) // 런타임 에러
+
 //
-
-
-
 enum HeightError: Error {
     case maxHeight
     case minHeight
@@ -100,9 +115,7 @@ do { // 정상적인 경우의 처리 상황
     }
     
 } catch { // 비정상적인 경우의 처리 상황
-    
     print("에러가 발생한 경우의 처리")
-    
 }
 
 
