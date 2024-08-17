@@ -18,7 +18,7 @@ func deferStatement1() {
     print("먼저 실행하기")
 }
 
-deferStatement1()
+//deferStatement1()
 
 
 
