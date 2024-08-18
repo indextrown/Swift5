@@ -15,7 +15,7 @@
 
 import UIKit
 
-let mykey = "91c037fce2fcb7481f8b8022c4bdc25a"
+let mykey = ""
 
 let movieURL = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(mykey)&targetDt=20120101"
 
