@@ -12,7 +12,7 @@
 import UIKit
 
 
-let mykey = "91c037fce2fcb7481f8b8022c4bdc25a"
+let mykey = ""
 
 
 // url 만들기
@@ -70,3 +70,8 @@ let task = URLSession.shared.dataTask(with: structUrl) { data, response, error i
 
 
 task.resume()
+
+
+
+
+
