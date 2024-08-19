@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     var name: String = "뷰컨"
     
     func doSomething() {
+        // MARK: 강한참조로 클로저가 길게 붙잡아둬서 print()끝나고 ViewController()종료될 수 있음
         DispatchQueue.global().async {
             sleep(3)
             print("글로벌큐에서 출력하기: \(self.name)")
@@ -32,7 +33,7 @@ func localScopeFunction() {
 }
 
 
-//localScopeFunction()
+// localScopeFunction()
 
 //글로벌큐에서 출력하기: 뷰컨
 //뷰컨 메모리 해제
@@ -54,7 +55,7 @@ class ViewController1: UIViewController {
         // 강한 참조 사이클이 일어나지 않지만, 굳이 뷰컨트롤러를 길게 잡아둘 필요가 없다면
         // weak self로 선언
         DispatchQueue.global().async { [weak self] in
-            guard let weakSelf = self else { return }
+            guard let weakSelf = self else { return } // self가 사라지면 return
             sleep(3)
             print("글로벌큐에서 출력하기: \(weakSelf.name)")
         }

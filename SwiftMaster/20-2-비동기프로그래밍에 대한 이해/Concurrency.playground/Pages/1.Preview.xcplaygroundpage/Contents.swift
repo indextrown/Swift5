@@ -36,11 +36,11 @@ func task5() {
 }
 
 
-task1()
-task2()
-task3()
-task4()
-task5()
+//task1()
+//task2()
+//task3()
+//task4()
+//task5()
 
 
 
@@ -84,17 +84,25 @@ func task10() {
 
 // 비동기처리를 하지 않으면 10초이상이 걸림
 
-task6()
-task7()
-task8()
-task9()
-task10()
+//task6()
+//task7()
+//task8()
+//task9()
+//task10()
 
 
 
 
 //: ### 오래 걸리는 작업을 비동기 처리를 한다면
+/*
+ 
+ MARK: DispatchQueue는 스레드 관리하는 객체이다
+ global: (공통의/일반적인) 즉 공통적으로 사용하는 큐이다(가장 많이 사용)
+ async: 클로저 내부의 작업을 비동기적으로 실행하겠다
+ 
+ */
 
+print(1)
 DispatchQueue.global().async {
     task6()
 }
@@ -114,6 +122,7 @@ DispatchQueue.global().async {
 DispatchQueue.global().async {
     task10()
 }
+print(2) // 항상 2가 먼저 출력되지는 않는다
 
 
 

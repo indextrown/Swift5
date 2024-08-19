@@ -18,6 +18,7 @@ DispatchQueue.global().async {
 //:> 클로저는 작업을 하나로 묶음
 // 전체가 하나의 작업 ===> 내부적으로는 동기적으로 동작 ⭐️
 DispatchQueue.global().async {
+    // MARK: 클로저는 작업 하나의 묶음이라서 순서대로 출력된다
     print("Task1 시작")
     print("Task1-1")
     print("Task1-2")

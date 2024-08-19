@@ -26,7 +26,7 @@ func task3() {
 
 
 // 비동기적인 함수의 정의
-
+// MARK: 이 함수 자체가 비동기적인 함수다
 func task4() {
     DispatchQueue.global().async {
         print("Task 4 시작")

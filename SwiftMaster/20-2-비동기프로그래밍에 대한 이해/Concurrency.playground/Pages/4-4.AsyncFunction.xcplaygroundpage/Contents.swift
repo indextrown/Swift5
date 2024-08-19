@@ -30,8 +30,11 @@ longtimePrint(name: "잡스")
 // 비동기적으로 동작하도록 만들어, 반복적으로 사용하도록 만들기
 // 내부적으로 다른 큐로 비동기적으로 보내서 처리
 
+
+// MARK: 리턴형이 있기 때문에 리턴형을 전달하기 위해 completion 핸들러(클로저)를 만들고 실행
 func asyncLongtimePrint(name: String, completion: @escaping (String) -> Void) {
     DispatchQueue.global().async {
+        // MARK: 결과가 늦게 나오는데 그 결과를 n에 담고 전달한다
         let n = longtimePrint(name: name)
         completion(n)
     }

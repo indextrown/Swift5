@@ -30,12 +30,15 @@ let unspecifiedQueue = DispatchQueue.global(qos: .unspecified)
 //: ### 3) 프라이빗(커스텀)큐
 //기본적인 설정은 Serial, 다만 Concurrent설정도 가능
 
-
+// MARK: 직렬큐
 let privateQueue = DispatchQueue(label: "com.inflearn.serial")
 
 
+// MARK: 시리얼큐
+DispatchQueue(label: "serial")
 
-
+// 여러개의 스레드 사용 즉 동시큐 만들 수 있다
+DispatchQueue(label: "custom", attributes: .concurrent)
 
 
 

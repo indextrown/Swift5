@@ -42,9 +42,9 @@ calculate(number: 30)
 
 
 func calculateFunc() -> ((Int) -> Int) {
+    // MARK: 누적이 된다 squre()기준으로 외부변수라서 외부변수의 주소를 캡처해서 사용한다
     
     var sum = 0
-    
     func square(num: Int) -> Int {
         sum += (num * num)
         return sum
@@ -64,7 +64,16 @@ squareFunc(20)
 squareFunc(30)
 
 
-
+func calculateFunc2() -> ((Int) -> Int) {
+    func square(num: Int) -> Int {
+        // MARK: 누적이 안된다: 외부에 있는 변수가 아니라 함수가 실행될 때 스택프레임 안에서 새롭게 생성되는 변수이다
+        var sum = 0
+        sum += (num * num)
+        return sum
+    }
+    
+    return square
+}
 
 /*:
  ## 클로저 캡처 리스트

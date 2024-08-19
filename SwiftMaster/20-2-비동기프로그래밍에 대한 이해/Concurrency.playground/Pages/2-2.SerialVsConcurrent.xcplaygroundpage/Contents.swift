@@ -28,27 +28,28 @@ func task3() {
 //: # 직렬(Serial)큐 VS 동시큐(Concurrent)
 
 //: ### Serial 직렬큐
-let serialQueue = DispatchQueue(label: "com.inflearn.serial")
+let serialQueue = DispatchQueue(label: "com.inflearn.serial") // 문자열은 개발자 마음대로
 
 
 
-serialQueue.async {
-    task1()
-}
-
-serialQueue.async {
-    task2()
-}
-
-serialQueue.async {
-    task3()
-}
+//serialQueue.async {
+//    task1()
+//}
+//
+//serialQueue.async {
+//    task2()
+//}
+//
+//serialQueue.async {
+//    task3()
+//}
 
 
 // 비동기적으로 보내더라도, 순서대로 출력
 
 
 //: ### Concurrent 동시큐
+// MARK: 애플이 미리 만들어둔, 개발자들이 자주 사용하라고 만들어둔 큐
 let concurrentQueue = DispatchQueue.global()
 
 
@@ -104,3 +105,5 @@ PlaygroundPage.current.finishExecution()
 //LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //THE SOFTWARE.
+
+

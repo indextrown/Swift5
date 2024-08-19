@@ -16,6 +16,11 @@ import UIKit
 // (1) 클로저를 단순 실행 (non-escaping) =====================
 //     (지금까지 다뤘던 내용)
 
+
+/*
+ MARK: input파라미터로 쓰이는 함수타입이 heap에 저장되지 않음
+ MARK: 파라미터로 쓰이는 동안 잠깐동안 저장됨
+ */
 func performEscaping1(closure: () -> ()) {
     print("프린트 시작")
     closure()
@@ -39,13 +44,12 @@ performEscaping1 {
  =============================================**/
 
 
-
+// 외부변수
 var aSavedFunction: () -> () = { print("출력") }
 
 //aSavedFunction()
 
-
-
+// MARK: input으로 쓰이는 함수가 heap에 오래동안 저장되서 함수가 종료되도 사라지지 않음
 func performEscaping2(closure: @escaping () -> ()) {
     aSavedFunction = closure         // 클로저를 실행하는 것이 아니라  aSavedFunction 변수에 저장
     //closure()
@@ -65,7 +69,7 @@ performEscaping2(closure: { print("다르게 출력") })
 
 // 또다른 예제 (GCD 비동기 코드)
 
-
+// MARK: @escape: input으로 쓰이는 파라미터가 힙에 저장되서 오래동안 사용한다
 func performEscaping1(closure: @escaping (String) -> ()) {
     
     var name = "홍길동"

@@ -11,8 +11,9 @@ var imageView: UIImageView? = nil
 let url = URL(string: "https://bit.ly/32ps0DI")!
 
 
-// URL세션은 내부적으로 비동기로 처리된 함수임.
+// MARK: URL세션은 내부적으로 비동기로 처리된 함수임.
 URLSession.shared.dataTask(with: url) { (data, response, error) in
+    // MARK: 여기에 DispatchQueue.global().async 있다고 가정하면됨
     
     if error != nil{
         print("에러있음")
@@ -20,7 +21,7 @@ URLSession.shared.dataTask(with: url) { (data, response, error) in
     
     guard let imageData = data else { return }
     
-    // 즉, 데이터를 가지고 이미지로 변형하는 코드
+    // 즉, 데이터를 가지고 이미지로 변형하는 코드: 데이터 생성자
     let photoImage = UIImage(data: imageData)
     
     // 🎾 이미지 표시는 DispatchQueue.main에서 🎾
