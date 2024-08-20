@@ -200,6 +200,7 @@ personClassOnly(array: [student, student])
 
 func findIndex(item: String, array:[String]) -> Int? {
     for (index, value) in array.enumerated() {
+        // MARK: 대소문자 무시
         if item.caseInsensitiveCompare(value) == .orderedSame {
             return index
         }
