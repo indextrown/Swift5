@@ -166,14 +166,14 @@ personClassOnly(array: [Person(), Student()])
 // 문자열의 경우, 대소문자를 무시하고 비교하고 싶어서 아래와 같이 구현 가능 ⭐️
 // 위의 findIndex<T: Equatable>(item: T, array:[T]) -> Int? 와 완전 동일
 
-func findIndex(item: String, array:[String]) -> Int? {
-    for (index, value) in array.enumerated() {
-        if item.caseInsensitiveCompare(value) == .orderedSame {
-            return index
-        }
-    }
-    return nil
-}
+//func findIndex(item: String, array:[String]) -> Int? {
+//    for (index, value) in array.enumerated() {
+//        if item.caseInsensitiveCompare(value) == .orderedSame {
+//            return index
+//        }
+//    }
+//    return nil
+//}
 
 
 
