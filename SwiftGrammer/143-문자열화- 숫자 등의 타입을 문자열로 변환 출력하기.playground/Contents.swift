@@ -32,7 +32,6 @@ print("원하는 숫자는 " + String(format: "%.2f", pi))
 print("원하는 숫자는 " + String(format: "%.1f", pi))
 
 
-
 //MARK: 출력 형식 지정자 종류(절대 외우기 금지)
 
 // d는 정수를 의미한다
@@ -52,9 +51,8 @@ print(string) // 003.142
 
 var swift = "Swift"
 // 내가 변환하고싶은 문자열 형태
-string = String(format: "Hello, %@", swift) // %@부분에 문자열을 넣겠다
+string = String(format: "Hello, %1$@", swift) // %@부분에 문자열을 넣겠다
 print(string)
-
 
 
 // MARK: 형식 지정자 활용 예시
@@ -89,6 +87,7 @@ var lastName = "Hong"
 
 var korean = "사용자의 이름은 %2$@ %1$@ 입니다."
 var english = "The username is %1$@ %2$@."
+
 string = String(format: korean, firstName, lastName)
 print(string)
 

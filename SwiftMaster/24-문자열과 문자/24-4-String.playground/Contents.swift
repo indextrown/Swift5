@@ -70,7 +70,8 @@ string = String(format: "Hello, %@", swift)       // %@  ===> 문자열
 print(string)
 
 
-
+string = String(format: "Hello, %1$@", swift) // %@ ==> 문자열
+print(string)  // Hello, Swift
 //:> 절대 외울 필요없음! ➞ 필요할 때 찾아쓰기
 
 // 참고 https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html#//apple_ref/doc/uid/TP40004265-SW1

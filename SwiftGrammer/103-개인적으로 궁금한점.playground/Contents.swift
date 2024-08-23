@@ -28,6 +28,29 @@
  */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// swift에서 기본 타입들은 구조체임에도 불구하고 var a: Int = 0이 가능한 이유가 궁금하였다
+var num: Int = 5
+print(num)
+
+
+
+
+
+
+
 // MyInt는 리터럴 초기화를 지원하지 않기 때문에, 아래의 코드는 컴파일 에러 발생한다
 struct MyInt {
     // 리터럴 초기화 지원 코드가 없음
@@ -35,7 +58,11 @@ struct MyInt {
 }
 
 // 컴파일 에러
-// var test: MyInt = 0
+//var test: MyInt = 0
+
+
+
+
 
 
 // `ExpressibleByIntegerLiteral` 프로토콜을 준수하면 리터럴 값으로 변수를 초기화할 수 있다.
@@ -49,6 +76,15 @@ struct MyInt2: ExpressibleByIntegerLiteral {
 
 // 가능
 var test: MyInt2 = 10
+print(test)
+
+
+
+
+
+
+
+
 
 
 

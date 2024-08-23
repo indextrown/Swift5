@@ -42,6 +42,7 @@ print(dog)
 // 더 자세하게 출력
 // 인스턴스를 dump로 출력하면메모리 구조상에 어떤 방식으로 저장되어있는지 출력
 dump(dog)
+dump(dog)
 
 
 
@@ -66,10 +67,13 @@ dump(dog)
 // CustomStringConvertible을 채택해야한다
 // Swift 4방식
 extension Dog: CustomStringConvertible {
-    var description: String {
+    var  description: String {
         return "강아지 이름은 \(name)이고, 몸무게는 \(weight)kg 입니다"
     }
 }
+print("test")
+print(dog)
+print("\(dog)")
 
 // 결과적으로 String Interpolation 썼을 때 그 인스턴스의 형태를 찾아가서 프로토콜을 채택했다면 description 속성에 구현된 부분을 읽고 출력해준다.
 
@@ -103,12 +107,12 @@ extension String.StringInterpolation {
         appendInterpolation("X좌표는 \(value.x), Y좌표는 \(value.y)입니다.")
     }
     
-//    mutating func appendInterpolation(_ value: Dog) {
-//        appendInterpolation("강아지의 이름은 \(value.name)이고, 몸무게는 \(value.weight)kg 입니다.")
-//    }
+
 }
 
 print("\(p)")
+print("\(dog)")
+
 
 
 /* 

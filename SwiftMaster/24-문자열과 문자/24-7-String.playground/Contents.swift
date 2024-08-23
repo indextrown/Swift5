@@ -194,10 +194,10 @@ greeting[lower...upper]
 
 // 실제로는 뒤에서 배울, 교체/삭제에서 주로 범위를 활용
 
-var range = greeting.range(of: "Tag!")!
+var range: Range<String.Index> = greeting.range(of: "Tag!")!
 greeting[range]
 
-
+// 대소문자를 비교하지 않는 옵션
 range = greeting.range(of: "tag", options: [.caseInsensitive])!
 greeting[range]
 

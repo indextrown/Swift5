@@ -18,12 +18,12 @@ string.capitalized // 문자열의 맨 앞글자만 대문자로 리턴한다(�
 "swift".lowercased() == "Swift".lowercased() // true
 
 // MARK: count, isEmpty: 데이터 바구니에서 자주 사용하는 속성
-var emptyString = " "
-emptyString.count   // 1
-emptyString.isEmpty // false
+var emptyString = " " // 공백문자열
+emptyString.count     // 1
+emptyString.isEmpty   // false
 
 
-emptyString = "" // 빈 문자열(메모리공간 차지한다) ##nil아니다!
+emptyString = ""    // 빈 문자열(메모리공간 차지한다) nil아니다!
 emptyString.count   // 0
 emptyString.isEmpty // true
 

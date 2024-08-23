@@ -31,5 +31,6 @@ var word: String.SubSequence = greeting.prefix(5)
 
 // MARK: 문자열은 결국 메모리 공간을 차지하고 있는데 새로운 메모리 공간을 사용하지 않고 스위프트 내부적으로 잘 설계되어 메모리 공간이 공유되는 개념이 존재한다는 것이다
 
-
+greeting = "Happy"
+print(word)
 
