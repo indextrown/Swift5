@@ -6,6 +6,7 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 
 //: ### 작업을 오랫동안 실행하는 함수가 있다고 가정
 
+// MARK: - 작업을 오랫동안 실행하는 함수가 있다고 가정
 func longtimePrint(name: String) -> String {
     print("프린트 - 1")
     sleep(1)
@@ -20,17 +21,39 @@ func longtimePrint(name: String) -> String {
 }
 
 
-longtimePrint(name: "잡스")
+//longtimePrint(name: "잡스")
 
+
+
+
+func longtimePrint2(name: String, com: @escaping () -> Void) {
+    DispatchQueue.global().async {
+        print("프린트 - 1")
+        sleep(1)
+        print("프린트 - 2")
+        sleep(1)
+        print("프린트 - 3 이름:\(name)")
+        sleep(1)
+        print("프린트 - 4")
+        sleep(1)
+        print("프린트 - 5")
+        com()
+    }
+}
+
+
+// Corrected function call with closure
+longtimePrint2(name: "잡스") {
+    print("작업 완료")
+}
 
 
 
 //: # 동기함수를 비동기함수로 만들기
+// MARK: - 동기함수를 비동기함수로 만들기
 // 작업을 오랫동안 실행하는데, 동기적으로 동작하는 함수를
 // 비동기적으로 동작하도록 만들어, 반복적으로 사용하도록 만들기
 // 내부적으로 다른 큐로 비동기적으로 보내서 처리
-
-
 // MARK: 리턴형이 있기 때문에 리턴형을 전달하기 위해 completion 핸들러(클로저)를 만들고 실행
 func asyncLongtimePrint(name: String, completion: @escaping (String) -> Void) {
     DispatchQueue.global().async {
@@ -40,19 +63,14 @@ func asyncLongtimePrint(name: String, completion: @escaping (String) -> Void) {
     }
 }
 
-
-
 //asyncLongtimePrint(name: "잡스", completion: <#T##(String) -> Void#>)
-
-
-
 asyncLongtimePrint(name: "잡스") { (result) in
     print(result)
     
     // 메인쓰레드에서 처리해야하는 일이라면,
-//    DispatchQueue.main.async {
-//        print(result)
-//    }
+    DispatchQueue.main.async {
+        print(result)
+    }
 }
 
 

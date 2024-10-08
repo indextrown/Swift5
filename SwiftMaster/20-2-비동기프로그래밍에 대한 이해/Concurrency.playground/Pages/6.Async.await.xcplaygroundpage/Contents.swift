@@ -29,9 +29,6 @@ func longtimePrint(completion: @escaping (Int) -> Void) {
 // 여러개의 비동기함수를 이어서 처리할때, 코드의 처리가 불편
 // 비동기함수의 일이 종료되는 시점을 연결하기 위해, 끊임없는 콜백함수의 연결이 필요
 // 코드는 계속 들여쓰기.. 들여쓰기.. 들여쓰기..
-
-
-
 func linkedPrint(completion: @escaping (Int) -> Void) {
     longtimePrint { num in
         // 코드처리
@@ -57,33 +54,41 @@ func linkedPrint(completion: @escaping (Int) -> Void) {
 
 // Async/await 함수의 설계
 // 내부에 따로 DispatchQueue로 보낼 필요는 없음
+func longtimeAsyncAwait() async -> Int {
+    print("프린트 - 1")
+    sleep(1)
+    print("프린트 - 2")
+    sleep(1)
+    print("프린트 - 3")
+    sleep(1)
+    print("프린트 - 4")
+    sleep(1)
+    print("프린트 - 5")
+    return 7
+}
 
-//func longtimeAsyncAwait() async -> Int {
-//    print("프린트 - 1")
-//    sleep(1)
-//    print("프린트 - 2")
-//    sleep(1)
-//    print("프린트 - 3")
-//    sleep(1)
-//    print("프린트 - 4")
-//    sleep(1)
-//    print("프린트 - 5")
-//    return 7
-//}
 
-
+Task {
+    let result = await longtimeAsyncAwait()
+    print("결과1", result)
+    let result2 = await longtimeAsyncAwait()
+    print("결과2",result2)
+}
 
 // Async/await 함수의 사용
+func linkedPrint2() async -> Int {
+    _ = await longtimeAsyncAwait()
+    _ = await longtimeAsyncAwait()
+    _ = await longtimeAsyncAwait()
+    _ = await longtimeAsyncAwait()
+    return 7
+}
 
-//func linkedPrint2() async -> Int {
-//    _ = await longtimeAsyncAwait()
-//    _ = await longtimeAsyncAwait()
-//    _ = await longtimeAsyncAwait()
-//    _ = await longtimeAsyncAwait()
-//    return 7
-//}
 
-
+Task {
+    let result = await linkedPrint2()
+    print("최종 결과: \(result)")
+}
 
 
 

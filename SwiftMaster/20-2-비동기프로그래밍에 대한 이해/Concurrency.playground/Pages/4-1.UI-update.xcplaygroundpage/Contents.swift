@@ -47,15 +47,6 @@ DispatchQueue.global().async {
     }
 }
 
-
-
-
-
-
-
-
-
-
 sleep(4)
 
 PlaygroundPage.current.finishExecution()

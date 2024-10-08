@@ -32,9 +32,18 @@ var b = "Swift"
 
 
 a.caseInsensitiveCompare(b) == ComparisonResult.orderedSame
+var result = a.caseInsensitiveCompare(b)
 
-//문자열.caseInsensitiveCompare(<#T##aString: StringProtocol##StringProtocol#>)
+//문자열.caseInsensitiveCompare(<#T##aString: StringProtocol##StringProtocol#>) // 열거형 타입으로 정의됨
 
+switch result {
+case .orderedAscending:
+    print("오름차순으로 나옴")
+case .orderedDescending:
+    print("내림차순으로 나옴")
+case .orderedSame:
+    print("동일한 차순으로 나옴")
+}
 
 /**========================================================
  ComparisonResult 열거형 타입으로 정의  (비교 결과 타입)
@@ -110,7 +119,7 @@ name.compare("hello", options: [.caseInsensitive]) == .orderedDescending    // �
 
 
 
-// .forcedOrdering 강제적 오름차순/내림차순 정렬순 (대소문자 무조건 구별 의미)
+// .forcedOrdering 강제적 오름차순/내림차순 정렬순 (대소문자 무조건 구별 의미) 배열 적용안됨
 "Hello".compare("hello", options: [.forcedOrdering, .caseInsensitive]) == .orderedAscending
 
 

@@ -17,24 +17,24 @@ DispatchQueue.global().async {
 
 //:> 클로저는 작업을 하나로 묶음
 // 전체가 하나의 작업 ===> 내부적으로는 동기적으로 동작 ⭐️
-DispatchQueue.global().async {
-    // MARK: 클로저는 작업 하나의 묶음이라서 순서대로 출력된다
-    print("Task1 시작")
-    print("Task1-1")
-    print("Task1-2")
-    print("Task1-3")
-    print("Task1 종료")
-}
-
+//DispatchQueue.global().async {
+//    // MARK: 클로저는 작업 하나의 묶음이라서 순서대로 출력된다
+//    print("Task1 시작")
+//    print("Task1-1")
+//    print("Task1-2")
+//    print("Task1-3")
+//    print("Task1 종료")
+//}
+//
 
 
 
 // 위의 코드랑 아래의 코드는 전혀다름... 순서를 보장할 수 없음
 // 아래의 코드는 작업이 5개로 분할된 개념
 
-DispatchQueue.global().async {
-    print("Task2 시작")
-}
+//DispatchQueue.global().async {
+//    print("Task2 시작")
+//}
 
 
 DispatchQueue.global().async {
@@ -52,6 +52,7 @@ DispatchQueue.global().async {
 DispatchQueue.global().async {
     print("Task2 종료")
 }
+
 
 
 

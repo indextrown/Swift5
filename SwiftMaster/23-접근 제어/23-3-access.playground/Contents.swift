@@ -17,6 +17,7 @@ public class A {
 
 // public이하의 접근 수준만 가능(public/internal/fileprivate)
 internal class B: A {
+    // MARK: - 멤버는 재정의할때 접근수준을 올릴 수 있음
     override internal func someMethod() {   // 접근 수준 올려서 재정의 가능 ⭐️
         super.someMethod()                  // (더 낮아도) 모듈에서 접근가능하기 때문에 호출가능
     }

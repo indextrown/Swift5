@@ -32,17 +32,17 @@ let serialQueue = DispatchQueue(label: "com.inflearn.serial") // 문자열은 �
 
 
 
-//serialQueue.async {
-//    task1()
-//}
-//
-//serialQueue.async {
-//    task2()
-//}
-//
-//serialQueue.async {
-//    task3()
-//}
+serialQueue.async {
+    task1()
+}
+
+serialQueue.async {
+    task2()
+}
+
+serialQueue.async {
+    task3()
+}
 
 
 // 비동기적으로 보내더라도, 순서대로 출력
