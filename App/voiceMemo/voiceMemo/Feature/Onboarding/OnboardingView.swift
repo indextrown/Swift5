@@ -6,12 +6,30 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    // 처음 선언이라 StateObject로 선언해줌(온보딩뷰모델)
-    @StateObject private var onboardingViewModel = OnboardingViewModel()
+    @StateObject private var pathModel = PathModel()
+    @StateObject private var onboardingViewModel = OnboardingViewModel() // 처음 선언이라 StateObject로 선언해줌(온보딩뷰모델)
     
     var body: some View {
-        // TODO: - 화면 전환 구현 필요
-        OnboardingContentView(onboardingViewModel: onboardingViewModel)
+        
+        // TODO: - 화면 전환 구현 완료
+        NavigationStack(path: $pathModel.paths) {
+            OnboardingContentView(onboardingViewModel: onboardingViewModel)
+                .navigationDestination(for: PathType.self) { pathType in
+                    switch pathType {
+                    case .homeView:
+                        HomeView()
+                            .navigationBarBackButtonHidden()    // 커스텀 탭을 위해 숨김
+                    case .todoView:
+                        TodoView()
+                            .navigationBarBackButtonHidden()
+                    case .memoView:
+                        MemoView()
+                            .navigationBarBackButtonHidden()
+                    }
+                }
+        }
+        // 각 뷰들을 pathModel을가지고 뒤로빠져나가는역할 -> environmentObject 로 감싸줘야함 -> 전역적사용으로 관리 수월해진다
+        .environmentObject(pathModel) // 전역주입
     }
 }
 
@@ -30,8 +48,13 @@ private struct OnboardingContentView: View {
             // 온보딩 셀리스트 뷰
             OnboardingCellListView(onboardingViewModel: onboardingViewModel)
             
+            Spacer()
+            
             // 시작 버튼 뷰
+            StartBtnView()
         }
+        // 위쪽 꽉채워줌(SafeArea 무시)
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
@@ -112,7 +135,31 @@ private struct OnboardingCellView: View {
     }
 }
 
-
+// MARK: - 시작하기 버튼 뷰(뷰모델필요x, 비즈니스로직필요x)
+private struct StartBtnView: View {
+    @EnvironmentObject private var pathModel: PathModel
+    
+    fileprivate var body: some View {
+        Button(
+            action: {
+                pathModel.paths.append(.homeView) //
+            },
+            label: {
+                HStack {
+                    Text("시작하기")
+                        .font(.system(size: 16, weight: .medium))
+                        .foregroundColor(.customGreen)
+                    
+                    Image("startHome")
+                        .renderingMode(.template)   // 색상변경해주기위해사용
+                        .foregroundColor(.customGreen)
+                }
+            }
+        )
+        // 하단부터 50 공백
+        .padding(.bottom, 50)
+    }
+}
 
 
 
