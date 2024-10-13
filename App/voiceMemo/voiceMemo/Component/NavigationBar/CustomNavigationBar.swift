@@ -29,6 +29,7 @@ struct CustomNavigationBar: View {
     
     var body: some View {
         HStack {
+            // 참이면 버튼 보여줌
             if isDisplayLeftBtn {
                 Button(
                     action: leftBtnAction,
@@ -38,6 +39,7 @@ struct CustomNavigationBar: View {
             
             Spacer()
             
+            // 참이면 버튼 보여줌
             if isDisplayRightBtn {
                 Button(
                     action: rightBtnAction,
@@ -48,7 +50,8 @@ struct CustomNavigationBar: View {
                             Text(rightBtnType.rawValue)
                                 .foregroundColor(.customBlack)
                         }
-                    })
+                    }
+                )
             }
         }
         // 책임을 잡아줘야함
