@@ -110,6 +110,6 @@ class AuthenticationViewModel: ObservableObject {
                 print(error.localizedDescription)
             }
         }
-    }    
+    }
 }
 

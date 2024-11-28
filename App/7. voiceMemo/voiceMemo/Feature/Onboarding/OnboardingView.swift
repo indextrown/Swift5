@@ -194,10 +194,13 @@ struct OnboardingView: View {
 
   
   var body: some View {
+    // MARK: - 초기 온보딩 컨텐츠뷰를 초기점으로 만들어줌
     NavigationStack(path: $pathModel.paths) {
       OnboardingContentView(onboardingViewModel: onboardingViewModel)
         .navigationDestination(
           for: PathType.self,
+          
+          // MARK: - 어디를 갈지 지정해줌 -> 구분자 path타입 사용
           destination: { pathType in
             switch pathType {
             case .homeView:
@@ -209,6 +212,7 @@ struct OnboardingView: View {
               TodoView()
                 .navigationBarBackButtonHidden()
                 .environmentObject(todoListViewModel)
+                
             case .memoView:
                 MemoView()
                     .navigationBarBackButtonHidden()
@@ -217,6 +221,7 @@ struct OnboardingView: View {
           }
         )
     }
+      // MARK: - 전역적으로 pathModel을 사용하기위해 전역적으로 주입
     .environmentObject(pathModel)
   }
 }

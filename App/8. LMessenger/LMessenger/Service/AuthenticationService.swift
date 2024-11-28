@@ -160,6 +160,7 @@ extension AuthenticationService {
         let credential = OAuthProvider.credential(providerID: AuthProviderID.apple,
                                                       idToken: idTokenString,
                                                       rawNonce: nonce)
+                                          
         
         authenticateUserWithFirebase(credential: credential) { result in
             switch result {

@@ -13,6 +13,7 @@ struct LMessengerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     // environmentObject로 주입하기 위해 StateObject 사용
+    // MARK: - 의존성
     @StateObject var container: DIContainer = .init(services: Services())
     
     var body: some Scene {

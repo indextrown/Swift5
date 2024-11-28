@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserObject: Codable {
+struct UserObject: Codable { // 직렬화 가능
     var id: String
     var name: String
     var phoneNumber: String?

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MainTabView: View {
-    //@EnvironmentObject var authVM: AuthenticationViewModel
     @EnvironmentObject var authViewModel: AuthenticationViewModel
     @EnvironmentObject var container: DIContainer
     @State private var selectedTab: MainTabType = .home
@@ -52,12 +51,3 @@ struct MainTabView_Previews: PreviewProvider {
     }
 }
 
-//#Preview {
-//    MainTabView()
-//}
-
-//        Button {
-//            authVM.send(action: .logout)
-//        } label: {
-//            Text("로그아웃")
-//        }

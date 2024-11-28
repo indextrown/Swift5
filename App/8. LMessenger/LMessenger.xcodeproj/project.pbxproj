@@ -41,6 +41,9 @@
 		DF8B02D52CD2323700564046 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = DF8B02D42CD2323700564046 /* GoogleSignIn */; };
 		DF8B02D82CD2338E00564046 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B02D72CD2338E00564046 /* User.swift */; };
 		DF8B02DA2CD233D700564046 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B02D92CD233D700564046 /* ServiceError.swift */; };
+		DF9C81D52CEB1ECE000DDAC3 /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C81D42CEB1ECE000DDAC3 /* MyProfileViewModel.swift */; };
+		DF9C81D72CEB251D000DDAC3 /* MyProfileMenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C81D62CEB251D000DDAC3 /* MyProfileMenuType.swift */; };
+		DF9C81D92CEB3409000DDAC3 /* MyProfileDescEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C81D82CEB3409000DDAC3 /* MyProfileDescEditView.swift */; };
 		DFBCFC082CD082930095895B /* LMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBCFC072CD082930095895B /* LMessengerApp.swift */; };
 		DFBCFC0A2CD082930095895B /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBCFC092CD082930095895B /* AuthenticatedView.swift */; };
 		DFBCFC0C2CD082940095895B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFBCFC0B2CD082940095895B /* Assets.xcassets */; };
@@ -48,9 +51,11 @@
 		DFBCFC192CD082940095895B /* LMessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBCFC182CD082940095895B /* LMessengerTests.swift */; };
 		DFBCFC232CD082940095895B /* LMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBCFC222CD082940095895B /* LMessengerUITests.swift */; };
 		DFBCFC252CD082940095895B /* LMessengerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBCFC242CD082940095895B /* LMessengerUITestsLaunchTests.swift */; };
+		DFC406BC2CE23B1F00ABBE2A /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC406BB2CE23B1F00ABBE2A /* ContactService.swift */; };
 		DFCF01C62CD298F10036350E /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF01C52CD298F10036350E /* SHA256.swift */; };
 		DFCF01C82CD298FF0036350E /* RandomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF01C72CD298FF0036350E /* RandomNonceString.swift */; };
 		DFCF01CA2CD2A6830036350E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFCF01C92CD2A6830036350E /* GoogleService-Info.plist */; };
+		DFF6062D2CEC8C530074E694 /* PhotoPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF6062C2CEC8C530074E694 /* PhotoPickerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +108,9 @@
 		DF8B02D12CD2246E00564046 /* LoginButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonStyle.swift; sourceTree = "<group>"; };
 		DF8B02D72CD2338E00564046 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DF8B02D92CD233D700564046 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		DF9C81D42CEB1ECE000DDAC3 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
+		DF9C81D62CEB251D000DDAC3 /* MyProfileMenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileMenuType.swift; sourceTree = "<group>"; };
+		DF9C81D82CEB3409000DDAC3 /* MyProfileDescEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDescEditView.swift; sourceTree = "<group>"; };
 		DFBCFC042CD082930095895B /* LMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBCFC072CD082930095895B /* LMessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMessengerApp.swift; sourceTree = "<group>"; };
 		DFBCFC092CD082930095895B /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
@@ -113,10 +121,12 @@
 		DFBCFC1E2CD082940095895B /* LMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBCFC222CD082940095895B /* LMessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMessengerUITests.swift; sourceTree = "<group>"; };
 		DFBCFC242CD082940095895B /* LMessengerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMessengerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DFC406BB2CE23B1F00ABBE2A /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
 		DFCF01C32CD296470036350E /* LMessenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LMessenger.entitlements; sourceTree = "<group>"; };
 		DFCF01C52CD298F10036350E /* SHA256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
 		DFCF01C72CD298FF0036350E /* RandomNonceString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNonceString.swift; sourceTree = "<group>"; };
 		DFCF01C92CD2A6830036350E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DFF6062C2CEC8C530074E694 /* PhotoPickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +191,9 @@
 				DF226D332CD164B300D9C71E /* Services.swift */,
 				DF8B02D92CD233D700564046 /* ServiceError.swift */,
 				DF5B265B2CD4A6FE00FD807E /* UserService.swift */,
+				DFC406BB2CE23B1F00ABBE2A /* ContactService.swift */,
 				DF8B02C52CD20D1200564046 /* AuthenticationService.swift */,
+				DFF6062C2CEC8C530074E694 /* PhotoPickerService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -265,7 +277,10 @@
 			isa = PBXGroup;
 			children = (
 				DF5B26712CD4C89E00FD807E /* MyProfileView.swift */,
+				DF9C81D62CEB251D000DDAC3 /* MyProfileMenuType.swift */,
 				DF5B26732CD4C8A900FD807E /* OtherProfileView.swift */,
+				DF9C81D42CEB1ECE000DDAC3 /* MyProfileViewModel.swift */,
+				DF9C81D82CEB3409000DDAC3 /* MyProfileDescEditView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -521,11 +536,13 @@
 				DF5B26612CD4AA3800FD807E /* DBError.swift in Sources */,
 				DF8B02D82CD2338E00564046 /* User.swift in Sources */,
 				DF4CA30E2CD3EE78004E4E2B /* MainTabType.swift in Sources */,
+				DFF6062D2CEC8C530074E694 /* PhotoPickerService.swift in Sources */,
 				DF8B02CA2CD217D900564046 /* LoginIntroView.swift in Sources */,
 				DF5B265F2CD4A9C700FD807E /* UserObject.swift in Sources */,
 				DF5B266C2CD4C61B00FD807E /* ErrorView.swift in Sources */,
 				DF5B266A2CD4C5BD00FD807E /* LoadingView.swift in Sources */,
 				DF5B26652CD4C41700FD807E /* Phase.swift in Sources */,
+				DFC406BC2CE23B1F00ABBE2A /* ContactService.swift in Sources */,
 				DF4CA3162CD3F440004E4E2B /* HomeViewModel.swift in Sources */,
 				DF226D4A2CD170D400D9C71E /* AuthenticationViewModel.swift in Sources */,
 				DF226D342CD164B300D9C71E /* Services.swift in Sources */,
@@ -539,6 +556,7 @@
 				DF4CA3142CD3F054004E4E2B /* ChatListView.swift in Sources */,
 				DF226D2B2CD14D5C00D9C71E /* Color+Extension.swift in Sources */,
 				DF4CA3122CD3F043004E4E2B /* HomeView.swift in Sources */,
+				DF9C81D52CEB1ECE000DDAC3 /* MyProfileViewModel.swift in Sources */,
 				DF8B02D22CD2246E00564046 /* LoginButtonStyle.swift in Sources */,
 				DF5B26632CD4AD3000FD807E /* Constant.swift in Sources */,
 				DFBCFC082CD082930095895B /* LMessengerApp.swift in Sources */,
@@ -549,6 +567,8 @@
 				DF8B02DA2CD233D700564046 /* ServiceError.swift in Sources */,
 				DF5B26722CD4C89E00FD807E /* MyProfileView.swift in Sources */,
 				DF8B02CC2CD217F400564046 /* MainTabView.swift in Sources */,
+				DF9C81D92CEB3409000DDAC3 /* MyProfileDescEditView.swift in Sources */,
+				DF9C81D72CEB251D000DDAC3 /* MyProfileMenuType.swift in Sources */,
 				DF5B26742CD4C8A900FD807E /* OtherProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,7 +658,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -695,7 +715,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -724,7 +744,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 17;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -757,7 +777,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 17;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

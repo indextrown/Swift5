@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var container: DIContainer
     // 뷰모델 세팅은 생성하는곳에서 넣어준다(MainTabView에서 HomeView(viewModel: .init()) )
     @StateObject var viewModel: HomeViewModel
     
@@ -18,7 +19,7 @@ struct HomeView: View {
                     switch $0 {
                     case .myProfile:
                         // TODO:
-                        MyProfileView()
+                        MyProfileView(viewModel: .init(container: container, userId: viewModel.userId))
                     case let .otherProfile(userId):
                         // TODO:
                         OtherProfileView()
@@ -74,7 +75,7 @@ struct HomeView: View {
                 Spacer(minLength: 89)
                 emptyView
             } else {
-                LazyVStack {
+                LazyVStack { // 무한정 늘어날 수 있음
                     ForEach(viewModel.users, id: \.id) { user in
                         Button {
                             viewModel.send(action: .presentOtherProfileView(user.id))
@@ -164,7 +165,7 @@ struct HomeView: View {
             .padding(.bottom, 30)
             
             Button {
-                
+                viewModel.send(action: .requestContacts)
             } label: {
                 Text("친구 추가")
                     .font(.system(size: 14))

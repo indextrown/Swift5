@@ -13,6 +13,7 @@ class HomeViewModel:ObservableObject {
         case load
         case presentMyProfileView
         case presentOtherProfileView(String)
+        case requestContacts
     }
     
     @Published var myUser: User?
@@ -20,7 +21,7 @@ class HomeViewModel:ObservableObject {
     @Published var phase: Phase = .notRequested
     @Published var modalDestination: HomeModalDestination?
  
-    private var userId: String
+    var userId: String
     private var container: DIContainer
     private var subscriptions = Set<AnyCancellable>()
     
@@ -66,6 +67,24 @@ class HomeViewModel:ObservableObject {
             
         case let .presentOtherProfileView(userId):
             modalDestination = .otherProfile(userId)
+            
+        case .requestContacts:
+            container.services.contactService.fetchContacts()
+                .flatMap { users in
+                    self.container.services.userService.addUserAfterContact(users: users)
+                }
+                .flatMap { _ in
+                    self.container.services.userService.loadUsers(id: self.userId)
+                }
+                .sink { [weak self] completion in
+                    if case .failure = completion {
+                        self?.phase = .fail
+                    }
+                } receiveValue: { [weak self] users in
+                    // TODO: - 유저정보를db에 넣고 load
+                    self?.phase = .success
+                    self?.users = users
+                }.store(in: &subscriptions)
         }
     
     }
