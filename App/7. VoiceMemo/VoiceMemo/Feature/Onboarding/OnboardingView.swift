@@ -40,9 +40,14 @@ struct OnboardingView: View {
                             .navigationBarBackButtonHidden()
                             .environmentObject(todoListViewModel)
                         
-                    case .memoView:
+                    case let .memoView(isCreatedMode, memo):
                         // 메모 뷰로 넘어갈때 두가지 모드가 존재해서 파라미터로 받을 수 있다.
-                        MemoView()
+                        MemoView(
+                            memoViewModel: isCreatedMode
+                            ? MemoViewModel(memo: Memo(title: "", content: "", date: .now)) // create 모드
+                            : MemoViewModel(memo: memo ?? Memo(title: "", content: "", date: .now)), // viewer 모드(편집가능)
+                            isCreatedMode: isCreatedMode
+                        )
                             .navigationBarBackButtonHidden()
                             .environmentObject(memoListViewModel)
                     }

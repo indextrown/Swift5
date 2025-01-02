@@ -67,6 +67,7 @@ extension MemoListViewModel {
                 isEditMemoMode = false
             } else {
                 // 삭제 알람 상태값 변경을 위한 메서드 호출
+                setIsDisplayRemoveMemoAlert(true)
             }
         } else {
             // 편집모드가 아니라면 버튼을 누르면 편집모드가 되야한다

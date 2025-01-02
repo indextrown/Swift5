@@ -19,7 +19,7 @@ struct TodoListView: View {
                 if !todoListViewModel.todos.isEmpty {
                     CustomNavigationBar(
                         isDisplayLeftBtn: false,
-                        rigntBtnAction: {
+                        rightBtnAction: {
                             todoListViewModel.navigationRightBtnTapped()
                         },
                         rightBtnType: todoListViewModel.navigationBarRightBtnMode

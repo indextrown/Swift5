@@ -26,7 +26,7 @@ struct TodoView: View {
                 leftBtnAction: {
                     pathModel.paths.removeLast()    // 뒤로가기버튼 누르면 최상단의 todoView가 닫힌다
                 },
-                rigntBtnAction: {
+                rightBtnAction: {
                     todoListViewModel.addTodo(
                         .init(
                             title: todoViewModel.title,

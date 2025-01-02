@@ -17,7 +17,7 @@ struct MemoListView: View {
                 if !memoListViewModel.memos.isEmpty {
                     CustomNavigationBar(
                         isDisplayLeftBtn: false,
-                        rigntBtnAction: {
+                        rightBtnAction: {
                             memoListViewModel.navigationRightBtnTapped()
                         },
                         rightBtnType:
@@ -141,7 +141,8 @@ private struct MemoCellView: View {
     
     fileprivate var body: some View {
         Button {
-            // TODO: - path 관련 메모 궇ㄴ 후 구현 필요
+            // TODO: - path 관련 메모 구현 후 구현 필요
+            pathModel.paths.append(.memoView(isCreatedMode: false, memo: memo))
         } label: {
             VStack(spacing: 10) {
                 HStack {
@@ -191,8 +192,8 @@ private struct WriteMemoBtnView: View {
                 Spacer()
                 
                 Button {
-                    // TODO: - 메모 뷰 구현 후 돌아와서 구현 필요
-                    // pathModel.paths.append(.memoView)
+                    // TODO: - 메모 뷰 구현 후 돌아와서 구현 필요(메모 생성)
+                    pathModel.paths.append(.memoView(isCreatedMode: true, memo: nil))
                 } label: {
                     Image("writeBtn")
                 }

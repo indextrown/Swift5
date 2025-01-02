@@ -15,27 +15,38 @@ struct MemoView: View {
     
     var body: some View {
         ZStack {
-            CustomNavigationBar(
-                leftBtnAction: {
-                    pathModel.paths.removeLast()
-                },
-                rightBtnAction: {
-                    if isCreatedMode {
-                        memoListViewModel.addMemo(memoViewModel.memo)
-                    } else {
-                        memoListViewModel.updateMemo(memoViewModel.memo)
-                    }
-                    pathModel.paths.removeLast() // 생성버튼 눌러도 뒤로 나와야함
-                },
-                // 생성모드이면 create 수저/편집모드이면 완료
-                rightBtnType: isCreatedMode ? .create : .complete
-            )
+            VStack {
+                CustomNavigationBar(
+                    leftBtnAction: {
+                        pathModel.paths.removeLast()
+                    },
+                    rightBtnAction: {
+                        if isCreatedMode {
+                            memoListViewModel.addMemo(memoViewModel.memo)
+                        } else {
+                            memoListViewModel.updateMemo(memoViewModel.memo)
+                        }
+                        pathModel.paths.removeLast() // 생성버튼 눌러도 뒤로 나와야함
+                    },
+                    // 생성모드이면 create 수저/편집모드이면 완료
+                    rightBtnType: isCreatedMode ? .create : .complete
+                )
+        
+                // 메모 타이틀 인풋 뷰
+                MemoTitleInputView(memoViewModel: memoViewModel, isCreateMode: $isCreatedMode)
+                    .padding(.top, 20)
+                
+                // 메모 컨텐츠 인풋 뷰
+                MemoContentInputView(memoViewModel: memoViewModel)
+                    .padding(.top, 20)
+            }
             
-            // 메모 타이틀 인풋 뷰
-            
-            // 메모 컨텐츠 인풋 뷰
-            
-            // 삭제 플로팅 버튼 뷰
+        }
+        // 삭제 플로팅 버튼 뷰
+        if !isCreatedMode {
+            RemoveMemoBtnView(memoViewModel: memoViewModel)
+                .padding(.trailing, 20)
+                .padding(.bottom, 10)
         }
     }
 }
@@ -70,12 +81,70 @@ private struct MemoTitleInputView: View {
     }
 }
 
+// MARK: - 메모 본문 입력 뷰
+private struct MemoContentInputView: View {
+    @ObservedObject private var memoViewModel: MemoViewModel
+    
+    fileprivate init(memoViewModel: MemoViewModel) {
+        self.memoViewModel = memoViewModel
+    }
+    
+    fileprivate var body: some View {
+        ZStack(alignment: .topLeading) {
+            TextEditor(text: $memoViewModel.memo.content)
+                .font(.system(size: 20))
+            
+            if memoViewModel.memo.content.isEmpty {
+                Text("메모를 입력하세요.")
+                    .font(.system(size: 16))
+                    .foregroundColor(.customGray1)
+                    // false로 해주면 터치가 안먹어서 텍스트 에디터를 터치하도록 접근 가능해짐
+                    .allowsTightening(false)
+                    .padding(.top, 10)
+                    .padding(.leading, 5)
+            }
+        }
+        .padding(.horizontal, 20)
+    }
+}
+
+// MARK: - 메모 삭제 버튼 뷰
+private struct RemoveMemoBtnView: View {
+    @EnvironmentObject private var pathModel: PathModel
+    @EnvironmentObject private var memoListViewModel: MemoListViewModel
+    @ObservedObject private var memoViewModel: MemoViewModel
+    
+    fileprivate init(memoViewModel: MemoViewModel) {
+        self.memoViewModel = memoViewModel
+    }
+    
+    fileprivate var body: some View {
+        VStack {
+            Spacer()
+            
+            HStack {
+                Spacer()
+                
+                Button {
+                    memoListViewModel.removeMemo(memoViewModel.memo)
+                    pathModel.paths.removeLast()
+                } label: {
+                    Image("trash")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                }
+            }
+        }
+    }
+    
+}
+
 #Preview {
     MemoView(
         memoViewModel: .init(
             memo: .init(
-                title: "",
-                content: "",
+                title: "타이틀 테스트",
+                content: "내용 테스트",
                 date: Date()
             )
         )
