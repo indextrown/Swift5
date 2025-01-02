@@ -100,7 +100,7 @@ class AuthenticationService: AuthenticationServiceType {
 // MARK: - 구글로그인은 Combine제공하지 않는다 응답으로 completion핸들러 구현하고 completion핸들러 가지고 future로 publisher만드는 작업 진행
 // MARK: - 애플로그인도 combine지원하지 않아서 completion handler만들어서 future로 publisher를 만들자
 extension AuthenticationService {
-    // Google Sign-In의 실제 비동기 작업을 수행하는 함수입니다. 이 메서드의 결과를 signInWidhGoogle()에서 Combine의 Future로 변환하여 사용할 수 있습니다.
+    // Google Sign-In의 실제 비동기 작업을 수행하는 함수입니다. 이 메서드의 결과를 signInWidhGoogle()에서 Co mbine의 Future로 변환하여 사용할 수 있습니다.
     private func signInWithGoogle(completion: @escaping (Result<User, Error>) -> Void) {
         guard let clientID = FirebaseApp.app()?.options.clientID else {
             completion(.failure(AuthenticationError.clientIDError)) // 실패

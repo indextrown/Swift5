@@ -15,7 +15,6 @@ struct UserObject: Codable { // 직렬화 가능
     var description: String?
 }
 
-
 extension UserObject {
     func toModel() -> User {
         .init(id: id,
