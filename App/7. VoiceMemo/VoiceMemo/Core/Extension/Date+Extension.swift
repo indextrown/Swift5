@@ -32,4 +32,12 @@ extension Date {
             return formatter.string(from: self)
         }
     }
+    
+    // MARK: - 음성 녹음에서 사용
+    var formattedVoiceRecorderTime: String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "yyyy.M.d"
+        return formatter.string(from: self)
+    }
 }

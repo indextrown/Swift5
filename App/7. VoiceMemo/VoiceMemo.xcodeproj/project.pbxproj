@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF1154442D2FB68F000262C3 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1154432D2FB68F000262C3 /* Time.swift */; };
+		DF1154462D2FB871000262C3 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1154452D2FB871000262C3 /* Int+Extensions.swift */; };
+		DF1154492D2FBCA1000262C3 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1154482D2FBCA1000262C3 /* TimerViewModel.swift */; };
+		DF11544B2D2FBCA9000262C3 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11544A2D2FBCA9000262C3 /* TimerView.swift */; };
+		DF3E1FA92D2E4D630027416C /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E1FA82D2E4D630027416C /* Double+Extension.swift */; };
+		DF3E1FAC2D2E4E590027416C /* VoiceRecorderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E1FAB2D2E4E590027416C /* VoiceRecorderViewModel.swift */; };
+		DF3E1FAE2D2E4E600027416C /* VoiceRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E1FAD2D2E4E600027416C /* VoiceRecorderView.swift */; };
 		DF7FF5E42D2667750065ADDC /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7FF5E32D2667750065ADDC /* Memo.swift */; };
 		DF7FF5E72D2668530065ADDC /* MemoViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7FF5E62D2668530065ADDC /* MemoViewViewModel.swift */; };
 		DF7FF5E92D26685F0065ADDC /* MemoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7FF5E82D26685F0065ADDC /* MemoListViewModel.swift */; };
@@ -36,6 +43,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF1154432D2FB68F000262C3 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		DF1154452D2FB871000262C3 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		DF1154482D2FBCA1000262C3 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		DF11544A2D2FBCA9000262C3 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		DF3E1FA82D2E4D630027416C /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		DF3E1FAB2D2E4E590027416C /* VoiceRecorderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecorderViewModel.swift; sourceTree = "<group>"; };
+		DF3E1FAD2D2E4E600027416C /* VoiceRecorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecorderView.swift; sourceTree = "<group>"; };
 		DF7FF5E32D2667750065ADDC /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		DF7FF5E62D2668530065ADDC /* MemoViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewViewModel.swift; sourceTree = "<group>"; };
 		DF7FF5E82D26685F0065ADDC /* MemoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewModel.swift; sourceTree = "<group>"; };
@@ -76,6 +90,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF1154472D2FBC80000262C3 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				DF1154432D2FB68F000262C3 /* Time.swift */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
+		DF3E1FAA2D2E4E130027416C /* VoiceRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				DF3E1FAB2D2E4E590027416C /* VoiceRecorderViewModel.swift */,
+				DF3E1FAD2D2E4E600027416C /* VoiceRecorderView.swift */,
+			);
+			path = VoiceRecorder;
+			sourceTree = "<group>";
+		};
 		DF7FF5E22D2667690065ADDC /* Memo */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +194,8 @@
 				DFA576662D1A8A5200EA719A /* Date+Extension.swift */,
 				DFA5766D2D1A96FA00EA719A /* Color+Extensions.swift */,
 				DF84D23C2D26D0650047B39A /* UINavigationController+Extensions.swift */,
+				DF3E1FA82D2E4D630027416C /* Double+Extension.swift */,
+				DF1154452D2FB871000262C3 /* Int+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -178,6 +211,7 @@
 		DFA5766F2D1A98FB00EA719A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DF1154472D2FBC80000262C3 /* Time */,
 				DF7FF5E22D2667690065ADDC /* Memo */,
 				DFCE7F472D1E918200B88DBF /* Todo */,
 				DFA5767A2D1AA6AC00EA719A /* Path */,
@@ -227,6 +261,7 @@
 				DFA576832D1AADF600EA719A /* HomeView.swift */,
 				DFCE7F4A2D1E938E00B88DBF /* TodoList */,
 				DFA576812D1AADE700EA719A /* MemoList */,
+				DF3E1FAA2D2E4E130027416C /* VoiceRecorder */,
 				DFA576822D1AADEC00EA719A /* Timer */,
 			);
 			path = Home;
@@ -254,6 +289,8 @@
 		DFA576822D1AADEC00EA719A /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				DF1154482D2FBCA1000262C3 /* TimerViewModel.swift */,
+				DF11544A2D2FBCA9000262C3 /* TimerView.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -356,8 +393,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF11544B2D2FBCA9000262C3 /* TimerView.swift in Sources */,
 				DFA5766E2D1A96FA00EA719A /* Color+Extensions.swift in Sources */,
+				DF3E1FAE2D2E4E600027416C /* VoiceRecorderView.swift in Sources */,
 				DFA5766B2D1A94DF00EA719A /* AppDelegate.swift in Sources */,
+				DF3E1FAC2D2E4E590027416C /* VoiceRecorderViewModel.swift in Sources */,
 				DF7FF5EB2D2668690065ADDC /* MemoListView.swift in Sources */,
 				DFA5767C2D1AA6BF00EA719A /* PathType.swift in Sources */,
 				DFCE7F502D1E93DA00B88DBF /* TodoListViewModel.swift in Sources */,
@@ -369,14 +409,18 @@
 				DFA576842D1AADF600EA719A /* HomeView.swift in Sources */,
 				DFA576862D1AADFE00EA719A /* TodoView.swift in Sources */,
 				DFCE7F4C2D1E93AC00B88DBF /* TodoViewModel.swift in Sources */,
+				DF1154442D2FB68F000262C3 /* Time.swift in Sources */,
 				DF94D1472D1A73A4004B29EB /* VoiceMemoApp.swift in Sources */,
 				DF7FF5E42D2667750065ADDC /* Memo.swift in Sources */,
 				DFCE7F462D1E8D1000B88DBF /* NavigationBarType.swift in Sources */,
 				DFCE7F492D1E918A00B88DBF /* Todo.swift in Sources */,
 				DFA576722D1A991400EA719A /* OnboardingContent.swift in Sources */,
+				DF1154492D2FBCA1000262C3 /* TimerViewModel.swift in Sources */,
 				DF7FF5E72D2668530065ADDC /* MemoViewViewModel.swift in Sources */,
 				DFCE7F4E2D1E93D100B88DBF /* TodoListView.swift in Sources */,
+				DF3E1FA92D2E4D630027416C /* Double+Extension.swift in Sources */,
 				DFA576672D1A8A5200EA719A /* Date+Extension.swift in Sources */,
+				DF1154462D2FB871000262C3 /* Int+Extensions.swift in Sources */,
 				DFA5767E2D1AA6F700EA719A /* Path.swift in Sources */,
 				DFA576772D1A9A4200EA719A /* OnboardingView.swift in Sources */,
 			);
@@ -517,6 +561,7 @@
 				DEVELOPMENT_TEAM = LGX4B4WC66;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "녹음 기능을 제공하기 위해 마이크를 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -550,6 +595,7 @@
 				DEVELOPMENT_TEAM = LGX4B4WC66;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "녹음 기능을 제공하기 위해 마이크를 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

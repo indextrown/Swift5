@@ -157,6 +157,7 @@ extension AuthenticationService {
             return
         }
         
+        
         let credential = OAuthProvider.credential(providerID: AuthProviderID.apple,
                                                       idToken: idTokenString,
                                                       rawNonce: nonce)
@@ -165,6 +166,7 @@ extension AuthenticationService {
         authenticateUserWithFirebase(credential: credential) { result in
             switch result {
             case var .success(user):
+                // ASAuthorizationAppleIDCredential에서 제공된 이름 정보(givenName과 familyName)를 User 객체에 추가
                 user.name = [appleIDCredential.fullName?.givenName, appleIDCredential.fullName?.familyName]
                     .compactMap{ $0 }
                     .joined(separator: " ")
