@@ -19,8 +19,9 @@ struct OnboardingView: View {
         // MARK: - SwiftUi는 NavigationStack의 path 바인딩을 통해 스택을 관리하고 배열의 마지막 요소가 화면에 반영되도록 설계되어 있다
         NavigationStack(path: $pathModel.paths) {
             
-            
-            VoiceRecorderView()
+            SettingView()
+            // TimerView()
+            //VoiceRecorderView()
             
             // MARK: - paths가 비어 있을 때 표시되는 기본 콘텐츠
             // MemoListView()
