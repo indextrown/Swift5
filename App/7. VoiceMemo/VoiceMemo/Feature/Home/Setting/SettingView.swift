@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-
 struct SettingView: View {
+    @EnvironmentObject private var homeViewModel: HomeViewModel
+    
     var body: some View {
         VStack {
             // 타이틀 뷰
@@ -44,22 +45,23 @@ private struct TitleView: View {
 
 // MARK: - 전체 탭 설정된 카운트 뷰
 private struct TotalTabCountView: View {
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     fileprivate var body: some View {
         // 각각 탭 카운트 뷰 호출(todolist, 메모장, 음성메모)
         HStack {
             Spacer()
             
-            TabCountView(title: "Todo", count: 1)
+            TabCountView(title: "Todo", count: homeViewModel.todosCount)
             
             Spacer()
                 .frame(width: 70)
             
-            TabCountView(title: "메모", count: 2)
+            TabCountView(title: "메모", count: homeViewModel.memosCount)
             
             Spacer()
                 .frame(width: 70)
             
-            TabCountView(title: "음성메모", count: 3)
+            TabCountView(title: "음성메모", count: homeViewModel.voiceRecorderCount)
             
             Spacer()
         }
@@ -91,16 +93,36 @@ private struct TabCountView: View {
 
 // MARK: - 전체 탭 이동 뷰
 private struct TotalTabMoveView: View {
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     fileprivate var body: some View {
         Rectangle()
             .fill(Color.customGray0)
             .frame(height: 1)
         
         // 각 탭 4개 이동 뷰 컴포넌트
-        TabMoveView(title: "To do List", tabAvtion: {})
-        TabMoveView(title: "메모장", tabAvtion: {})
-        TabMoveView(title: "음성메모", tabAvtion: {})
-        TabMoveView(title: "타이머", tabAvtion: {})
+        TabMoveView(
+            title: "To do List",
+            tabAction: { homeViewModel.changeSelectedTab(.todoList)
+            }
+        )
+        TabMoveView(
+            title: "메모장",
+            tabAction: {
+                homeViewModel.changeSelectedTab(.memo)
+            }
+        )
+        TabMoveView(
+            title: "음성메모",
+            tabAction: {
+                homeViewModel.changeSelectedTab(.voiceRecorder)
+            }
+        )
+        TabMoveView(
+            title: "타이머",
+            tabAction: {
+                homeViewModel.changeSelectedTab(.timer)
+            }
+        )
         
         Rectangle()
             .fill(Color.customGray0)
@@ -112,16 +134,16 @@ private struct TotalTabMoveView: View {
 // MARK: - 각 탭 이동 뷰
 private struct TabMoveView: View {
     private var title: String
-    private var tabAvtion: () -> Void
+    private var tabAction: () -> Void
     
-    fileprivate init(title: String, tabAvtion: @escaping () -> Void) {
+    fileprivate init(title: String, tabAction: @escaping () -> Void) {
         self.title = title
-        self.tabAvtion = tabAvtion
+        self.tabAction = tabAction
     }
     
     fileprivate var body: some View {
         Button(
-            action: tabAvtion) {
+            action: tabAction) {
                 HStack {
                     Text(title)
                         .font(.system(size: 14))
@@ -136,4 +158,5 @@ private struct TabMoveView: View {
 
 #Preview {
     SettingView()
+        .environmentObject(HomeViewModel())
 }

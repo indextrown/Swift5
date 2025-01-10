@@ -13,6 +13,8 @@
 		DF11544B2D2FBCA9000262C3 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11544A2D2FBCA9000262C3 /* TimerView.swift */; };
 		DF3DB9272D30F29E00623545 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3DB9262D30F29E00623545 /* NotificationService.swift */; };
 		DF3DB92A2D30FFC100623545 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3DB9292D30FFC100623545 /* SettingView.swift */; };
+		DF3DB93A2D31062300623545 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3DB9392D31062300623545 /* Tab.swift */; };
+		DF3DB93C2D31080200623545 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3DB93B2D31080200623545 /* HomeViewModel.swift */; };
 		DF3E1FA92D2E4D630027416C /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E1FA82D2E4D630027416C /* Double+Extension.swift */; };
 		DF3E1FAC2D2E4E590027416C /* VoiceRecorderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E1FAB2D2E4E590027416C /* VoiceRecorderViewModel.swift */; };
 		DF3E1FAE2D2E4E600027416C /* VoiceRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E1FAD2D2E4E600027416C /* VoiceRecorderView.swift */; };
@@ -51,6 +53,8 @@
 		DF11544A2D2FBCA9000262C3 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		DF3DB9262D30F29E00623545 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		DF3DB9292D30FFC100623545 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		DF3DB9392D31062300623545 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		DF3DB93B2D31080200623545 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DF3E1FA82D2E4D630027416C /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		DF3E1FAB2D2E4E590027416C /* VoiceRecorderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecorderViewModel.swift; sourceTree = "<group>"; };
 		DF3E1FAD2D2E4E600027416C /* VoiceRecorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecorderView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,14 @@
 				DF3DB9292D30FFC100623545 /* SettingView.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		DF3DB9382D31061700623545 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DF3DB9392D31062300623545 /* Tab.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		DF3E1FAA2D2E4E130027416C /* VoiceRecorder */ = {
@@ -224,6 +236,7 @@
 		DFA5766F2D1A98FB00EA719A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DF3DB9382D31061700623545 /* Home */,
 				DF1154472D2FBC80000262C3 /* Time */,
 				DF7FF5E22D2667690065ADDC /* Memo */,
 				DFCE7F472D1E918200B88DBF /* Todo */,
@@ -271,8 +284,9 @@
 		DFA5767F2D1AADD500EA719A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				DF3DB9282D30FFB200623545 /* Setting */,
 				DFA576832D1AADF600EA719A /* HomeView.swift */,
+				DF3DB93B2D31080200623545 /* HomeViewModel.swift */,
+				DF3DB9282D30FFB200623545 /* Setting */,
 				DFCE7F4A2D1E938E00B88DBF /* TodoList */,
 				DFA576812D1AADE700EA719A /* MemoList */,
 				DF3E1FAA2D2E4E130027416C /* VoiceRecorder */,
@@ -424,6 +438,7 @@
 				DFCE7F442D1E8CE800B88DBF /* CustomNavigationBar.swift in Sources */,
 				DFA576842D1AADF600EA719A /* HomeView.swift in Sources */,
 				DFA576862D1AADFE00EA719A /* TodoView.swift in Sources */,
+				DF3DB93C2D31080200623545 /* HomeViewModel.swift in Sources */,
 				DFCE7F4C2D1E93AC00B88DBF /* TodoViewModel.swift in Sources */,
 				DF1154442D2FB68F000262C3 /* Time.swift in Sources */,
 				DF94D1472D1A73A4004B29EB /* VoiceMemoApp.swift in Sources */,
@@ -434,6 +449,7 @@
 				DF1154492D2FBCA1000262C3 /* TimerViewModel.swift in Sources */,
 				DF7FF5E72D2668530065ADDC /* MemoViewViewModel.swift in Sources */,
 				DFCE7F4E2D1E93D100B88DBF /* TodoListView.swift in Sources */,
+				DF3DB93A2D31062300623545 /* Tab.swift in Sources */,
 				DF3E1FA92D2E4D630027416C /* Double+Extension.swift in Sources */,
 				DFA576672D1A8A5200EA719A /* Date+Extension.swift in Sources */,
 				DF1154462D2FB871000262C3 /* Int+Extensions.swift in Sources */,

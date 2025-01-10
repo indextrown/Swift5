@@ -10,6 +10,7 @@ import SwiftUI
 struct TodoListView: View {
     @EnvironmentObject private var pathModel: PathModel
     @EnvironmentObject private var todoListViewModel: TodoListViewModel
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
         ZStack {
@@ -55,6 +56,10 @@ struct TodoListView: View {
             }
             
             Button("취소", role: .cancel) { }
+        }
+        // todos 추가되거나 삭제될때마다 반응
+        .onChange(of: todoListViewModel.todos) { oldValue, newTodo in
+            homeViewModel.setTodosCount(newTodo .count)
         }
     }
 }

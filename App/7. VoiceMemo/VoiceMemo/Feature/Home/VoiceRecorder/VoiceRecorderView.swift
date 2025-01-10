@@ -9,6 +9,7 @@ import SwiftUI
 
 struct VoiceRecorderView: View {
     @StateObject private var voiceRecorderViewModel = VoiceRecorderViewModel()
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
          ZStack {
@@ -47,6 +48,10 @@ struct VoiceRecorderView: View {
          ) {
              Button("확인", role: .cancel) {}
          }
+        // todos 추가되거나 삭제될때마다 반응
+        .onChange(of: voiceRecorderViewModel.recordedFiles) { oldValue, newRecordedFiles in
+            homeViewModel.voiceRecorderCount(newRecordedFiles.count)
+        }
     }
 }
 
