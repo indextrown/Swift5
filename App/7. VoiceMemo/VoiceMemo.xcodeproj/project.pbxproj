@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF0E2C6A2D33ADD80034F717 /* WriteBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0E2C692D33ADD80034F717 /* WriteBtn.swift */; };
 		DF1154442D2FB68F000262C3 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1154432D2FB68F000262C3 /* Time.swift */; };
 		DF1154462D2FB871000262C3 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1154452D2FB871000262C3 /* Int+Extensions.swift */; };
 		DF1154492D2FBCA1000262C3 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1154482D2FBCA1000262C3 /* TimerViewModel.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF0E2C692D33ADD80034F717 /* WriteBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteBtn.swift; sourceTree = "<group>"; };
 		DF1154432D2FB68F000262C3 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		DF1154452D2FB871000262C3 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		DF1154482D2FBCA1000262C3 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF0E2C682D33ADC50034F717 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				DF0E2C692D33ADD80034F717 /* WriteBtn.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		DF1154472D2FBC80000262C3 /* Time */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +238,7 @@
 		DFA5766C2D1A952600EA719A /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				DF0E2C682D33ADC50034F717 /* CustomView */,
 				DFCE7F422D1E8CD200B88DBF /* NavigationBar */,
 			);
 			path = Component;
@@ -451,6 +462,7 @@
 				DFCE7F4E2D1E93D100B88DBF /* TodoListView.swift in Sources */,
 				DF3DB93A2D31062300623545 /* Tab.swift in Sources */,
 				DF3E1FA92D2E4D630027416C /* Double+Extension.swift in Sources */,
+				DF0E2C6A2D33ADD80034F717 /* WriteBtn.swift in Sources */,
 				DFA576672D1A8A5200EA719A /* Date+Extension.swift in Sources */,
 				DF1154462D2FB871000262C3 /* Int+Extensions.swift in Sources */,
 				DFA5767E2D1AA6F700EA719A /* Path.swift in Sources */,

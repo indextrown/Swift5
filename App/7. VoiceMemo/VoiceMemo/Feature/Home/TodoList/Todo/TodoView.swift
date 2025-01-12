@@ -22,6 +22,7 @@ struct TodoView: View {
     @StateObject private var todoViewModel = TodoViewModel()
     
     var body: some View {
+        
         VStack {
             CustomNavigationBar(
                 leftBtnAction: {

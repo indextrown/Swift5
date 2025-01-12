@@ -13,8 +13,46 @@ struct TodoListView: View {
     @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
-        ZStack {
-            // 투두 셀 리스트
+        
+        /*
+        // 투두 셀 리스트
+        VStack {
+            // MARK: - 커스텀 네비게이션바(유무)
+            if !todoListViewModel.todos.isEmpty {
+                CustomNavigationBar(
+                    isDisplayLeftBtn: false,
+                    rightBtnAction: {
+                        todoListViewModel.navigationRightBtnTapped()
+                    },
+                    rightBtnType: todoListViewModel.navigationBarRightBtnMode
+                )
+            } else {
+                Spacer()
+                    .frame(height: 30)
+            }
+            
+            TitleView()
+                .padding(.top, 20)
+            
+            // todos 가 비어있다면 AnnouncementView 그렇지 않으면 빈 공간
+            if todoListViewModel.todos.isEmpty {
+                AnnouncementView()
+            } else {
+                TodoListContentView()
+                    .padding(.top, 20)
+            }
+        }
+        // 1번방식
+        //.modifier(WriteBtnViewModifier(action: { pathModel.paths.append(.todoView)}))
+        
+        // 2번방식
+        .writeBtn {
+            pathModel.paths.append(.todoView)
+        }
+         */
+        
+        // 3번방식
+        WriteBtnView(content: {
             VStack {
                 // MARK: - 커스텀 네비게이션바(유무)
                 if !todoListViewModel.todos.isEmpty {
@@ -41,12 +79,18 @@ struct TodoListView: View {
                         .padding(.top, 20)
                 }
             }
-            
-            // 동그라미 버튼
-            WriteTodoBtnView()
-                .padding(.trailing, 20)
-                .padding(.bottom, 50)
-        }
+        }, action: {
+            pathModel.paths.append(.todoView)
+        })
+        
+        
+        /*
+        // 동그라미 버튼
+        WriteTodoBtnView()
+            .padding(.trailing, 20)
+            .padding(.bottom, 50)
+         */
+        
         .alert(
             "To do list \(todoListViewModel.removeTodosCount)개 삭제하시겠습니까",
             isPresented: $todoListViewModel.isDisplayRemoveTodoAlert
