@@ -1,6 +1,6 @@
 //
-//  get set.swift
-//  SwiftSkillCLT
+//  ServiceError.swift
+//  LMessenger
 //
 //  Created by 김동현 on 1/13/25.
 //

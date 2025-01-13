@@ -101,3 +101,12 @@ struct Main {
             .store(in: &cancellables)
     }
 }
+
+/*
+ 결과
+ 받은 값: 1
+ 받은 값: 2
+ 받은 값: 3
+ 스트림 완료: finished
+ 스트림 에러 발생: indexWrong
+ */

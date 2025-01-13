@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF3FCD3A2D34FA10006AAFC8 /* 2. Type Erase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3FCD392D34FA10006AAFC8 /* 2. Type Erase.swift */; };
+		DF4456BF2D358CAE00B46809 /* 2. Try.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4456BE2D358CAE00B46809 /* 2. Try.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,11 +37,13 @@
 		DF3FCD352D34F4A2006AAFC8 /* 0. PassThroughSubjcet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "0. PassThroughSubjcet.swift"; sourceTree = "<group>"; wrapsLines = 0; };
 		DF3FCD372D34F78F006AAFC8 /* 1. AnyCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1. AnyCancellable.swift"; sourceTree = "<group>"; };
 		DF3FCD392D34FA10006AAFC8 /* 2. Type Erase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2. Type Erase.swift"; sourceTree = "<group>"; };
+		DF4456BE2D358CAE00B46809 /* 2. Try.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2. Try.swift"; sourceTree = "<group>"; };
 		DFCF813F2D34002C0082AA5F /* 4. Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "4. Future.swift"; sourceTree = "<group>"; };
 		DFE8A5A92D33F5FE00EDD1D3 /* SwiftSkillCLT */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftSkillCLT; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE8A5AC2D33F5FE00EDD1D3 /* 1. Just.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1. Just.swift"; sourceTree = "<group>"; };
 		DFE8A5B42D33F82800EDD1D3 /* 0. Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "0. Stream.swift"; sourceTree = "<group>"; };
 		DFE8A5B62D33FC8600EDD1D3 /* 2. Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2. Empty.swift"; sourceTree = "<group>"; };
+		DFF4EF6B2D353C4100F16D41 /* 1. get set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1. get set.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		DFE8A5AB2D33F5FE00EDD1D3 /* SwiftSkillCLT */ = {
 			isa = PBXGroup;
 			children = (
+				DFF4EF6A2D353C2500F16D41 /* Grammer */,
 				DFE8A5B32D33F65000EDD1D3 /* Combine */,
 			);
 			path = SwiftSkillCLT;
@@ -134,6 +137,15 @@
 				DF3FCD342D34F484006AAFC8 /* 3. Subjcet & Cancellation */,
 			);
 			path = Combine;
+			sourceTree = "<group>";
+		};
+		DFF4EF6A2D353C2500F16D41 /* Grammer */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4EF6B2D353C4100F16D41 /* 1. get set.swift */,
+				DF4456BE2D358CAE00B46809 /* 2. Try.swift */,
+			);
+			path = Grammer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,7 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF3FCD3A2D34FA10006AAFC8 /* 2. Type Erase.swift in Sources */,
+				DF4456BF2D358CAE00B46809 /* 2. Try.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
