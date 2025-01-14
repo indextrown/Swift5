@@ -9,4 +9,6 @@ import Foundation
 
 final class HomeViewModel: ObservableObject {
     @Published var myUser: User?
+    @Published var users: [User] = []
+    
 }

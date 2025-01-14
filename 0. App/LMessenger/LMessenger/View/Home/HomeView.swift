@@ -26,6 +26,12 @@ struct HomeView: View {
                     Spacer()
                 }
                 .padding(.horizontal, 30)
+                
+                // MARK: - 친구 목록
+                if viewModel.users.isEmpty {
+                    Spacer(minLength: 80)
+                    emptyView
+                }
             }
             .toolbar {
                 Image("bookmark")
@@ -78,6 +84,20 @@ struct HomeView: View {
             .padding(.leading, 22)
         }
         .padding(.horizontal, 30)
+    }
+    
+    // MARK: - emptyView
+    private var emptyView: some View {
+        VStack {
+            VStack(spacing: 3) {
+                Text("친구를 추가해보세요.")
+                    .foregroundColor(.bkText)
+                Text("큐알코드나 검색을 이용해서 친구를 추가해보세요.")
+                    .foregroundColor(.bkText)
+            }
+            .font(.system(size: 14))
+            .padding(.bottom, 30)
+        }
     }
 }
 
