@@ -31,6 +31,20 @@ struct HomeView: View {
                 if viewModel.users.isEmpty {
                     Spacer(minLength: 80)
                     emptyView
+                } else {
+                    ForEach(viewModel.users, id: \.id) { user in
+                        HStack(spacing: 8) {
+                            Image("person")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .clipShape(Circle())
+                            Text(user.name)
+                                .font(.system(size: 12))
+                                .foregroundColor(.bkText)
+                            Spacer()
+                        }
+                        .padding(.horizontal, 30)
+                    }
                 }
             }
             .toolbar {
@@ -60,6 +74,7 @@ struct HomeView: View {
             Spacer()
             
             Image("person")
+                .resizable()
                 .frame(width: 52, height: 52)
                 .clipShape(Circle())
         }
@@ -97,6 +112,20 @@ struct HomeView: View {
             }
             .font(.system(size: 14))
             .padding(.bottom, 30)
+            
+            Button {
+                
+            } label: {
+                Text("친구추가")
+                    .font(.system(size: 14))
+                    .foregroundColor(.bkText)
+                    .padding(.vertical, 9)
+                    .padding(.horizontal, 24)
+            }
+            .overlay {
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(Color.greyDeep)
+            }
         }
     }
 }

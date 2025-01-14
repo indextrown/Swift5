@@ -15,3 +15,12 @@ struct User {
     var description: String?
 }
  
+extension User {
+    static var stub1: User {
+        .init(id: "user1_id", name: "인덱스")
+    }
+    
+    static var stub2: User {
+        .init(id: "user2_id", name: "홍길동")
+    }
+}
