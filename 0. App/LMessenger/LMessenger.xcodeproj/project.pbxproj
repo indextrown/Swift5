@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		DF4BCEA42D3645CE0095F9FA /* RandomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4BCEA12D3645CE0095F9FA /* RandomNonceString.swift */; };
 		DF4BCEA52D3645CE0095F9FA /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4BCEA22D3645CE0095F9FA /* SHA256.swift */; };
+		DF4BCEA82D3652C50095F9FA /* MainTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4BCEA72D3652C50095F9FA /* MainTabType.swift */; };
+		DF4BCEAD2D3653C00095F9FA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4BCEAC2D3653C00095F9FA /* HomeView.swift */; };
+		DF4BCEAF2D3653CA0095F9FA /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4BCEAE2D3653CA0095F9FA /* ChatListView.swift */; };
+		DF4BCEB12D3657590095F9FA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4BCEB02D3657590095F9FA /* HomeViewModel.swift */; };
 		DFB1AFF42D350696004A6A80 /* LMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1AFF32D350696004A6A80 /* LMessengerApp.swift */; };
 		DFB1AFF62D350696004A6A80 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1AFF52D350696004A6A80 /* AuthenticatedView.swift */; };
 		DFB1AFF82D350697004A6A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB1AFF72D350697004A6A80 /* Assets.xcassets */; };
@@ -56,6 +60,10 @@
 		DF4BCEA12D3645CE0095F9FA /* RandomNonceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNonceString.swift; sourceTree = "<group>"; };
 		DF4BCEA22D3645CE0095F9FA /* SHA256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
 		DF4BCEA62D3645F70095F9FA /* LMessenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LMessenger.entitlements; sourceTree = "<group>"; };
+		DF4BCEA72D3652C50095F9FA /* MainTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabType.swift; sourceTree = "<group>"; };
+		DF4BCEAC2D3653C00095F9FA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DF4BCEAE2D3653CA0095F9FA /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		DF4BCEB02D3657590095F9FA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DFB1AFF02D350696004A6A80 /* LMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB1AFF32D350696004A6A80 /* LMessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMessengerApp.swift; sourceTree = "<group>"; };
 		DFB1AFF52D350696004A6A80 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
@@ -118,6 +126,23 @@
 				DF4BCEA22D3645CE0095F9FA /* SHA256.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		DF4BCEA92D3653A40095F9FA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DF4BCEAC2D3653C00095F9FA /* HomeView.swift */,
+				DF4BCEB02D3657590095F9FA /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DF4BCEAA2D3653AA0095F9FA /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				DF4BCEAE2D3653CA0095F9FA /* ChatListView.swift */,
+			);
+			path = ChatList;
 			sourceTree = "<group>";
 		};
 		DFB1AFE72D350696004A6A80 = {
@@ -224,6 +249,8 @@
 		DFB1B02B2D350CD6004A6A80 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DF4BCEAA2D3653AA0095F9FA /* ChatList */,
+				DF4BCEA92D3653A40095F9FA /* Home */,
 				DFB1B02C2D350CE8004A6A80 /* Authentication */,
 				DFF4EF6D2D3541C900F16D41 /* Login */,
 				DFF4EF6E2D3541D100F16D41 /* MainTabView */,
@@ -254,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				DFF4EF712D3541FF00F16D41 /* MainTabView.swift */,
+				DF4BCEA72D3652C50095F9FA /* MainTabType.swift */,
 			);
 			path = MainTabView;
 			sourceTree = "<group>";
@@ -408,13 +436,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF4BCEA52D3645CE0095F9FA /* SHA256.swift in Sources */,
+				DF4BCEA82D3652C50095F9FA /* MainTabType.swift in Sources */,
 				DFF4EF7E2D354F8300F16D41 /* User.swift in Sources */,
+				DF4BCEB12D3657590095F9FA /* HomeViewModel.swift in Sources */,
 				DFB1B02E2D350D0C004A6A80 /* AuthenticationViewModel.swift in Sources */,
 				DF4BCEA42D3645CE0095F9FA /* RandomNonceString.swift in Sources */,
 				DFB1B02A2D350BCF004A6A80 /* Services.swift in Sources */,
 				DFB1B0272D350B5B004A6A80 /* DIContainer.swift in Sources */,
 				DFB1AFF62D350696004A6A80 /* AuthenticatedView.swift in Sources */,
+				DF4BCEAF2D3653CA0095F9FA /* ChatListView.swift in Sources */,
 				DFB1B0352D35124C004A6A80 /* AppDelegate.swift in Sources */,
+				DF4BCEAD2D3653C00095F9FA /* HomeView.swift in Sources */,
 				DFB1B0222D3507F4004A6A80 /* Color+Extension.swift in Sources */,
 				DFB1AFF42D350696004A6A80 /* LMessengerApp.swift in Sources */,
 				DFF4EF782D3546C900F16D41 /* LoginButtonStyle.swift in Sources */,

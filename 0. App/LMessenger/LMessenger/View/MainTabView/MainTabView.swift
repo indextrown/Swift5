@@ -8,8 +8,32 @@
 import SwiftUI
 
 struct MainTabView: View {
+    // @EnvironmentObject private var authViewModel: AuthenticationViewModel
+    @State private var selectedTab: MainTabType = .home
+    
     var body: some View {
-        Text("MainTabView")
+        TabView(selection: $selectedTab) {
+            ForEach(MainTabType.allCases, id: \.self) { tab in
+                Group {
+                    switch tab {
+                    case .home:
+                        HomeView(viewModel: HomeViewModel())
+                    case .chat:
+                        ChatListView()
+                    case .phone:
+                        Color.blackFix
+                    }
+                }
+                .tabItem { Label(tab.title, image: tab.imageName(selected: selectedTab == tab))}
+                .tag(tab)
+            }
+        }
+        // 선택된 글자 색 변경 파란색 -> 검은색
+        .tint(.bkText)
+    }
+    // 선택되지 않은 글자 색 변경
+    init() {
+        UITabBar.appearance().unselectedItemTintColor = UIColor(Color.bkText)
     }
 }
 

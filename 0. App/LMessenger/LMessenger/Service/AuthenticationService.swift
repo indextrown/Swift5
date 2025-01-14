@@ -111,13 +111,24 @@ enum AuthenticationError: Error {
  - Completion Handler를 Combine으로 변환하려면, Combine의 Future 또는 PassthroughSubject를 사용해 Completion Handler의 결과를 Combine의 Publisher로 만들어야 한다.
  */
 protocol AuthenticationServiceType {
-   
+    func chechAuthenticationState() -> String?
     func signInWithGoogle() -> AnyPublisher<User, ServiceError>
     func handleSignInWithAppleRequest(_ request: ASAuthorizationAppleIDRequest) -> String
     func handleSignInWithAppleCompletion(_ authorization: ASAuthorization, nonce: String) -> AnyPublisher<User, ServiceError>
+    func logout() -> AnyPublisher<Void, ServiceError>
 }
 
 final class AuthenticationService: AuthenticationServiceType {
+
+    // MARK: - 현재 유저정보가 있는지 테스트하고 정보가 있다면 유저 id 추출
+    func chechAuthenticationState() -> String? {
+        if let user = Auth.auth().currentUser {
+            return user.uid
+        } else {
+            return nil
+        }
+    }
+    
     // Combine 방식의 인터페이스로 외부에 제공하는 역할을 하고, Combine을 사용하는 ViewModel이나 서비스에서 쉽게 구독할 수 있습니다.
     func signInWithGoogle() -> AnyPublisher<User, ServiceError> {
         Future { [weak self] promise in
@@ -152,9 +163,26 @@ final class AuthenticationService: AuthenticationServiceType {
             }
         }.eraseToAnyPublisher()
     }
+    
+    func logout() -> AnyPublisher<Void, ServiceError> {
+        Future { promise in
+            do {
+                try Auth.auth().signOut()
+                promise(.success(()))
+            } catch {
+                promise(.failure(ServiceError.error(error)))
+            }
+        }
+        .eraseToAnyPublisher()
+    }
 }
 
 final class StubAuthenticationService: AuthenticationServiceType {
+    
+    func chechAuthenticationState() -> String? {
+        return nil
+    }
+    
     func signInWithGoogle() -> AnyPublisher<User, ServiceError> {
         Empty().eraseToAnyPublisher()
     }
@@ -163,6 +191,10 @@ final class StubAuthenticationService: AuthenticationServiceType {
         return ""
     }
     func handleSignInWithAppleCompletion(_ authorization: ASAuthorization, nonce: String) -> AnyPublisher<User, ServiceError> {
+        Empty().eraseToAnyPublisher()
+    }
+    
+    func logout() -> AnyPublisher<Void, ServiceError> {
         Empty().eraseToAnyPublisher()
     }
 }
