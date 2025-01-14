@@ -6,6 +6,10 @@
 	objectVersion = 56;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DF5CA2492D36DCB30058E0F9 /* 3. firstIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CA2482D36DCB30058E0F9 /* 3. firstIndex.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		DFE8A5A72D33F5FE00EDD1D3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -34,6 +38,7 @@
 		DF3FCD372D34F78F006AAFC8 /* 1. AnyCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1. AnyCancellable.swift"; sourceTree = "<group>"; };
 		DF3FCD392D34FA10006AAFC8 /* 2. Type Erase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2. Type Erase.swift"; sourceTree = "<group>"; };
 		DF4456BE2D358CAE00B46809 /* 2. Try.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2. Try.swift"; sourceTree = "<group>"; };
+		DF5CA2482D36DCB30058E0F9 /* 3. firstIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3. firstIndex.swift"; sourceTree = "<group>"; };
 		DFCF813F2D34002C0082AA5F /* 4. Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "4. Future.swift"; sourceTree = "<group>"; };
 		DFD320052D362F3F0076DD16 /* 5. AnyPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "5. AnyPublisher.swift"; sourceTree = "<group>"; };
 		DFE8A5A92D33F5FE00EDD1D3 /* SwiftSkillCLT */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftSkillCLT; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +147,7 @@
 			children = (
 				DFF4EF6B2D353C4100F16D41 /* 1. get set.swift */,
 				DF4456BE2D358CAE00B46809 /* 2. Try.swift */,
+				DF5CA2482D36DCB30058E0F9 /* 3. firstIndex.swift */,
 			);
 			path = Grammer;
 			sourceTree = "<group>";
@@ -205,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF5CA2492D36DCB30058E0F9 /* 3. firstIndex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
