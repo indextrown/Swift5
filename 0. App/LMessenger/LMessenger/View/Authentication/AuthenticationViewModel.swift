@@ -45,13 +45,52 @@ final class AuthenticationViewModel: ObservableObject {
             }
         case .googleLogin:
             isLoading = true // 로그인중
+            
             // MARK: - sink하면 subscriptions이 return된다 이를 viewModel에서 관리할건데 구독이 하나만 이루어지는게 아니라서 set으로 관리하자
             container.services.authService.signInWithGoogle()
+                // MARK: - 성공시 DB추가 작업
+                // Google 로그인 작업이 성공(User 객체 반환)하면, .flatMap을 통해 반환된 User를 받아서 데이터베이스에 추가 작업을 수행
+                 
+                // MARK: - 실패시
+                /*
+                 sink를 사용해 최종 처리
+                 실패 시: sink의 completion 블록에서 .failure를 확인하여 실패 처리 로직을 실행합니다. 여기서는 isLoading을 false로 설정해 로딩 상태를 종료합니다.
+                 성공 시: sink의 receiveValue 블록에서 user 정보를 받아 성공 처리 로직을 실행합니다.
+                 */
+                .flatMap { user in
+                    self.container.services.userService.addUser(user)
+                }
                 .sink { [weak self] completion in
+                    // 스트림이 끝날 때 호출 공간(항상 실행됨)
+                    
                     // 실패시 작업
+                    /*
                     if case .failure = completion {
                         self?.isLoading = false
                     }
+                     */
+                    
+                    /*
+                    switch completion {
+                    case .finished:
+                        print("✅ User added successfully.")
+                    case .failure(let error):
+                        print("❌ Firebase 에러: \(error.localizedDescription)") // 최종 출력
+                        self?.isLoading = false
+                    }
+                     */
+                    switch completion {
+                    case .finished:
+                        print("✅ User added successfully.")
+                    case .failure(let error):
+                        if case .dbError(let dbError) = error {
+                            print("❌ DB에러: \(dbError.localizedDescription)")
+                        } else {
+                            print("❌ Service 에러: \(error.localizedDescription)")
+                        }
+                        self?.isLoading = false
+                    }
+                // 실패시 receiveValue는 일어나지 않음
                 } receiveValue: { [weak self] user in
                     self?.isLoading = false // 값을 받았을 때
                     // 유저정보가 오면 이 뷰에서 유저정보id를 가지고 있자
@@ -67,6 +106,9 @@ final class AuthenticationViewModel: ObservableObject {
             if case let .success(authorization) = result {
                 guard let nonce = currentNonce else { return }
                 container.services.authService.handleSignInWithAppleCompletion(authorization, nonce: nonce)
+                    .flatMap { user in
+                        self.container.services.userService.addUser(user)
+                    }
                     .sink { [weak self] completion in
                         // 실패시 작업
                         // 실패시 작업

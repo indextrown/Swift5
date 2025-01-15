@@ -453,6 +453,7 @@ private struct RecordBtnView: View {
                 
                 Spacer()
                 
+                
                 Button {
                     voiceRecorderViewModel.recordBtnTapped()
                 } label: {

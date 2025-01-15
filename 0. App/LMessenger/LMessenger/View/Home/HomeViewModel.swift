@@ -9,6 +9,6 @@ import Foundation
 
 final class HomeViewModel: ObservableObject {
     @Published var myUser: User?
-    @Published var users: [User] = [.stub1, .stub2]
+    @Published var users: [User] = []// = [.stub1, .stub2]
     
 }

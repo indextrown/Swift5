@@ -37,6 +37,8 @@
 //}
 //
 
+// MARK: - Future: 한 번만 값을 방출하는 비동기 작업을 처리하기 위해 사용
+
 import Combine
 import Foundation
 
