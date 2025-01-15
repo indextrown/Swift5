@@ -15,18 +15,8 @@ enum ServiceError: Error {
      연관 값을 사용하여 **다른 오류 타입(Error)**을 감쌉니다.
      즉, 이미 존재하는 오류 타입을 포장(wrapper)하여 다룰 수 있습니다.
      */
-    
     case dbError(DBError) // DBError를 포함
     case error(Error)
-    
-    var errorDescription: String {
-        switch self {
-        case .dbError(let dbError):
-            return "DB에러: \(dbError.localizedDescription)"
-        case .error(let error):
-            return "기타 에러: \(error.localizedDescription)"
-        }
-    }
 }
 
 

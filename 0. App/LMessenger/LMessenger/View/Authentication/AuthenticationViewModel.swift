@@ -81,10 +81,12 @@ final class AuthenticationViewModel: ObservableObject {
                      */
                     switch completion {
                     case .finished:
-                        print("✅ User added successfully.")
+                        print("✅ 유저가 성공적으로 추가되었습니다!")
                     case .failure(let error):
                         if case .dbError(let dbError) = error {
-                            print("❌ DB에러: \(dbError.localizedDescription)")
+                            // ❌ 에러 ServiceError{DBError}
+                            print("\(String(describing: dbError.errorDescription))")
+                            
                         } else {
                             print("❌ Service 에러: \(error.localizedDescription)")
                         }
@@ -110,7 +112,6 @@ final class AuthenticationViewModel: ObservableObject {
                         self.container.services.userService.addUser(user)
                     }
                     .sink { [weak self] completion in
-                        // 실패시 작업
                         // 실패시 작업
                         if case .failure = completion {
                             self?.isLoading = false

@@ -9,13 +9,12 @@ import Foundation
 
 // DB Layer에서 다룰 수 있는 에러타입 추가
 enum DBError: Error {
-    case error(Error)
+    case addUserError(Error)
     
-//    var errorDescription: String? {
-//        switch self {
-//            
-//        case .error(let underlyingError):
-//            return "DB에러: \(underlyingError.localizedDescription)"
-//        }
-//    }
+    var errorDescription: String {
+        switch self {
+        case .addUserError(let underlyingError):
+            return "❌ 에러 [addUser]: \(underlyingError.localizedDescription)"
+        }
+    }
 }

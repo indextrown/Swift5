@@ -124,7 +124,7 @@ final class UserDBRepository: UserDBRepositoryType {
                     }
                 }
             }
-            .mapError { DBError.error($0) }
+            .mapError { DBError.addUserError($0) }
             .eraseToAnyPublisher()
     }
  }
