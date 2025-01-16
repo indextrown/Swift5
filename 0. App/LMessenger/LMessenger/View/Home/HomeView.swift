@@ -58,6 +58,9 @@ struct HomeView: View {
                 }
             }
         }
+        .onAppear {
+            viewModel.send(action: .load)
+        }
     }
     
     // MARK: - 뷰를 프로퍼티로 만들기
@@ -131,5 +134,6 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(viewModel: HomeViewModel())
+    HomeView(viewModel: HomeViewModel(container: DIContainer(services: StubServices()), userId: "user1_id"))
 }
+ 

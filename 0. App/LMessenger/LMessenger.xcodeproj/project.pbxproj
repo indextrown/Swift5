@@ -181,11 +181,11 @@
 		DFB1AFF22D350696004A6A80 /* LMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				DFB1AFF32D350696004A6A80 /* LMessengerApp.swift */,
 				DF4BCEA62D3645F70095F9FA /* LMessenger.entitlements */,
 				DFB1B0362D351335004A6A80 /* Info.plist */,
 				DFB1B0342D35124C004A6A80 /* AppDelegate.swift */,
 				DFC6542C2D37A1910017401B /* Repository */,
-				DFB1AFF32D350696004A6A80 /* LMessengerApp.swift */,
 				DFB1B0202D3507D1004A6A80 /* Extension */,
 				DFB1B0252D350B4E004A6A80 /* General */,
 				DFF4EF7C2D354F7C00F16D41 /* Model */,

@@ -79,17 +79,24 @@ final class AuthenticationViewModel: ObservableObject {
                         self?.isLoading = false
                     }
                      */
+                    
+                    // Result<Void, ServiceError>
                     switch completion {
                     case .finished:
                         print("✅ 유저가 성공적으로 추가되었습니다!")
+                        
+                    // completion이 .failure인 경우, error는 ServiceError 타입이다
+                    // error는 ServiceError의 다양한 케이스 중 하나
+                    // ServiceError.dbError
                     case .failure(let error):
                         if case .dbError(let dbError) = error {
-                            // ❌ 에러 ServiceError{DBError}
-                            print("\(String(describing: dbError.errorDescription))")
-                            
+                            // ❌ error가 .dbError 케이스일 경우 실행 - ServiceError{DBError}
+                            print(dbError.errorDescription)
                         } else {
+                            // ❌ 다른 ServiceError 처리
                             print("❌ Service 에러: \(error.localizedDescription)")
                         }
+
                         self?.isLoading = false
                     }
                 // 실패시 receiveValue는 일어나지 않음
@@ -112,8 +119,25 @@ final class AuthenticationViewModel: ObservableObject {
                         self.container.services.userService.addUser(user)
                     }
                     .sink { [weak self] completion in
+                        /*
                         // 실패시 작업
+                        // completion 값이 .failure라면
                         if case .failure = completion {
+                            self?.isLoading = false
+                        }
+                        */
+                        switch completion {
+                        case .finished:
+                            print("✅ 유저가 성공적으로 추가되었습니다!")
+                        case .failure(let error):
+                            if case .dbError(let dbError) = error {
+                                // ❌ 에러 ServiceError{DBError}
+                                print(dbError.errorDescription)
+                                //print("\(String(describing: dbError.errorDescription))")
+                                
+                            } else {
+                                print("❌ Service 에러: \(error.localizedDescription)")
+                            }
                             self?.isLoading = false
                         }
                     } receiveValue: { [weak self] user in

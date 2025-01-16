@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF5CA2492D36DCB30058E0F9 /* 3. firstIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CA2482D36DCB30058E0F9 /* 3. firstIndex.swift */; };
+		DF8E93052D38C70400F9D884 /* 6. enum-Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E93042D38C70400F9D884 /* 6. enum-Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +39,9 @@
 		DF3FCD392D34FA10006AAFC8 /* 2. Type Erase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2. Type Erase.swift"; sourceTree = "<group>"; };
 		DF4456BE2D358CAE00B46809 /* 2. Try.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2. Try.swift"; sourceTree = "<group>"; };
 		DF5CA2482D36DCB30058E0F9 /* 3. firstIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3. firstIndex.swift"; sourceTree = "<group>"; };
+		DF8E93002D38BCCE00F9D884 /* 4. enum-Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "4. enum-Error.swift"; sourceTree = "<group>"; };
+		DF8E93022D38C14300F9D884 /* 5. enum-Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "5. enum-Error.swift"; sourceTree = "<group>"; };
+		DF8E93042D38C70400F9D884 /* 6. enum-Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6. enum-Error.swift"; sourceTree = "<group>"; };
 		DFCF813F2D34002C0082AA5F /* 4. Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "4. Future.swift"; sourceTree = "<group>"; };
 		DFD320052D362F3F0076DD16 /* 5. AnyPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "5. AnyPublisher.swift"; sourceTree = "<group>"; };
 		DFE8A5A92D33F5FE00EDD1D3 /* SwiftSkillCLT */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftSkillCLT; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +151,9 @@
 				DFF4EF6B2D353C4100F16D41 /* 1. get set.swift */,
 				DF4456BE2D358CAE00B46809 /* 2. Try.swift */,
 				DF5CA2482D36DCB30058E0F9 /* 3. firstIndex.swift */,
+				DF8E93002D38BCCE00F9D884 /* 4. enum-Error.swift */,
+				DF8E93022D38C14300F9D884 /* 5. enum-Error.swift */,
+				DF8E93042D38C70400F9D884 /* 6. enum-Error.swift */,
 			);
 			path = Grammer;
 			sourceTree = "<group>";
@@ -211,7 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF5CA2492D36DCB30058E0F9 /* 3. firstIndex.swift in Sources */,
+				DF8E93052D38C70400F9D884 /* 6. enum-Error.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

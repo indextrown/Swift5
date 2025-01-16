@@ -16,6 +16,8 @@ import Combine
 protocol UserServiceType {
     // MARK: - 여기는 Service Layer이므로 DTO(userObject)가 아닌 Model(user)를 받자
     func addUser(_ user: User) -> AnyPublisher<User, ServiceError>
+    func getUser(userId: String) -> AnyPublisher<User, ServiceError>
+    func loadUsers(userId: String) -> AnyPublisher<[User], ServiceError>
 }
 
 final class UserService: UserServiceType {
@@ -53,10 +55,35 @@ final class UserService: UserServiceType {
             .mapError { ServiceError.dbError($0) }
             .eraseToAnyPublisher()
     }
+    
+    func getUser(userId: String) -> AnyPublisher<User, ServiceError> {
+        dbRepository.getUser(userId: userId)
+            .map { $0.toModel() }
+            .mapError { ServiceError.dbError($0) }
+            .eraseToAnyPublisher()
+    }
+    
+    func loadUsers(userId id: String) -> AnyPublisher<[User], ServiceError> {
+        dbRepository.loadUsers()
+            .map { $0
+                .map { $0.toModel() }
+                .filter { $0.id != id }  // 나를 제외한 모든 유저 호출
+            }
+            .mapError { ServiceError.dbError($0) }
+            .eraseToAnyPublisher()
+    }
 }
 
 final class StubUserService: UserServiceType {
     func addUser(_ user: User) -> AnyPublisher<User, ServiceError> {
+        Empty().eraseToAnyPublisher()
+    }
+    
+    func getUser(userId: String) -> AnyPublisher<User, ServiceError> {
+        Empty().eraseToAnyPublisher()
+    }
+    
+    func loadUsers(userId: String) -> AnyPublisher<[User], ServiceError> {
         Empty().eraseToAnyPublisher()
     }
 }
