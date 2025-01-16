@@ -11,11 +11,14 @@ import Combine
 final class HomeViewModel: ObservableObject {
     enum Action {
         case load
+        case presentMyProfileView
+        case presentOtherProfileView(String)
     }
     
     @Published var myUser: User?
     @Published var users: [User] = []// = [.stub1, .stub2]
     @Published var phase: Phase = .notRequested
+    @Published var modalDestination: HomeModalDestination?
     
     private var userId: String
     private var container: DIContainer
@@ -76,6 +79,11 @@ final class HomeViewModel: ObservableObject {
                     self?.myUser = user
                 }.store(in: &subscriptions)
              */
+        case .presentMyProfileView:
+            modalDestination = .myProfile
+
+        case let .presentOtherProfileView(userId):
+            modalDestination = .otherProfile(userId)
         }
     }
 }

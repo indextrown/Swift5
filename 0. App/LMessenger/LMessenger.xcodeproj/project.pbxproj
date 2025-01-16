@@ -17,6 +17,9 @@
 		DF8E93092D38E5ED00F9D884 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E93082D38E5ED00F9D884 /* PlaceholderView.swift */; };
 		DF8E930C2D38E63E00F9D884 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E930B2D38E63E00F9D884 /* LoadingView.swift */; };
 		DF8E930E2D38E6DF00F9D884 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E930D2D38E6DF00F9D884 /* ErrorView.swift */; };
+		DF8E93102D38EAC500F9D884 /* HomeModalDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E930F2D38EAC500F9D884 /* HomeModalDestination.swift */; };
+		DF8E93132D38EC3D00F9D884 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E93122D38EC3D00F9D884 /* MyProfileView.swift */; };
+		DF8E93152D38EC4500F9D884 /* OtherProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E93142D38EC4500F9D884 /* OtherProfileView.swift */; };
 		DFB1AFF42D350696004A6A80 /* LMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1AFF32D350696004A6A80 /* LMessengerApp.swift */; };
 		DFB1AFF62D350696004A6A80 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1AFF52D350696004A6A80 /* AuthenticatedView.swift */; };
 		DFB1AFF82D350697004A6A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB1AFF72D350697004A6A80 /* Assets.xcassets */; };
@@ -78,6 +81,9 @@
 		DF8E93082D38E5ED00F9D884 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		DF8E930B2D38E63E00F9D884 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		DF8E930D2D38E6DF00F9D884 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		DF8E930F2D38EAC500F9D884 /* HomeModalDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModalDestination.swift; sourceTree = "<group>"; };
+		DF8E93122D38EC3D00F9D884 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		DF8E93142D38EC4500F9D884 /* OtherProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileView.swift; sourceTree = "<group>"; };
 		DFB1AFF02D350696004A6A80 /* LMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB1AFF32D350696004A6A80 /* LMessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMessengerApp.swift; sourceTree = "<group>"; };
 		DFB1AFF52D350696004A6A80 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				DF4BCEAC2D3653C00095F9FA /* HomeView.swift */,
+				DF8E930F2D38EAC500F9D884 /* HomeModalDestination.swift */,
 				DF4BCEB02D3657590095F9FA /* HomeViewModel.swift */,
 			);
 			path = Home;
@@ -173,6 +180,15 @@
 				DF8E930D2D38E6DF00F9D884 /* ErrorView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DF8E93112D38EC3100F9D884 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DF8E93122D38EC3D00F9D884 /* MyProfileView.swift */,
+				DF8E93142D38EC4500F9D884 /* OtherProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		DFB1AFE72D350696004A6A80 = {
@@ -199,15 +215,16 @@
 		DFB1AFF22D350696004A6A80 /* LMessenger */ = {
 			isa = PBXGroup;
 			children = (
-				DFB1AFF32D350696004A6A80 /* LMessengerApp.swift */,
-				DF4BCEA62D3645F70095F9FA /* LMessenger.entitlements */,
-				DFB1B0362D351335004A6A80 /* Info.plist */,
 				DFB1B0342D35124C004A6A80 /* AppDelegate.swift */,
-				DFC6542C2D37A1910017401B /* Repository */,
 				DFB1B0202D3507D1004A6A80 /* Extension */,
 				DFB1B0252D350B4E004A6A80 /* General */,
+				DFB1B0362D351335004A6A80 /* Info.plist */,
+				DF4BCEA62D3645F70095F9FA /* LMessenger.entitlements */,
+				DFB1AFF32D350696004A6A80 /* LMessengerApp.swift */,
 				DFF4EF7C2D354F7C00F16D41 /* Model */,
 				DFB1AFF92D350697004A6A80 /* Preview Content */,
+				DF8E93112D38EC3100F9D884 /* Profile */,
+				DFC6542C2D37A1910017401B /* Repository */,
 				DFB1B01F2D350747004A6A80 /* Resource */,
 				DFB1B0282D350BC6004A6A80 /* Service */,
 				DF4BCEA32D3645CE0095F9FA /* Util */,
@@ -508,6 +525,7 @@
 				DFB1B02E2D350D0C004A6A80 /* AuthenticationViewModel.swift in Sources */,
 				DF4BCEA42D3645CE0095F9FA /* RandomNonceString.swift in Sources */,
 				DFC654302D37A1CF0017401B /* UserService.swift in Sources */,
+				DF8E93102D38EAC500F9D884 /* HomeModalDestination.swift in Sources */,
 				DFC6542E2D37A1A40017401B /* UserDBRepository.swift in Sources */,
 				DFB1B02A2D350BCF004A6A80 /* Services.swift in Sources */,
 				DFB1B0272D350B5B004A6A80 /* DIContainer.swift in Sources */,
@@ -525,7 +543,9 @@
 				DFF4EF802D35505100F16D41 /* ServiceError.swift in Sources */,
 				DF8E930C2D38E63E00F9D884 /* LoadingView.swift in Sources */,
 				DFF4EF742D35422700F16D41 /* LoginIntroView.swift in Sources */,
+				DF8E93132D38EC3D00F9D884 /* MyProfileView.swift in Sources */,
 				DF8E93092D38E5ED00F9D884 /* PlaceholderView.swift in Sources */,
+				DF8E93152D38EC4500F9D884 /* OtherProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

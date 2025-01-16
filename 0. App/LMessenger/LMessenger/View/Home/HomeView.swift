@@ -12,6 +12,14 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             contentView
+                .fullScreenCover(item: $viewModel.modalDestination) {
+                    switch $0 {
+                    case .myProfile:
+                        MyProfileView()
+                    case let .otherProfile(userId):
+                        OtherProfileView()
+                    }
+                }
         }
     }
     
@@ -54,18 +62,24 @@ struct HomeView: View {
                 Spacer(minLength: 80)
                 emptyView
             } else {
-                ForEach(viewModel.users, id: \.id) { user in
-                    HStack(spacing: 8) {
-                        Image("person")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Circle())
-                        Text(user.name)
-                            .font(.system(size: 12))
-                            .foregroundColor(.bkText)
-                        Spacer()
+                LazyVStack {
+                    ForEach(viewModel.users, id: \.id) { user in
+                        Button {
+                            viewModel.send(action: .presentOtherProfileView(user.id))
+                        } label: {
+                            HStack(spacing: 8) {
+                                Image("person")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                                Text(user.name)
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.bkText)
+                                Spacer()
+                            }
+                        }
+                        .padding(.horizontal, 30)
                     }
-                    .padding(.horizontal, 30)
                 }
             }
         }
@@ -100,6 +114,10 @@ struct HomeView: View {
                 .clipShape(Circle())
         }
         .padding(.horizontal, 30)
+        // 직접적인 값 변경을 권장하지 않아서 action을 만들자
+        .onTapGesture {
+            viewModel.send(action:.  presentMyProfileView)
+        }
     }
     
     // MARK: - 검색 버튼 뷰
@@ -151,7 +169,7 @@ struct HomeView: View {
     }
 }
 
+
 #Preview {
     HomeView(viewModel: HomeViewModel(container: DIContainer(services: StubServices()), userId: "user1_id"))
 }
- 
