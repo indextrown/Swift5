@@ -15,6 +15,7 @@ final class HomeViewModel: ObservableObject {
     
     @Published var myUser: User?
     @Published var users: [User] = []// = [.stub1, .stub2]
+    @Published var phase: Phase = .notRequested
     
     private var userId: String
     private var container: DIContainer
@@ -35,6 +36,7 @@ final class HomeViewModel: ObservableObject {
              입력: userId = "123".
              출력: UserObject(id: "123", name: "John").
              */
+            phase = .loading
             container.services.userService.getUser(userId: userId)
                 // MARK: 1. handleEvents: handleEvents는 데이터 스트림에 영향을 주지 않고 부수 작업(예: myUser 업데이트)을 수행
                 /*
@@ -57,9 +59,12 @@ final class HomeViewModel: ObservableObject {
                     self.container.services.userService.loadUsers(userId: user.id)
                 }
                 // MARK: - 3. sink: users에 [Alice, Bob]
-                .sink { completion in
-                    
+                .sink { [weak self] completion in
+                    if case .failure = completion {
+                        self?.phase = .fail
+                    }
                 } receiveValue: { [weak self] users in
+                    self?.phase = .success
                     self?.users = users
                 }.store(in: &subscriptions)
             
