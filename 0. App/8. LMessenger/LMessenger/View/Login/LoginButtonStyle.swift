@@ -2,7 +2,7 @@
 //  LoginButtonStyle.swift
 //  LMessenger
 //
-//  Created by 김동현 on 10/30/24.
+//  Created by 김동현 on 1/13/25.
 //
 
 import SwiftUI
@@ -24,29 +24,10 @@ struct LoginButtonStyle: ButtonStyle {
             .frame(maxWidth: .infinity, maxHeight: 40)
             .overlay {
                 RoundedRectangle(cornerRadius: 5)
-                    .stroke(borderColor, lineWidth: 0.8) // 외곽선 색상, 두께
+                    .stroke(borderColor, lineWidth: 0.8)
             }
             .padding(.horizontal, 15)
             .opacity(configuration.isPressed ? 0.5 : 1)
         
     }
 }
-
-
-//#Preview {
-//    LoginButtonStyle()
-//}
-
-//Button {
-//    isPresentedLoginView.toggle()
-//} label: {
-//    Text("로그인")
-//        .font(.system(size: 14))
-//        .foregroundColor(.lineAppColor)
-//        .frame(maxWidth: .infinity, maxHeight: 40)
-//}
-//.overlay {
-//    RoundedRectangle(cornerRadius: 5)
-//        .stroke(Color.lineAppColor, lineWidth: 0.8) // 외곽선 색상, 두께
-//}
-//.padding(.horizontal, 15)

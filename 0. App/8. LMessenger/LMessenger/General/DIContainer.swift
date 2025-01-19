@@ -2,14 +2,15 @@
 //  DIContainer.swift
 //  LMessenger
 //
-//  Created by 김동현 on 10/30/24.
+//  Created by 김동현 on 1/13/25.
 //
 
 import Foundation
 
-// MARK: - DiContainer는 enviromentObject에 주입될 예정이기 때문에 클래스 타입과 ObservableObject로 선언
-class DIContainer: ObservableObject {
-    // TODO: - service 서비스 관리할 프로퍼티
+// MARK: - Dicontainer: service dependency를 담음
+// EnciromentObject로 주입될 예정이므로 class + observableObject로 선언
+
+final class DIContainer: ObservableObject {
     var services: ServiceType
     
     init(services: ServiceType) {

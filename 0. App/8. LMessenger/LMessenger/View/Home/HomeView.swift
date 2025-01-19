@@ -2,26 +2,21 @@
 //  HomeView.swift
 //  LMessenger
 //
-//  Created by 김동현 on 11/1/24.
+//  Created by 김동현 on 1/14/25.
 //
 
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var container: DIContainer
-    // 뷰모델 세팅은 생성하는곳에서 넣어준다(MainTabView에서 HomeView(viewModel: .init()) )
     @StateObject var viewModel: HomeViewModel
-    
     var body: some View {
         NavigationStack {
             contentView
                 .fullScreenCover(item: $viewModel.modalDestination) {
                     switch $0 {
                     case .myProfile:
-                        // TODO:
-                        MyProfileView(viewModel: .init(container: container, userId: viewModel.userId))
+                        MyProfileView()
                     case let .otherProfile(userId):
-                        // TODO:
                         OtherProfileView()
                     }
                 }
@@ -29,10 +24,10 @@ struct HomeView: View {
     }
     
     @ViewBuilder
-    var contentView: some View {
+    private var contentView: some View {
         switch viewModel.phase {
         case .notRequested:
-            PlaceHolderView()
+            PlaceholderView()
                 .onAppear {
                     viewModel.send(action: .load)
                 }
@@ -40,42 +35,34 @@ struct HomeView: View {
             LoadingView()
         case .success:
             loadedView
-                .toolbar {
-                    Image("bookmark")
-                    Image("notifications")
-                    Image("person_add")
-                    Button {
-                        // TODO: -
-                    } label: {
-                        Image("settings")
-                    }
-                }
         case .fail:
             ErrorView()
         }
     }
     
-    var loadedView: some View {
+    private var loadedView: some View {
         ScrollView {
             profileView
                 .padding(.bottom, 30)
-            searchView
+            
+            searchButton
                 .padding(.bottom, 24)
             
             HStack {
                 Text("친구")
                     .font(.system(size: 14))
                     .foregroundColor(.bkText)
+                
                 Spacer()
             }
             .padding(.horizontal, 30)
             
-            // TODO: - 친구묵록
+            // MARK: - 친구 목록
             if viewModel.users.isEmpty {
-                Spacer(minLength: 89)
+                Spacer(minLength: 80)
                 emptyView
             } else {
-                LazyVStack { // 무한정 늘어날 수 있음
+                LazyVStack {
                     ForEach(viewModel.users, id: \.id) { user in
                         Button {
                             viewModel.send(action: .presentOtherProfileView(user.id))
@@ -91,37 +78,34 @@ struct HomeView: View {
                                 Spacer()
                             }
                         }
-                    }.padding(.horizontal, 30)
+                        .padding(.horizontal, 30)
+                    }
                 }
             }
         }
-//        .toolbar {
-//            Image("bookmark")
-//            Image("notifications")
-//            Image("person_add")
-//            Button {
-//                // TODO: -
-//            } label: {
-//                Image("settings")
-//            }
-//        }
-//        .onAppear {
-//            viewModel.send(action: .load)
-//        }
+        .toolbar {
+            Image("bookmark")
+            Image("notifications")
+            Image("person_add")
+            Button {
+                
+            } label: {
+                Image("settings")
+            }
+        }
     }
     
-    // 프로퍼티로 만들어서 진행
-    var profileView: some View {
+    // MARK: - 뷰를 프로퍼티로 만들기
+    private var profileView: some View {
         HStack {
             VStack(alignment: .leading, spacing: 7) {
                 Text(viewModel.myUser?.name ?? "이름")
                     .font(.system(size: 22, weight: .bold))
                     .foregroundColor(.bkText)
-                Text(viewModel.myUser?.description ?? "상태메시지")
+                Text(viewModel.myUser?.description ?? "상태 메시지 입력")
                     .font(.system(size: 12))
                     .foregroundColor(.greyDeep)
             }
-            
             Spacer()
             
             Image("person")
@@ -130,18 +114,21 @@ struct HomeView: View {
                 .clipShape(Circle())
         }
         .padding(.horizontal, 30)
+        // 직접적인 값 변경을 권장하지 않아서 action을 만들자
         .onTapGesture {
-            viewModel.send(action: .presentMyProfileView)
+            viewModel.send(action:.  presentMyProfileView)
         }
     }
     
-    var searchView: some View {
+    // MARK: - 검색 버튼 뷰
+    private var searchButton: some View {
         ZStack {
             Rectangle()
                 .foregroundColor(.clear)
                 .frame(height: 36)
-                .background(.greyCool)
+                .background(Color.greyCool)
                 .cornerRadius(5)
+            
             HStack {
                 Text("검색")
                     .font(.system(size: 12))
@@ -153,21 +140,22 @@ struct HomeView: View {
         .padding(.horizontal, 30)
     }
     
-    var emptyView: some View {
+    // MARK: - emptyView
+    private var emptyView: some View {
         VStack {
             VStack(spacing: 3) {
-                Text("친구를 추가헤보세요.")
+                Text("친구를 추가해보세요.")
                     .foregroundColor(.bkText)
                 Text("큐알코드나 검색을 이용해서 친구를 추가해보세요.")
-                    .foregroundColor((.greyDeep))
+                    .foregroundColor(.bkText)
             }
             .font(.system(size: 14))
             .padding(.bottom, 30)
             
             Button {
-                viewModel.send(action: .requestContacts)
+                
             } label: {
-                Text("친구 추가")
+                Text("친구추가")
                     .font(.system(size: 14))
                     .foregroundColor(.bkText)
                     .padding(.vertical, 9)
@@ -175,12 +163,13 @@ struct HomeView: View {
             }
             .overlay {
                 RoundedRectangle(cornerRadius: 5)
-                    .stroke(.greyLight) // 테두리만 나타남
+                    .stroke(Color.greyDeep)
             }
         }
     }
 }
 
+
 #Preview {
-    HomeView(viewModel: .init(container: .init(services: StubService()), userId: "user1_id"))
+    HomeView(viewModel: HomeViewModel(container: DIContainer(services: StubServices()), userId: "user1_id"))
 }
