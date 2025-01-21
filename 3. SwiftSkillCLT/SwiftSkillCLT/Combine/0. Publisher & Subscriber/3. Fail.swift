@@ -42,8 +42,7 @@ struct Main {
         // 4. 구독 저장
         cancellable.store(in: &cancellables)
         
-        // RunLoop를 사용해 비동기 작업 대기
-        RunLoop.main.run(until: Date(timeIntervalSinceNow: 2))
+        ㄹ
     }
 }
 

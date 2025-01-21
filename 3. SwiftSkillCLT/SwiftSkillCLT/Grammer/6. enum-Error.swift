@@ -12,7 +12,7 @@ enum DBError: Error {
     case connectionFailed(String)   // 연결 실패, 연관값으로 메시지 포함
     case queryFailed  // 쿼리 실패
     case wrappedError(Error)         // Swift Error 타입을 연관 값으로 추가
-    친 
+    
     // DBError 전용 처리 메서드
     func handle() {
         switch self {

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF8E93052D38C70400F9D884 /* 6. enum-Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E93042D38C70400F9D884 /* 6. enum-Error.swift */; };
+		DFB560832D400ACD00A8DAF4 /* 1. 동기_비동기(Synchronous).swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB560822D400ACD00A8DAF4 /* 1. 동기_비동기(Synchronous).swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +42,7 @@
 		DF8E93002D38BCCE00F9D884 /* 4. enum-Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "4. enum-Error.swift"; sourceTree = "<group>"; };
 		DF8E93022D38C14300F9D884 /* 5. enum-Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "5. enum-Error.swift"; sourceTree = "<group>"; };
 		DF8E93042D38C70400F9D884 /* 6. enum-Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "6. enum-Error.swift"; sourceTree = "<group>"; };
+		DFB560822D400ACD00A8DAF4 /* 1. 동기_비동기(Synchronous).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1. 동기_비동기(Synchronous).swift"; sourceTree = "<group>"; };
 		DFCF813F2D34002C0082AA5F /* 4. Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "4. Future.swift"; sourceTree = "<group>"; };
 		DFD320052D362F3F0076DD16 /* 5. AnyPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "5. AnyPublisher.swift"; sourceTree = "<group>"; };
 		DFE8A5A92D33F5FE00EDD1D3 /* SwiftSkillCLT */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftSkillCLT; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +110,14 @@
 			path = "3. Subjcet & Cancellation";
 			sourceTree = "<group>";
 		};
+		DFB560812D400AAD00A8DAF4 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				DFB560822D400ACD00A8DAF4 /* 1. 동기_비동기(Synchronous).swift */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
 		DFE8A5A02D33F5FE00EDD1D3 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +137,7 @@
 		DFE8A5AB2D33F5FE00EDD1D3 /* SwiftSkillCLT */ = {
 			isa = PBXGroup;
 			children = (
+				DFB560812D400AAD00A8DAF4 /* GCD */,
 				DFF4EF6A2D353C2500F16D41 /* Grammer */,
 				DFE8A5B32D33F65000EDD1D3 /* Combine */,
 			);
@@ -217,7 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF8E93052D38C70400F9D884 /* 6. enum-Error.swift in Sources */,
+				DFB560832D400ACD00A8DAF4 /* 1. 동기_비동기(Synchronous).swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
