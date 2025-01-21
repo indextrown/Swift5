@@ -13,6 +13,7 @@ protocol UserDBRepositoryType {
     func addUser(_ object: UserObject) -> AnyPublisher<Void, DBError>
     func getUser(userId: String) -> AnyPublisher<UserObject, DBError>
     func loadUsers() -> AnyPublisher<[UserObject], DBError>
+    func addUserAfterContact(users: [UserObject]) -> AnyPublisher<Void, DBError>
 }
 
 final class UserDBRepository: UserDBRepositoryType {
@@ -110,8 +111,7 @@ final class UserDBRepository: UserDBRepositoryType {
         //Empty().eraseToAnyPublisher()
     }
      */
-    func addUser(_ object: UserObject) -> AnyPublisher<Void, DBError> 
-    {
+    func addUser(_ object: UserObject) -> AnyPublisher<Void, DBError> {
         Just(object)
             .compactMap { try? JSONEncoder().encode($0) }   // object > data
             .compactMap { try? JSONSerialization.jsonObject(with: $0, options: .fragmentsAllowed) } // data > dict
@@ -192,6 +192,47 @@ final class UserDBRepository: UserDBRepositoryType {
         }.eraseToAnyPublisher()
     }
     
+    /*
+     - 스트림으로 users를 -> 데이터화 -> 딕셔너리화
+     - 첫번째 스트림은(user_id) 유저정보를 변환하지 않는 퍼블리셔
+     - 두번째 스트림은([String: Any]) 변환을 하는 퍼블리셔
+     
+     Users/
+        user_id: [String: Any]
+        user_id: [String: Any]
+        user_id: [String: Any]
+     */
+    func addUserAfterContact(users: [UserObject]) -> AnyPublisher<Void, DBError> {
+        Publishers.Zip(users.publisher, users.publisher)
+            .compactMap { origin, toConvert -> (UserObject, Data)? in
+                if let converted = try? JSONEncoder().encode(toConvert) {
+                    return (origin, converted)
+                }
+                return nil
+            }
+            .compactMap { origin, converted -> (UserObject, Any)? in
+                guard let serialized = try? JSONSerialization.jsonObject(with: converted, options: .fragmentsAllowed) else {
+                    return nil
+                }
+                return (origin, serialized)
+            }
+            .flatMap { origin, serialized -> AnyPublisher<Void, DBError> in
+                Future<Void, Error> { [weak self] promise in
+                    self?.db.child(DBKey.Users).child(origin.id).setValue(serialized) { error, _ in
+                        if let error {
+                            promise(.failure(error))
+                        } else {
+                            promise(.success(()))
+                        }
+                    }
+                }
+                .mapError { DBError.error($0) }
+                .eraseToAnyPublisher()
+            }
+            .collect() // 모든 작업이 완료되었을 때 결합
+            .map { _ in () } // Void 반환
+            .eraseToAnyPublisher()
+    }
  }
  
 

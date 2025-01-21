@@ -16,6 +16,7 @@ import Combine
 protocol UserServiceType {
     // MARK: - 여기는 Service Layer이므로 DTO(userObject)가 아닌 Model(user)를 받자
     func addUser(_ user: User) -> AnyPublisher<User, ServiceError>
+    func addUserAfterContact(users: [User]) -> AnyPublisher<Void, ServiceError>
     func getUser(userId: String) -> AnyPublisher<User, ServiceError>
     func loadUsers(userId: String) -> AnyPublisher<[User], ServiceError>
 }
@@ -56,6 +57,12 @@ final class UserService: UserServiceType {
             .eraseToAnyPublisher()
     }
     
+    func addUserAfterContact(users: [User]) -> AnyPublisher<Void, ServiceError> {
+        dbRepository.addUserAfterContact(users: users.map { $0.toObject() })
+            .mapError { .error($0) }
+            .eraseToAnyPublisher()
+    }
+    
     func getUser(userId: String) -> AnyPublisher<User, ServiceError> {
         dbRepository.getUser(userId: userId)
             .map { $0.toModel() }
@@ -76,6 +83,10 @@ final class UserService: UserServiceType {
 
 final class StubUserService: UserServiceType {
     func addUser(_ user: User) -> AnyPublisher<User, ServiceError> {
+        Empty().eraseToAnyPublisher()
+    }
+    
+    func addUserAfterContact(users: [User]) -> AnyPublisher<Void, ServiceError> {
         Empty().eraseToAnyPublisher()
     }
     

@@ -103,7 +103,6 @@ private extension TimerViewModel {
                     UIApplication.shared.endBackgroundTask(task)
                     backgroundTaskID = .invalid
                 }
-                
             }
         }
     }

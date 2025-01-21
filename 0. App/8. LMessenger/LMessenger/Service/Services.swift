@@ -11,10 +11,10 @@ import Foundation
 /// 서비스 계층의 표준을 정의하는 프로토콜
 /// 각 서비스는 반드시 'authService'와 'userService'를 포함해야 한다
 protocol ServiceType {
-    // 인증 서비스 (로그인, 회원가입 등 처리)
-    var authService: AuthenticationServiceType { get set }
-    // 사용자 서비스 (사용자 데이터 관리 처리)
-    var userService: UserServiceType { get set }
+    
+    var authService: AuthenticationServiceType { get set }  // 인증 서비스 (로그인, 회원가입 등 처리)
+    var userService: UserServiceType { get set }            // 인증 서비스 (로그인, 회원가입 등 처리)
+    var contactService: ContactServiceType { get set  }
 }
 
 // MARK: - 실제 구현체 (Services)
@@ -23,6 +23,7 @@ protocol ServiceType {
 final class Services: ServiceType {
     var authService: AuthenticationServiceType
     var userService: UserServiceType
+    var contactService: ContactServiceType
     
     init() {
         authService = AuthenticationService()
@@ -35,6 +36,7 @@ final class Services: ServiceType {
         // - 실제 구현체와 의존성이 없으므로 `UserDBRepository` 대신 다른 구현체를 주입 가능
         // - 느슨한 결합을 통해 테스트 및 유지보수 용이
         userService = UserService(dbRepository: UserDBRepository())
+        contactService = ContactService()
     }
 }
 
@@ -43,5 +45,7 @@ final class Services: ServiceType {
 /// 테스트 환경에서 사용되며, 실제 데이터베이스 대신 가짜 데이터를 제공
 final class StubServices: ServiceType {
     var authService: AuthenticationServiceType = StubAuthenticationService()
-    var userService: UserServiceType =  StubUserService()
+    var userService: UserServiceType = StubUserService()
+    var contactService: ContactServiceType = ContactService()
 }
+

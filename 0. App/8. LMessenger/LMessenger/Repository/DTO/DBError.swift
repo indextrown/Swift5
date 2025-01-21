@@ -9,6 +9,7 @@ import Foundation
 
 // DB Layer에서 다룰 수 있는 에러타입 추가
 enum DBError: Error {
+    case error(Error)
     case addUserError(Error)
     case getUserError(Error)
     case emptyValue
@@ -27,6 +28,8 @@ enum DBError: Error {
                 return "❌ 에러 [loadUser]: \(underlyingError.localizedDescription)"
             case .invalidatedType:
                 return "❌ 에러 [invalidatedType]"
+            case .error(let error):
+                return "❌ 에러 [error]: \(error)"
             }
         }
 }
