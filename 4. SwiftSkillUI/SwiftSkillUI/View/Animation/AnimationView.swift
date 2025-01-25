@@ -45,5 +45,3 @@ private struct CustomButton: View {
 #Preview {
     AnimationView()
 }
-
-
