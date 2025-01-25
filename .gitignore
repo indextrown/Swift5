@@ -11,7 +11,7 @@ App/UpDownGame/UpDownGame.xcodeproj/
 
 # 기타 무시할 항목들
 .DS_Store
-*.xcuserstate
+# *.xcuserstate
 
 
 
