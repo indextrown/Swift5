@@ -9,13 +9,15 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
+    @EnvironmentObject var container: DIContainer
+    
     var body: some View {
         NavigationStack {
             contentView
                 .fullScreenCover(item: $viewModel.modalDestination) {
                     switch $0 {
                     case .myProfile:
-                        MyProfileView()
+                        MyProfileView(viewModel: MyProfileViewModel(container: container, userId: viewModel.userId))
                     case let .otherProfile(userId):
                         OtherProfileView()
                     }
