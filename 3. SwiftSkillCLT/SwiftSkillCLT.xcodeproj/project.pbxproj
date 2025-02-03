@@ -110,6 +110,19 @@
 			path = "3. Subjcet & Cancellation";
 			sourceTree = "<group>";
 		};
+		DF8B0DDC2D477AE400F02B42 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4EF6B2D353C4100F16D41 /* 1. get set.swift */,
+				DF4456BE2D358CAE00B46809 /* 2. Try.swift */,
+				DF5CA2482D36DCB30058E0F9 /* 3. firstIndex.swift */,
+				DF8E93002D38BCCE00F9D884 /* 4. enum-Error.swift */,
+				DF8E93022D38C14300F9D884 /* 5. enum-Error.swift */,
+				DF8E93042D38C70400F9D884 /* 6. enum-Error.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		DFB560812D400AAD00A8DAF4 /* GCD */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,12 +171,7 @@
 		DFF4EF6A2D353C2500F16D41 /* Grammer */ = {
 			isa = PBXGroup;
 			children = (
-				DFF4EF6B2D353C4100F16D41 /* 1. get set.swift */,
-				DF4456BE2D358CAE00B46809 /* 2. Try.swift */,
-				DF5CA2482D36DCB30058E0F9 /* 3. firstIndex.swift */,
-				DF8E93002D38BCCE00F9D884 /* 4. enum-Error.swift */,
-				DF8E93022D38C14300F9D884 /* 5. enum-Error.swift */,
-				DF8E93042D38C70400F9D884 /* 6. enum-Error.swift */,
+				DF8B0DDC2D477AE400F02B42 /* Test */,
 			);
 			path = Grammer;
 			sourceTree = "<group>";
@@ -196,7 +204,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					DFE8A5A82D33F5FE00EDD1D3 = {
 						CreatedOnToolsVersion = 15.4;

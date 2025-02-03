@@ -11,7 +11,8 @@ import SwiftUI
 struct SwiftSkillUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //CustomMaintabView2()
+            ErrorMainTabView(searchText: "")
         }
     }
 }
