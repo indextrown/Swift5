@@ -22,6 +22,8 @@
 		DF8E93102D38EAC500F9D884 /* HomeModalDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E930F2D38EAC500F9D884 /* HomeModalDestination.swift */; };
 		DF9D4EDE2D54A2B4001412C5 /* PhotoPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D4EDD2D54A2B4001412C5 /* PhotoPickerService.swift */; };
 		DF9D4EE12D54A464001412C5 /* PhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D4EE02D54A464001412C5 /* PhotoImage.swift */; };
+		DF9D4EE32D54AACE001412C5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DF9D4EE22D54AACE001412C5 /* FirebaseStorage */; };
+		DF9D4EE52D54AACE001412C5 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = DF9D4EE42D54AACE001412C5 /* FirebaseStorageCombine-Community */; };
 		DFB1AFF42D350696004A6A80 /* LMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1AFF32D350696004A6A80 /* LMessengerApp.swift */; };
 		DFB1AFF62D350696004A6A80 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1AFF52D350696004A6A80 /* AuthenticatedView.swift */; };
 		DFB1AFF82D350697004A6A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB1AFF72D350697004A6A80 /* Assets.xcassets */; };
@@ -135,6 +137,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFC6542B2D37911A0017401B /* FirebaseDatabase in Frameworks */,
+				DF9D4EE32D54AACE001412C5 /* FirebaseStorage in Frameworks */,
+				DF9D4EE52D54AACE001412C5 /* FirebaseStorageCombine-Community in Frameworks */,
 				DFB1B0332D3511F1004A6A80 /* FirebaseAuth in Frameworks */,
 				DFF4EF7B2D354C5500F16D41 /* GoogleSignIn in Frameworks */,
 			);
@@ -418,6 +422,8 @@
 				DFB1B0322D3511F1004A6A80 /* FirebaseAuth */,
 				DFF4EF7A2D354C5500F16D41 /* GoogleSignIn */,
 				DFC6542A2D37911A0017401B /* FirebaseDatabase */,
+				DF9D4EE22D54AACE001412C5 /* FirebaseStorage */,
+				DF9D4EE42D54AACE001412C5 /* FirebaseStorageCombine-Community */,
 			);
 			productName = LMessenger;
 			productReference = DFB1AFF02D350696004A6A80 /* LMessenger.app */;
@@ -940,6 +946,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DF9D4EE22D54AACE001412C5 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DFB1B0312D3511F1004A6A80 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		DF9D4EE42D54AACE001412C5 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DFB1B0312D3511F1004A6A80 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
 		DFB1B0322D3511F1004A6A80 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DFB1B0312D3511F1004A6A80 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

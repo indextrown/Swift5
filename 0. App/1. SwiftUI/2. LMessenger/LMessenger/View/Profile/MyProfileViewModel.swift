@@ -61,6 +61,7 @@ final class MyProfileViewModel: ObservableObject {
             let data = try await container.services.photoPickerService.loadTransferable(from: pickerItem)
             
             // TODO: - storage upoad
+            // TODO: - db update
         } catch {
             
         }
