@@ -55,10 +55,12 @@ struct MyProfileView: View {
     }
     
     var profileView: some View {
+        
         PhotosPicker(selection: $viewModel.imageSelection,
                      matching: .images) {
             
-            AsyncImage(url: URL(string: viewModel.userInfo?.profileURL ?? "")) { image in
+            AsyncImage(
+                url: URL(string: viewModel.userInfo?.profileURL ?? "")) { image in
                 image.resizable()
             } placeholder: {
                 Image("person")
