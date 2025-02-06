@@ -14,7 +14,8 @@ protocol ServiceType {
     
     var authService: AuthenticationServiceType { get set }  // 인증 서비스 (로그인, 회원가입 등 처리)
     var userService: UserServiceType { get set }            // 인증 서비스 (로그인, 회원가입 등 처리)
-    var contactService: ContactServiceType { get set  }
+    var contactService: ContactServiceType { get set }
+    var photoPickerService: PhotoPickerServiceType { get set }
 }
 
 // MARK: - 실제 구현체 (Services)
@@ -24,9 +25,10 @@ final class Services: ServiceType {
     var authService: AuthenticationServiceType
     var userService: UserServiceType
     var contactService: ContactServiceType
+    var photoPickerService: PhotoPickerServiceType
     
     init() {
-        authService = AuthenticationService()
+        self.authService = AuthenticationService()
         
         // userService에 대한 상세 설명
         // - `UserService`는 사용자 데이터를 관리하는 역할
@@ -35,8 +37,9 @@ final class Services: ServiceType {
         // [프로토콜로 설정한 이유]
         // - 실제 구현체와 의존성이 없으므로 `UserDBRepository` 대신 다른 구현체를 주입 가능
         // - 느슨한 결합을 통해 테스트 및 유지보수 용이
-        userService = UserService(dbRepository: UserDBRepository())
-        contactService = ContactService()
+        self.userService = UserService(dbRepository: UserDBRepository())
+        self.contactService = ContactService()
+        self.photoPickerService = PhotoPickerService()
     }
 }
 
@@ -47,5 +50,6 @@ final class StubServices: ServiceType {
     var authService: AuthenticationServiceType = StubAuthenticationService()
     var userService: UserServiceType = StubUserService()
     var contactService: ContactServiceType = ContactService()
+    var photoPickerService: PhotoPickerServiceType = PhotoPickerService()
 }
 

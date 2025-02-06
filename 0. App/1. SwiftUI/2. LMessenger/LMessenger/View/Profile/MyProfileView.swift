@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct MyProfileView: View {
     @Environment(\.dismiss) var dismiss
@@ -46,13 +47,16 @@ struct MyProfileView: View {
                     }
                 }
             }
+            // task modifier는 onAppear가 불리기 직전에 실행된다?? => 패스트캠퍼스 설명 오류같음
+            .task {
+                 await viewModel.getUser()
+            }
         }
     }
     
     var profileView: some View {
-        Button {
-            //
-        } label: {
+        PhotosPicker(selection: $viewModel.imageSelection,
+                     matching: .images) {
             Image("person")
                 .resizable()
                 .frame(width: 80, height: 80)
@@ -68,11 +72,18 @@ struct MyProfileView: View {
     
     var descriptionView: some View {
         Button {
-            
+            viewModel.isPresentedDescEditView.toggle()
         } label: {
             Text(viewModel.userInfo?.description ?? "상태메시지를 입력해주세요.")
                 .font(.system(size: 14, weight: .bold))
                 .foregroundStyle(Color.bgWh)
+        }
+        .sheet(isPresented: $viewModel.isPresentedDescEditView) {
+            MyProfileDescEditView(description: viewModel.userInfo?.description ?? "") { willBeDesc in
+                Task {
+                    await viewModel.updateDescription(willBeDesc)
+                }
+            }
         }
     }
     

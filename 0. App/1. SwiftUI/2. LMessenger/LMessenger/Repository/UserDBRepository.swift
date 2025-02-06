@@ -11,7 +11,13 @@ import FirebaseDatabase
 
 protocol UserDBRepositoryType {
     func addUser(_ object: UserObject) -> AnyPublisher<Void, DBError>
+    // combine 방식
     func getUser(userId: String) -> AnyPublisher<UserObject, DBError>
+    
+    // async await 방식
+    func getUser(userId: String) async throws -> UserObject
+    func updateUser(userId: String, key: String, value: Any) async throws
+    
     func loadUsers() -> AnyPublisher<[UserObject], DBError>
     func addUserAfterContact(users: [UserObject]) -> AnyPublisher<Void, DBError>
 }
@@ -156,6 +162,23 @@ final class UserDBRepository: UserDBRepositoryType {
                 return Fail(error: .emptyValue).eraseToAnyPublisher()
             }
         }.eraseToAnyPublisher()
+    }
+    
+    // firebase realtime database는 async를 지원함(비동기 실행, 에러발생시 에러던짐)
+    func getUser(userId: String) async throws -> UserObject {
+        guard let value = try await self.db.child(DBKey.Users).child(userId).getData().value else { throw DBError.emptyValue }
+        
+        // 값을 정상적으로 받았다면 딕셔너리 형태를 userObject로 변환하자
+        
+        // 딕셔너리 -> 데이터화
+        let data = try JSONSerialization.data(withJSONObject: value)
+        let userObject = try JSONDecoder().decode(UserObject.self, from: data)
+        
+        return userObject
+    }
+    
+    func updateUser(userId: String, key: String, value: Any) async throws {
+        try await self.db.child(DBKey.Users).child(userId).child(key).setValue(value)
     }
     
     func loadUsers() -> AnyPublisher<[UserObject], DBError> {

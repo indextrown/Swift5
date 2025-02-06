@@ -35,7 +35,7 @@ func divideTwoNum2(a: Int, b: Int) -> Int? {
 }
 
 // 에러를 정의(열거형)
-enum Divisinrror: Error {
+enum Divisonrror: Error {
     case zeroError
 }
 
@@ -50,7 +50,7 @@ extension String: @retroactive Error {
 func divideTwoNum3(a: Int, b: Int) throws -> Int {
     if b == 0 {
         // 예외적인 상황에 에러를 던지겠다
-        throw Divisinrror.zeroError
+        throw Divisonrror.zeroError
     }
     return a / b
 }
@@ -95,7 +95,7 @@ struct Main {
         } catch {
             // 에러 발생시 catch문에서 받아서 처리 가능
             // error를 구체적인 내가 정의한 열거형 타입으로 타입캐스팅을 한다음 error변수로 사용 가능
-            let error = error as! Divisinrror
+            let error = error as! Divisonrror
             
             switch error {
             case .zeroError:
@@ -118,9 +118,9 @@ struct Main {
         
         // 7. 다른 함수 내부에서 다시 에러를 던질 수도 있다
         do {
-            let result = try doSomething()
+            _ = try doSomething()
         } catch {
-            let error = error as! Divisinrror
+            let error = error as! Divisonrror
             
             switch error {
             case .zeroError:

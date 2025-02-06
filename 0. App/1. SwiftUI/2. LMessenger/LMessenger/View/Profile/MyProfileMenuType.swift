@@ -22,7 +22,7 @@ enum MyProfileMenuType: Hashable, CaseIterable {
         case .keep:
             return "Keep"
         case .story:
-            return "스톨;"
+            return "스토리"
         }
     }
     

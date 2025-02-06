@@ -77,7 +77,7 @@ struct AuthenticatedView: View {
             }
         }
         .onAppear {
-            //authViewModel.send(action: .logout)
+//            authViewModel.send(action: .logout)
             authViewModel.send(action: .chechAuthenticationState)
         }
     }

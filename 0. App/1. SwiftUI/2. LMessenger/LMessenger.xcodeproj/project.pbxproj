@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF0763782D3F8FEC0049BB02 /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0763772D3F8FEC0049BB02 /* ContactService.swift */; };
+		DF4B9E3C2D53694800C5B540 /* MyProfileDescEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B9E3B2D53693F00C5B540 /* MyProfileDescEditView.swift */; };
 		DF4BCEA42D3645CE0095F9FA /* RandomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4BCEA12D3645CE0095F9FA /* RandomNonceString.swift */; };
 		DF4BCEA52D3645CE0095F9FA /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4BCEA22D3645CE0095F9FA /* SHA256.swift */; };
 		DF4BCEA82D3652C50095F9FA /* MainTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4BCEA72D3652C50095F9FA /* MainTabType.swift */; };
@@ -19,6 +20,7 @@
 		DF8E930C2D38E63E00F9D884 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E930B2D38E63E00F9D884 /* LoadingView.swift */; };
 		DF8E930E2D38E6DF00F9D884 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E930D2D38E6DF00F9D884 /* ErrorView.swift */; };
 		DF8E93102D38EAC500F9D884 /* HomeModalDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E930F2D38EAC500F9D884 /* HomeModalDestination.swift */; };
+		DF9D4EDE2D54A2B4001412C5 /* PhotoPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D4EDD2D54A2B4001412C5 /* PhotoPickerService.swift */; };
 		DFB1AFF42D350696004A6A80 /* LMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1AFF32D350696004A6A80 /* LMessengerApp.swift */; };
 		DFB1AFF62D350696004A6A80 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1AFF52D350696004A6A80 /* AuthenticatedView.swift */; };
 		DFB1AFF82D350697004A6A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB1AFF72D350697004A6A80 /* Assets.xcassets */; };
@@ -74,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		DF0763772D3F8FEC0049BB02 /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
+		DF4B9E3B2D53693F00C5B540 /* MyProfileDescEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDescEditView.swift; sourceTree = "<group>"; };
 		DF4BCEA12D3645CE0095F9FA /* RandomNonceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNonceString.swift; sourceTree = "<group>"; };
 		DF4BCEA22D3645CE0095F9FA /* SHA256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
 		DF4BCEA62D3645F70095F9FA /* LMessenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LMessenger.entitlements; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 		DF8E930B2D38E63E00F9D884 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		DF8E930D2D38E6DF00F9D884 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		DF8E930F2D38EAC500F9D884 /* HomeModalDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModalDestination.swift; sourceTree = "<group>"; };
+		DF9D4EDD2D54A2B4001412C5 /* PhotoPickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerService.swift; sourceTree = "<group>"; };
 		DFB1AFF02D350696004A6A80 /* LMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB1AFF32D350696004A6A80 /* LMessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMessengerApp.swift; sourceTree = "<group>"; };
 		DFB1AFF52D350696004A6A80 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 				DF0763772D3F8FEC0049BB02 /* ContactService.swift */,
 				DFF4EF682D353B2E00F16D41 /* AuthenticationService.swift */,
 				DFC6542F2D37A1CF0017401B /* UserService.swift */,
+				DF9D4EDD2D54A2B4001412C5 /* PhotoPickerService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				DFF2B9112D50AB6D00A8423E /* MyProfileMenuType.swift */,
 				DFF2B90F2D50A6E400A8423E /* MyProfileView.swift */,
 				DFF2B90B2D50A60E00A8423E /* MyProfileViewModel.swift */,
+				DF4B9E3B2D53693F00C5B540 /* MyProfileDescEditView.swift */,
 				DFF2B90D2D50A62A00A8423E /* OtherProfileView.swift */,
 			);
 			path = Profile;
@@ -526,6 +532,7 @@
 				DFC654352D37A8760017401B /* DBError.swift in Sources */,
 				DF4BCEA52D3645CE0095F9FA /* SHA256.swift in Sources */,
 				DF4BCEA82D3652C50095F9FA /* MainTabType.swift in Sources */,
+				DF9D4EDE2D54A2B4001412C5 /* PhotoPickerService.swift in Sources */,
 				DFF4EF7E2D354F8300F16D41 /* User.swift in Sources */,
 				DFC654332D37A7590017401B /* UserObject.swift in Sources */,
 				DF8E930E2D38E6DF00F9D884 /* ErrorView.swift in Sources */,
@@ -556,6 +563,7 @@
 				DF8E930C2D38E63E00F9D884 /* LoadingView.swift in Sources */,
 				DFF4EF742D35422700F16D41 /* LoginIntroView.swift in Sources */,
 				DF8E93092D38E5ED00F9D884 /* PlaceholderView.swift in Sources */,
+				DF4B9E3C2D53694800C5B540 /* MyProfileDescEditView.swift in Sources */,
 				DFF2B9122D50AB7500A8423E /* MyProfileMenuType.swift in Sources */,
 				DFF2B90E2D50A62F00A8423E /* OtherProfileView.swift in Sources */,
 			);
