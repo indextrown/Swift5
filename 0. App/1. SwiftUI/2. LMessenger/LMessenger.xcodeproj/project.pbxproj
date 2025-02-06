@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DF0763782D3F8FEC0049BB02 /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0763772D3F8FEC0049BB02 /* ContactService.swift */; };
+		DF4133842D54E2F20020C6D3 /* UploadProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4133832D54E2F20020C6D3 /* UploadProvider.swift */; };
+		DF4133862D54E4700020C6D3 /* UploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4133852D54E4700020C6D3 /* UploadService.swift */; };
+		DF4133892D54E51E0020C6D3 /* UploadSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4133882D54E51E0020C6D3 /* UploadSourceType.swift */; };
 		DF4B9E3C2D53694800C5B540 /* MyProfileDescEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B9E3B2D53693F00C5B540 /* MyProfileDescEditView.swift */; };
 		DF4BCEA42D3645CE0095F9FA /* RandomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4BCEA12D3645CE0095F9FA /* RandomNonceString.swift */; };
 		DF4BCEA52D3645CE0095F9FA /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4BCEA22D3645CE0095F9FA /* SHA256.swift */; };
@@ -79,6 +82,9 @@
 
 /* Begin PBXFileReference section */
 		DF0763772D3F8FEC0049BB02 /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
+		DF4133832D54E2F20020C6D3 /* UploadProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProvider.swift; sourceTree = "<group>"; };
+		DF4133852D54E4700020C6D3 /* UploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadService.swift; sourceTree = "<group>"; };
+		DF4133882D54E51E0020C6D3 /* UploadSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSourceType.swift; sourceTree = "<group>"; };
 		DF4B9E3B2D53693F00C5B540 /* MyProfileDescEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDescEditView.swift; sourceTree = "<group>"; };
 		DF4BCEA12D3645CE0095F9FA /* RandomNonceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNonceString.swift; sourceTree = "<group>"; };
 		DF4BCEA22D3645CE0095F9FA /* SHA256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
@@ -161,6 +167,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF4133812D54E2D60020C6D3 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				DF4133822D54E2E50020C6D3 /* Upload */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		DF4133822D54E2E50020C6D3 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				DF4133832D54E2F20020C6D3 /* UploadProvider.swift */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
+		DF4133872D54E5050020C6D3 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				DF4133852D54E4700020C6D3 /* UploadService.swift */,
+				DF4133882D54E51E0020C6D3 /* UploadSourceType.swift */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
 		DF4BCEA32D3645CE0095F9FA /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +337,7 @@
 		DFB1B0282D350BC6004A6A80 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DF4133872D54E5050020C6D3 /* Upload */,
 				DF9D4EDF2D54A448001412C5 /* PhotoPicker */,
 				DFF4EF7F2D35505100F16D41 /* ServiceError.swift */,
 				DFB1B0292D350BCF004A6A80 /* Services.swift */,
@@ -348,6 +380,7 @@
 		DFC6542C2D37A1910017401B /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				DF4133812D54E2D60020C6D3 /* Provider */,
 				DFC654312D37A74C0017401B /* DTO */,
 				DFC6542D2D37A1A40017401B /* UserDBRepository.swift */,
 			);
@@ -551,6 +584,7 @@
 				DF4BCEA82D3652C50095F9FA /* MainTabType.swift in Sources */,
 				DF9D4EDE2D54A2B4001412C5 /* PhotoPickerService.swift in Sources */,
 				DFF4EF7E2D354F8300F16D41 /* User.swift in Sources */,
+				DF4133892D54E51E0020C6D3 /* UploadSourceType.swift in Sources */,
 				DFC654332D37A7590017401B /* UserObject.swift in Sources */,
 				DF8E930E2D38E6DF00F9D884 /* ErrorView.swift in Sources */,
 				DF8E93072D38E3D000F9D884 /* Phase.swift in Sources */,
@@ -561,6 +595,7 @@
 				DFC654302D37A1CF0017401B /* UserService.swift in Sources */,
 				DF8E93102D38EAC500F9D884 /* HomeModalDestination.swift in Sources */,
 				DFC6542E2D37A1A40017401B /* UserDBRepository.swift in Sources */,
+				DF4133842D54E2F20020C6D3 /* UploadProvider.swift in Sources */,
 				DFB1B02A2D350BCF004A6A80 /* Services.swift in Sources */,
 				DFB1B0272D350B5B004A6A80 /* DIContainer.swift in Sources */,
 				DFB1AFF62D350696004A6A80 /* AuthenticatedView.swift in Sources */,
@@ -573,6 +608,7 @@
 				DFF2B90C2D50A61500A8423E /* MyProfileViewModel.swift in Sources */,
 				DFB1AFF42D350696004A6A80 /* LMessengerApp.swift in Sources */,
 				DFF4EF782D3546C900F16D41 /* LoginButtonStyle.swift in Sources */,
+				DF4133862D54E4700020C6D3 /* UploadService.swift in Sources */,
 				DFF4EF692D353B2E00F16D41 /* AuthenticationService.swift in Sources */,
 				DFF4EF762D35452100F16D41 /* LoginView.swift in Sources */,
 				DFF4EF722D3541FF00F16D41 /* MainTabView.swift in Sources */,

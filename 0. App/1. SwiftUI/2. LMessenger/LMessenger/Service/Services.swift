@@ -16,6 +16,7 @@ protocol ServiceType {
     var userService: UserServiceType { get set }            // 인증 서비스 (로그인, 회원가입 등 처리)
     var contactService: ContactServiceType { get set }
     var photoPickerService: PhotoPickerServiceType { get set }
+    var uploadService: UploadServiceType { get set }
 }
 
 // MARK: - 실제 구현체 (Services)
@@ -26,6 +27,7 @@ final class Services: ServiceType {
     var userService: UserServiceType
     var contactService: ContactServiceType
     var photoPickerService: PhotoPickerServiceType
+    var uploadService: UploadServiceType
     
     init() {
         self.authService = AuthenticationService()
@@ -40,6 +42,7 @@ final class Services: ServiceType {
         self.userService = UserService(dbRepository: UserDBRepository())
         self.contactService = ContactService()
         self.photoPickerService = PhotoPickerService()
+        self.uploadService = UploadService(provider: UploadProvider())
     }
 }
 
@@ -51,5 +54,6 @@ final class StubServices: ServiceType {
     var userService: UserServiceType = StubUserService()
     var contactService: ContactServiceType = ContactService()
     var photoPickerService: PhotoPickerServiceType = PhotoPickerService()
+    var uploadService: UploadServiceType = UploadService(provider: UploadProvider())
 }
 

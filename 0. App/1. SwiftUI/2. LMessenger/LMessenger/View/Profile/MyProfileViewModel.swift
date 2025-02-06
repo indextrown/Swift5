@@ -60,10 +60,15 @@ final class MyProfileViewModel: ObservableObject {
             // 사진을 데이터화
             let data = try await container.services.photoPickerService.loadTransferable(from: pickerItem)
             
-            // TODO: - storage upoad
-            // TODO: - db update
-        } catch {
+            // Data -> storage upload -> URL 추출
+            let url = try await container.services.uploadService.uploadImage(source: .profile(userId: userId), data: data)
             
+            // realtime db update(프로필 이미지 정보 업데이트)
+            try await container.services.userService.updateProfileURL(userId: userId, urlString: url.absoluteString)
+            
+            userInfo?.profileURL = url.absoluteString
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }
