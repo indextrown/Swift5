@@ -22,7 +22,10 @@ final class MyProfileViewModel: ObservableObject {
     // selection이 추가될때(didset)
     @Published var imageSelection: PhotosPickerItem? {
         didSet {
-            // TODO: - 
+            // TODO: -
+            Task {
+                await updateProfileImage(pickerItem: imageSelection)
+            }
         }
     }
     
@@ -43,6 +46,21 @@ final class MyProfileViewModel: ObservableObject {
     func updateDescription(_ description: String) async {
         do {
             try await container.services.userService.updateDescription(userId: userId, description: description)
+        } catch {
+            
+        }
+    }
+    
+    func updateProfileImage(pickerItem: PhotosPickerItem?) async {
+        
+        // 값이 없으면 리턴
+        guard let pickerItem else { return }
+        
+        do {
+            // 사진을 데이터화
+            let data = try await container.services.photoPickerService.loadTransferable(from: pickerItem)
+            
+            // TODO: - storage upoad
         } catch {
             
         }
