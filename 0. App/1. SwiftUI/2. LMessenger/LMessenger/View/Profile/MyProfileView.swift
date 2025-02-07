@@ -59,20 +59,22 @@ struct MyProfileView: View {
         PhotosPicker(selection: $viewModel.imageSelection,
                      matching: .images) {
             
-            AsyncImage(
-                url: URL(string: viewModel.userInfo?.profileURL ?? "")) { image in
-                image.resizable()
-            } placeholder: {
-                Image("person")
-                    .resizable()
-            }
-            .frame(width: 80, height: 80)
-            .clipShape(Circle())
-            /*Image("person")
-                .resizable()
-                .frame(width: 80, height: 80)
-                .clipShape(Circle())*/
+            // AsyncImage: 앱이 재시작되면 다시 네트워크 통신을 하여 이미지를 가져오는 작업..
+            // NSCache랑 비슷하게 동작 예상.. 이미지캐시로 AsyncImage 대체해보자
             
+//            AsyncImage(
+//                url: URL(string: viewModel.userInfo?.profileURL ?? "")) { image in
+//                image.resizable()
+//            } placeholder: {
+//                Image("person")
+//                    .resizable()
+//            }
+//            .frame(width: 80, height: 80)
+//            .clipShape(Circle())
+             
+            URLImageView(urlString: viewModel.userInfo?.profileURL)
+                .frame(width: 80, height: 80)
+                .clipShape(Circle())
         }
     }
     

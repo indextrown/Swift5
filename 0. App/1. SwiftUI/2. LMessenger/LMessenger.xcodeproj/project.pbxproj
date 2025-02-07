@@ -18,6 +18,11 @@
 		DF4BCEAD2D3653C00095F9FA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4BCEAC2D3653C00095F9FA /* HomeView.swift */; };
 		DF4BCEAF2D3653CA0095F9FA /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4BCEAE2D3653CA0095F9FA /* ChatListView.swift */; };
 		DF4BCEB12D3657590095F9FA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4BCEB02D3657590095F9FA /* HomeViewModel.swift */; };
+		DF61347A2D55D60E0041FEB9 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6134792D55D6000041FEB9 /* ImageCacheService.swift */; };
+		DF61347D2D55D6BD0041FEB9 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61347C2D55D6BD0041FEB9 /* MemoryStorage.swift */; };
+		DF61347F2D55D8240041FEB9 /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61347E2D55D8240041FEB9 /* DiskStorage.swift */; };
+		DF6134812D55FABA0041FEB9 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6134802D55FABA0041FEB9 /* URLImageView.swift */; };
+		DF6134842D55FADE0041FEB9 /* URLImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6134832D55FADE0041FEB9 /* URLImageViewModel.swift */; };
 		DF8E93072D38E3D000F9D884 /* Phase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E93062D38E3D000F9D884 /* Phase.swift */; };
 		DF8E93092D38E5ED00F9D884 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E93082D38E5ED00F9D884 /* PlaceholderView.swift */; };
 		DF8E930C2D38E63E00F9D884 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E930B2D38E63E00F9D884 /* LoadingView.swift */; };
@@ -93,6 +98,11 @@
 		DF4BCEAC2D3653C00095F9FA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DF4BCEAE2D3653CA0095F9FA /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		DF4BCEB02D3657590095F9FA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DF6134792D55D6000041FEB9 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		DF61347C2D55D6BD0041FEB9 /* MemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
+		DF61347E2D55D8240041FEB9 /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
+		DF6134802D55FABA0041FEB9 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
+		DF6134832D55FADE0041FEB9 /* URLImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageViewModel.swift; sourceTree = "<group>"; };
 		DF8E93062D38E3D000F9D884 /* Phase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phase.swift; sourceTree = "<group>"; };
 		DF8E93082D38E5ED00F9D884 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		DF8E930B2D38E63E00F9D884 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -219,10 +229,30 @@
 			path = ChatList;
 			sourceTree = "<group>";
 		};
+		DF61347B2D55D6A60041FEB9 /* ImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				DF6134792D55D6000041FEB9 /* ImageCacheService.swift */,
+				DF61347E2D55D8240041FEB9 /* DiskStorage.swift */,
+				DF61347C2D55D6BD0041FEB9 /* MemoryStorage.swift */,
+			);
+			path = ImageCache;
+			sourceTree = "<group>";
+		};
+		DF6134822D55FAC10041FEB9 /* URLImage */ = {
+			isa = PBXGroup;
+			children = (
+				DF6134802D55FABA0041FEB9 /* URLImageView.swift */,
+				DF6134832D55FADE0041FEB9 /* URLImageViewModel.swift */,
+			);
+			path = URLImage;
+			sourceTree = "<group>";
+		};
 		DF8E930A2D38E63100F9D884 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				DF8E93082D38E5ED00F9D884 /* PlaceholderView.swift */,
+				DF6134822D55FAC10041FEB9 /* URLImage */,
 				DF8E930B2D38E63E00F9D884 /* LoadingView.swift */,
 				DF8E930D2D38E6DF00F9D884 /* ErrorView.swift */,
 			);
@@ -337,6 +367,7 @@
 		DFB1B0282D350BC6004A6A80 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DF61347B2D55D6A60041FEB9 /* ImageCache */,
 				DF4133872D54E5050020C6D3 /* Upload */,
 				DF9D4EDF2D54A448001412C5 /* PhotoPicker */,
 				DFF4EF7F2D35505100F16D41 /* ServiceError.swift */,
@@ -593,11 +624,13 @@
 				DFB1B02E2D350D0C004A6A80 /* AuthenticationViewModel.swift in Sources */,
 				DF4BCEA42D3645CE0095F9FA /* RandomNonceString.swift in Sources */,
 				DFC654302D37A1CF0017401B /* UserService.swift in Sources */,
+				DF61347A2D55D60E0041FEB9 /* ImageCacheService.swift in Sources */,
 				DF8E93102D38EAC500F9D884 /* HomeModalDestination.swift in Sources */,
 				DFC6542E2D37A1A40017401B /* UserDBRepository.swift in Sources */,
 				DF4133842D54E2F20020C6D3 /* UploadProvider.swift in Sources */,
 				DFB1B02A2D350BCF004A6A80 /* Services.swift in Sources */,
 				DFB1B0272D350B5B004A6A80 /* DIContainer.swift in Sources */,
+				DF61347F2D55D8240041FEB9 /* DiskStorage.swift in Sources */,
 				DFB1AFF62D350696004A6A80 /* AuthenticatedView.swift in Sources */,
 				DF4BCEAF2D3653CA0095F9FA /* ChatListView.swift in Sources */,
 				DFB1B0352D35124C004A6A80 /* AppDelegate.swift in Sources */,
@@ -611,12 +644,15 @@
 				DF4133862D54E4700020C6D3 /* UploadService.swift in Sources */,
 				DFF4EF692D353B2E00F16D41 /* AuthenticationService.swift in Sources */,
 				DFF4EF762D35452100F16D41 /* LoginView.swift in Sources */,
+				DF61347D2D55D6BD0041FEB9 /* MemoryStorage.swift in Sources */,
 				DFF4EF722D3541FF00F16D41 /* MainTabView.swift in Sources */,
 				DFF2B9102D50A6E900A8423E /* MyProfileView.swift in Sources */,
 				DFF4EF802D35505100F16D41 /* ServiceError.swift in Sources */,
+				DF6134812D55FABA0041FEB9 /* URLImageView.swift in Sources */,
 				DF8E930C2D38E63E00F9D884 /* LoadingView.swift in Sources */,
 				DFF4EF742D35422700F16D41 /* LoginIntroView.swift in Sources */,
 				DF8E93092D38E5ED00F9D884 /* PlaceholderView.swift in Sources */,
+				DF6134842D55FADE0041FEB9 /* URLImageViewModel.swift in Sources */,
 				DF4B9E3C2D53694800C5B540 /* MyProfileDescEditView.swift in Sources */,
 				DFF2B9122D50AB7500A8423E /* MyProfileMenuType.swift in Sources */,
 				DFF2B90E2D50A62F00A8423E /* OtherProfileView.swift in Sources */,

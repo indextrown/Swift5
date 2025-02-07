@@ -5,19 +5,14 @@
 //  Created by 김동현 on 2/5/25.
 //
 
-/*
-
- */
-
 import Foundation
-
 
 @main
 struct Main {
     static func main() {
         
-        
         // 1. - 기존 동시성 프로그래밍(GCD) (대기열 / 큐를 사용)
+        // 기존 방시: 대기열에 넣어서 2번 cpu에 일을 시키는 방식으로 비동기 처리..GCD
         // ------------------------------------------------------------------------------------
         let group = DispatchGroup()
         group.enter() // 그룹에 작업 추가
@@ -41,9 +36,10 @@ struct Main {
         
         
         
-        // 2. Task
+        // 2. Swift Concurrency(async/await/task)
+
         // (비동기적인 일처리를 할 수 있게 만들어주는) 비동기적인 실행 작업 단위룰 만드는 것 => Task 클로저 내부에서 비동기적인 일을 수행가능 ⭐️
-        // Task (작업) - 비동기적인 일처리를 할 수 있는 하나의 작업 단위
+        // Task (작업) - 비동기적인 일처리를 할 수 있는 하나의 실행 작업 단위를 만드는 것
         /// 구조체로 만들어진
         /// A unit of asynchronous work.
         /// (프로그램의 일부로써) 비동기적으로 (실행될 수 있는 하나의) 작업 단위 - "비동기적인 일처리를 할 수 있는 하나의 작업 단위"
@@ -63,7 +59,11 @@ struct Main {
         // Task(priority: <#T##TaskPriority?#>, operation: <#T##() async -> Sendable#>)
         // Task(priority: <#T##TaskPriority?#>, operation: <#T##() async throws -> Sendable#>)
         // ------------------------------------------------------------------------------------
-        // 2번cpu 에서 일을 시킬 수 있다
+        
+        // MARK: - 지금은 GCD랑 비슷함
+        // 메인 스레드가 아닌 2번cpu 혹은 다른cpu 에서 일을 시킬 수 있다
+        
+        // 2번 cpu에서 일을 시킬 수 있다
         Task {
             // 스코프 내부에서는 순차적 실행이 된다!!!
             print("비동기적인 일 - 1")
@@ -80,11 +80,45 @@ struct Main {
         
         // task를 변수에 담을 수 있다
         // 변수에 담으면 cancel 메서드 사용 가능
+        // Never: 일반적인 구조에서 에러 발생하지 않는다
         let task: Task<Void, Never> = Task {
             print("비동기적인 일 - 7")
             print("비동기적인 일 - 8")
         }
         task.cancel()
+        
+        // task 작업의 결과로 문자열 리턴 가능
+        let task2: Task<String, Never> = Task {
+            print("비동기적인 일 - 9")
+            print("비동기적인 일 - 10")
+            return "문자열"
+        }
+        
+        func doSomething2() {
+            print("함수 내부의 동기적인 실행 - 1")
+            Task {
+                try await Task.sleep(for: .seconds(2))
+                print("함수 내부의 오래걸리는 일")
+            }
+            
+            print("함수 내부의 동기적인 실행 - 2")
+        }
+        
+        doSomething2()
+        
+        /// 작업 실행 우선 순위의 종류
+        /// ===============================
+        /// TaskPriority.userInitiated - 25
+        /// TaskPriority.high - 25
+        /// TaskPriority.medium - 21
+        /// TaskPriority.low - 17
+        /// TaskPriority.utility - 17
+        /// TaskPriority.background - 9
+        /// ===============================
+
+        
+        
+        
     }
 }
 

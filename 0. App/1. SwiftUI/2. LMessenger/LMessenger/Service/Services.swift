@@ -17,6 +17,7 @@ protocol ServiceType {
     var contactService: ContactServiceType { get set }
     var photoPickerService: PhotoPickerServiceType { get set }
     var uploadService: UploadServiceType { get set }
+    var imageCacheService: ImageCacheServiceType { get set }
 }
 
 // MARK: - 실제 구현체 (Services)
@@ -28,6 +29,7 @@ final class Services: ServiceType {
     var contactService: ContactServiceType
     var photoPickerService: PhotoPickerServiceType
     var uploadService: UploadServiceType
+    var imageCacheService: ImageCacheServiceType
     
     init() {
         self.authService = AuthenticationService()
@@ -43,6 +45,7 @@ final class Services: ServiceType {
         self.contactService = ContactService()
         self.photoPickerService = PhotoPickerService()
         self.uploadService = UploadService(provider: UploadProvider())
+        self.imageCacheService = ImageCacheService(memoryStorage: MemoryStorage(), diskStorage: DiskStorage())
     }
 }
 
@@ -55,5 +58,6 @@ final class StubServices: ServiceType {
     var contactService: ContactServiceType = ContactService()
     var photoPickerService: PhotoPickerServiceType = PhotoPickerService()
     var uploadService: UploadServiceType = UploadService(provider: UploadProvider())
+    var imageCacheService: ImageCacheServiceType = ImageCacheService(memoryStorage: MemoryStorage(), diskStorage: DiskStorage())
 }
 
