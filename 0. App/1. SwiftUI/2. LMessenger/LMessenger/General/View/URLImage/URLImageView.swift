@@ -24,7 +24,7 @@ struct URLImageView: View {
                 .id(urlString)// innerview url 변경시 내부의 StateObject변경을 위해 명시적인 id 추가
             
         } else {
-            // url 없으면 placeholder이미지 보여주자 
+            // url 없으면 placeholder이미지 보여주자
             Image(placeholderName)
                 .resizable()
         }
@@ -57,5 +57,4 @@ fileprivate struct URLInnerImageView: View {
 #Preview {
     URLImageView(urlString: nil)
 }
-
 

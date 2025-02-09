@@ -17,7 +17,6 @@ import PhotosUI
 @MainActor
 final class MyProfileViewModel: ObservableObject {
     
-    
     @Published var userInfo: User?
     @Published var isPresentedDescEditView: Bool = false
     
@@ -30,6 +29,9 @@ final class MyProfileViewModel: ObservableObject {
             }
         }
     }
+    
+    
+    @Published var indexImage: UIImage?
     
     private let userId: String
     private var container: DIContainer

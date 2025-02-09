@@ -64,7 +64,7 @@ struct AuthenticatedView: View {
     
     // MARK: - ViewModel을 init하는 시점은 이 view를 만들때로 하자. 왜냐하면 viewModel에서 container를 init할 때 주입해 줄 예정
     @StateObject var authViewModel: AuthenticationViewModel
-    
+
     var body: some View {
         VStack {
             switch authViewModel.authenticationState {
