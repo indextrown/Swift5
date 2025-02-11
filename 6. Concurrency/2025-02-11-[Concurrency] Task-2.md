@@ -43,4 +43,5 @@ header:
 
 ### 작업은 현재 실행중인 컨텍스트의 메타데이터를 그대로 상속해서 사용한다
 
-![1](../assets/img/2025-02-11-[Concurrency] Task-2/1.png)
+![1](/img/2025-02-11-[Concurrency] Task-2/1.png)
+
