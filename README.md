@@ -48,7 +48,7 @@
 | :---: | :----------------------------------------------------------: | :-----------------------------------: |
 |   1   | [변수와 상수 그리고 타입](https://github.com/indextrown/Swift5/blob/main/1.%20SwiftGrammer/2025-02-10-%5BSwift-01%5D변수와%20상수%20그리고%20타입.md) |            var, let, type             |
 |   2   | [기본 연산자](https://github.com/indextrown/Swift5/blob/main/1.%20SwiftGrammer/2025-02-10-%5BSwift-02%5D기본%20연산자.md) |                 null                  |
-|   3   | [프로그래밍 기본 원리 & 조건문](https://github.com/indextrown/Swift5/blob/main/1.%20SwiftGrammer/2025-02-10-%5BSwift-03%5D프로그래밍%20기본%20원리와%20조건문.md) |              if, switch               |
+|   3   | [프로그래밍 기본 원리 & 조건문](https://github.com/indextrown/Swift5/blob/main/1.%20SwiftGrammer/2025-02-10-%5BSwift-03%5D프로그래밍%20기본%20원리와%20조건문.md) |       if, switch, ~=(패턴매칭)        |
 |   4   | [튜플](https://github.com/indextrown/Swift5/blob/main/1.%20SwiftGrammer/2025-02-10-%5BSwift-04%5D튜플.md) |                 Tuple                 |
 |   5   | [(삼항/범위/패턴매칭) 연산자](https://github.com/indextrown/Swift5/blob/main/1.%20SwiftGrammer/2025-02-10-%5BSwift-05%5D삼항범위패턴매칭%20연산자.md) |              ?/:/.../~=               |
 |   6   | [반복문](https://github.com/indextrown/Swift5/blob/main/1.%20SwiftGrammer/2025-02-10-%5BSwift-06%5D반복문.md) | for, while, 반복상수, 와일드카드 패턴 |
