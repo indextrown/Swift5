@@ -58,9 +58,9 @@
 
 Concurrency
 
-| Round | Title             | Keyword |
-| ----- | ----------------- | ------- |
-| 1     | [비동기 처리방식] |         |
-| 2     | [Task-1]          |         |
-| 3     |                   |         |
+| Round |                            Title                             |  Keyword  |
+| :---: | :----------------------------------------------------------: | :-------: |
+|   1   | [비동기 처리방식](https://github.com/indextrown/Swift5/blob/main/6.%20Concurrency/2025-02-10-%5BConcurrency%5D%20비동기%20처리방식.md) |  Thread   |
+|   2   | [Task-1](https://github.com/indextrown/Swift5/blob/main/6.%20Concurrency/2025-02-11-%5BConcurrency%5D%20Task-1.md) | GCD, Task |
+|   3   | [Task-2](https://github.com/indextrown/Swift5/blob/main/6.%20Concurrency/2025-02-11-%5BConcurrency%5D%20Task-2.md) |           |
 
