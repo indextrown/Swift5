@@ -106,7 +106,7 @@ header:
 
   ```swift
   func doSomething() {
-  		Task {
+        Task {
             try await Task.sleep(for: .seconds(2))
         	print("함수 내부의 비동기적인 일 - 1")
         	print("함수 내부의 비동기적인 일 - 2")
