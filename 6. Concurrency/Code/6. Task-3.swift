@@ -10,3 +10,9 @@
  - Task를 생성할 수 있고 클로저 부분을 할당하여 작업을 
  */
 
+@main
+struct Main {
+    static func main() {
+
+    }
+}
