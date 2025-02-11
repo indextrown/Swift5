@@ -43,3 +43,4 @@ header:
 
 ### 작업은 현재 실행중인 컨텍스트의 메타데이터를 그대로 상속해서 사용한다
 
+![1](https://github.com/user-attachments/assets/11cfe2a5-e090-4725-82e4-48e6d9ccc7e2)
