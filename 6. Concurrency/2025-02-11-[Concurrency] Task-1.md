@@ -40,7 +40,7 @@ header:
   print("메인 쓰레드에서 실행 - 2")
   
   Task {
-  		print("백그라운드 쓰레드에서 실행 - 1")
+      print("백그라운드 쓰레드에서 실행 - 1")
       print("백그라운드 쓰레드에서 실행 - 2")
   }
   
@@ -58,13 +58,13 @@ header:
   ```swift
   // Task 1: // 2번 cpu
   Task {
-  		print("백그라운드 쓰레드에서 실행 - 1")
+      print("백그라운드 쓰레드에서 실행 - 1")
       print("백그라운드 쓰레드에서 실행 - 2")
   }
   
   // Task 2: 3번 cpu
   Task {
-  		print("백그라운드 쓰레드에서 실행 - 3")
+      print("백그라운드 쓰레드에서 실행 - 3")
       print("백그라운드 쓰레드에서 실행 - 4")
   }
   
@@ -107,7 +107,7 @@ header:
   ```swift
   func doSomething() {
   		Task {
-  				try await Task.sleep(for: .seconds(2))
+            try await Task.sleep(for: .seconds(2))
         	print("함수 내부의 비동기적인 일 - 1")
         	print("함수 내부의 비동기적인 일 - 2")
       }
@@ -123,7 +123,7 @@ header:
       // 2번 Cpu에서 비동기적인 일 실행 가능
     	Task {
         	// 2초동안 일을 멈추는 코드.. 즉 2초정도 걸림
-  				try await Task.sleep(for: .seconds(2))
+            try await Task.sleep(for: .seconds(2))
         	print("함수 내부의 오래걸리는 일")
       }
     	print("함수 내부의 동기적인 실행 - 2")
