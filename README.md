@@ -54,3 +54,13 @@
 |   6   | [반복문](https://github.com/indextrown/Swift5/blob/main/1.%20SwiftGrammer/2025-02-10-%5BSwift-06%5D반복문.md) | for, while, 반복상수, 와일드카드 패턴 |
 |   7   | [메모리, Stack vs Heap](https://github.com/indextrown/Swift5/blob/main/1.%20SwiftGrammer/2025-02-10-%5BSwift-07%5D메모리.md) |               let, ARC                |
 
+
+
+Concurrency
+
+| Round | Title             | Keyword |
+| ----- | ----------------- | ------- |
+| 1     | [비동기 처리방식] |         |
+| 2     | [Task-1]          |         |
+| 3     |                   |         |
+
