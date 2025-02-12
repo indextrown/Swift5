@@ -85,16 +85,18 @@ header:
 -  오래 걸릴 수 있는 함수를 호출하면 **데이터가 생기는 시점**에 변수에 바인딩 가능하다.
 - **함수이 호출이 오래걸리더라도 콜백 방식 사용 필요 없디.**
 - 동기방식으로 순차적으로 코드를 읽을 수 있다.
+- ⚠️ 각 비동기 함수가 완료된 후에 다음 줄이 실행된다! 
 
   ```swift
+  
   func asyncImageData() async throws -> Image {
     	let dataResource = try await loadWebResource("dataprofile.txt")
     	let imageResource = try await loadWebResource("imagedata.dat")
-    	let imageTmp = try await decodeImage(dataResource, imageResourc)
+    	let imageTmp = try await decodeImage(dataResource, imageResource)
     	let imageResult = try await dewarpAndCleanupImage(imageTMP)
     	return imageResult
   }
   ```
-
+  
   
 
