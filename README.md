@@ -58,10 +58,11 @@
 
 ### Concurrency
 
-| Round |                            Title                             |  Keyword  |
-| :---: | :----------------------------------------------------------: | :-------: |
-|   1   | [비동기 처리방식 비교](https://github.com/indextrown/Swift5/blob/main/6.%20Concurrency/2025-02-10-%5BConcurrency%5D%20비동기%20처리방식.md) |  Thread   |
-|   2   | [Task-1](https://github.com/indextrown/Swift5/blob/main/6.%20Concurrency/2025-02-11-%5BConcurrency%5D%20Task-1.md) | GCD, Task |
-|   3   | [Task-2](https://github.com/indextrown/Swift5/blob/main/6.%20Concurrency/2025-02-11-%5BConcurrency%5D%20Task-2.md) | Task 특징 |
-|   4   | [Task-3](https://github.com/indextrown/Swift5/blob/main/6.%20Concurrency/2025-02-11-%5BConcurrency%5D%20Task-3.md) |   Self    |
+| Round |                            Title                             |      Keyword       |
+| :---: | :----------------------------------------------------------: | :----------------: |
+|   1   | [비동기 처리방식 비교](https://github.com/indextrown/Swift5/blob/main/6.%20Concurrency/2025-02-10-%5BConcurrency%5D%20비동기%20처리방식.md) |       Thread       |
+|   2   | [Task-1](https://github.com/indextrown/Swift5/blob/main/6.%20Concurrency/2025-02-11-%5BConcurrency%5D%20Task-1.md) |     GCD, Task      |
+|   3   | [Task-2](https://github.com/indextrown/Swift5/blob/main/6.%20Concurrency/2025-02-11-%5BConcurrency%5D%20Task-2.md) |     Task 특징      |
+|   4   | [Task-3](https://github.com/indextrown/Swift5/blob/main/6.%20Concurrency/2025-02-11-%5BConcurrency%5D%20Task-3.md) |        Self        |
+|   5   | [async/await](https://github.com/indextrown/Swift5/blob/main/6.%20Concurrency/2025-02-12-%5BConcurrency%5D%20async-await-1.md) | GCD vs async/await |
 
