@@ -18,6 +18,7 @@ header:
   // 기존 방식에서 잘못된 함수 설계의 형태
   func getImage1() -> UIImage? {
       var image: UIImage?
+      
       /// 오래 걸리는 일(2번 cpu에게 일을 시킨다)
       DispatchQueue.global().async { 
           sleep(5)
@@ -36,7 +37,8 @@ header:
   ```swift
   // 올바른 형태 (콜백함수 방식으로 설계해야 한다)
   func getImage2(callback: @escaping (UIImage?) -> Void) {
-    	// 오래 걸리는 일
+      
+      // 오래 걸리는 일
       DispatchQueue.global().async {
             sleep(5)
         	let image = UIImage(systemName: "heart")
