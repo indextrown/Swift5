@@ -17,13 +17,13 @@ header:
   ```swift
   // 정의
   func method(closure: @escaping (String) -> Void) {
-    	// 함수 내부 정의
-    	closure(result)
+      // 함수 내부 정의
+      closure(result)
   }
   
   // 실행
   method { result in
-  		print(result)	      
+      print(result)	      
   }
   ```
 
@@ -38,16 +38,16 @@ header:
   ```swift
   // 정의
   func asyncMethod() async -> String {
-  		// 함수 내부 정의
-    	let result = await otherMethod()
-    	return result
+      // 함수 내부 정의
+      let result = await otherMethod()
+      return result
   }
   
   // 실행
   // Task: 비동기적인 환경을 만들어준다
   Task {
-    	let result = await asyncMethod()
-    	print(result)
+      let result = await asyncMethod()
+      print(result)
   }
   ```
 
@@ -67,11 +67,11 @@ header:
 
   ```swift
   func gcdImageData(completionBlock: (_ result: Image) -> Void) {
-    	loadWebResource("dataprofile.txt") { dataResource in
-        	loadWebResource("imagedata.dat") { imageResource in
-            	decodeImage(dataResource, imageResourc) { imageTMP in
-                	dewarpAndCleanupImage(imageTMP) { imageResult in
-    	                completionBlock(imageResult)
+      loadWebResource("dataprofile.txt") { dataResource in
+          loadWebResource("imagedata.dat") { imageResource in
+              decodeImage(dataResource, imageResourc) { imageTMP in
+                  dewarpAndCleanupImage(imageTMP) { imageResult in
+                      completionBlock(imageResult)
                   }
               }
           }
@@ -90,11 +90,11 @@ header:
   ```swift
   
   func asyncImageData() async throws -> Image {
-    	let dataResource = try await loadWebResource("dataprofile.txt")
-    	let imageResource = try await loadWebResource("imagedata.dat")
-    	let imageTmp = try await decodeImage(dataResource, imageResource)
-    	let imageResult = try await dewarpAndCleanupImage(imageTMP)
-    	return imageResult
+      let dataResource = try await loadWebResource("dataprofile.txt")
+      let imageResource = try await loadWebResource("imagedata.dat")
+      let imageTmp = try await decodeImage(dataResource, imageResource)
+      let imageResult = try await dewarpAndCleanupImage(imageTMP)
+      return imageResult
   }
   ```
   

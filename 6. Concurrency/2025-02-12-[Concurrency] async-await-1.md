@@ -53,6 +53,8 @@ header:
 
 - getImage1()처럼 리턴을 하는 것도 가능하도록 설계 가능해졌다.
 
+- ⚠️**비동기 작업을 수행하면서도 특정 작업의 순서를 보장하고 싶을 때 `await`을 사용**
+
   ```swift
   // async: (이미지를 받아오는데) "오래걸리는 함수" 의미
   func getImage() async -> UIImage? {

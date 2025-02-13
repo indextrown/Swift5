@@ -106,10 +106,10 @@ header:
 
   ```swift
   func doSomething() {
-        Task {
-            try await Task.sleep(for: .seconds(2))
-        	print("함수 내부의 비동기적인 일 - 1")
-        	print("함수 내부의 비동기적인 일 - 2")
+      Task {
+          try await Task.sleep(for: .seconds(2))
+          print("함수 내부의 비동기적인 일 - 1")
+          print("함수 내부의 비동기적인 일 - 2")
       }
   }
   /*
@@ -118,15 +118,15 @@ header:
   */
   
   func doSomething2() {
-  		print("함수 내부의 동기적인 실행 - 1")
+      print("함수 내부의 동기적인 실행 - 1")
       
       // 2번 Cpu에서 비동기적인 일 실행 가능
-    	Task {
-        	// 2초동안 일을 멈추는 코드.. 즉 2초정도 걸림
-            try await Task.sleep(for: .seconds(2))
-        	print("함수 내부의 오래걸리는 일")
+      Task {
+          // 2초동안 일을 멈추는 코드.. 즉 2초정도 걸림
+          try await Task.sleep(for: .seconds(2))
+          print("함수 내부의 오래걸리는 일")
       }
-    	print("함수 내부의 동기적인 실행 - 2")
+      print("함수 내부의 동기적인 실행 - 2")
   }
   
   /*
@@ -175,15 +175,15 @@ header:
 
   ```swift
   let task = Task(priority: .background) {
-    	sleep(2)
-    	print("비동기적인 일 실행: \(Task.currentPriority)")
-    	print("Task 내부에서 취소 여부: \(Task.isCancelled)")
+      sleep(2)
+      print("비동기적인 일 실행: \(Task.currentPriority)")
+      print("Task 내부에서 취소 여부: \(Task.isCancelled)")
     
-    	// 내부의 작업 -> 부모 작업의 메타데이터(우선 순위 등)를 상속 사용(취소는 상속 불가)
-    	// 작업 안에서 작업을 다시 생성하는 것은 구조화를 시키지 않는다(하위 작업이 되는 것이 아니다)
-    	Task {
-        	print("비동기적인 일 실행: \(Task.currentPriority)")
-        	print("Task 내부의 Task에서 취소 여부: \(Task.isCancelled)")
+      // 내부의 작업 -> 부모 작업의 메타데이터(우선 순위 등)를 상속 사용(취소는 상속 불가)
+      // 작업 안에서 작업을 다시 생성하는 것은 구조화를 시키지 않는다(하위 작업이 되는 것이 아니다)
+      Task {
+          print("비동기적인 일 실행: \(Task.currentPriority)")
+          print("Task 내부의 Task에서 취소 여부: \(Task.isCancelled)")
       }
   }
   

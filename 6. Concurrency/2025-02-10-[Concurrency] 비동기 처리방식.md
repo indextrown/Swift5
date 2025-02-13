@@ -19,7 +19,7 @@ header:
 
   ```swift
   let thread = Thread {
-    	print("Background 작업 실행")
+      print("Background 작업 실행")
   }
   
   thread.start()
@@ -35,7 +35,7 @@ header:
   ```swift
   let queue = OperationQueue()
   let operation = BlockOperation {
-    	print("Background 작업 실행")
+      print("Background 작업 실행")
   }
   queue.addOperation(operation)
   ```
@@ -49,11 +49,11 @@ header:
 
   ```swift
   DispatchQueue.gloal(qos: .background).async {
-   		// Background 작업 실행
-    	let result = heavyTask() 
+      // Background 작업 실행
+      let result = heavyTask() 
     
-    	DispatchQueue.main.async {
-        	updateUI(with: result)
+      DispatchQueue.main.async {
+          updateUI(with: result)
       }
   }
   ```
@@ -89,8 +89,8 @@ header:
   
   let publisher = Just("Background 작업 실행")
   let cancellable = publisher.sink { value in
-   		print(value)                                
-   }
+      print(value)                                
+  }
   ```
 
 ### 6. Async/await (Switt Concurrency) (iOS 15.0/2021/Swift5.5)
@@ -99,19 +99,18 @@ header:
 - 동기 코드처럼 작성 가능하다
 - Task를 활용해 SwiftUI에서도 사용 가능하다.
 - ✅ 현재 사용 여부: 가장 추천되는 방식이다. (Swift 5.5+ 환경에서 최적의 선택)
+  ```swift
+  func fetchData() async -> String {
+      // Background 작업 실행
+      try await Task.sleep(nanoseconds: 1_000_000_000) // 1초 대기
+      return "Fetched Data"
+  }
 
-```swift
-func fetchData() async -> String {
-  	// Background 작업 실행
-		try await Task.sleep(nanoseconds: 1_000_000_000) // 1초 대기
-  	return "Fetched Data"
-}
-
-Task {
-		let data = await fetchData()
-  	print(data)
-}
-```
+  Task {
+      let data = await fetchData()
+      print(data)
+  }
+  ```
 
 
 
