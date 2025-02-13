@@ -13,6 +13,7 @@ App/UpDownGame/UpDownGame.xcodeproj/
 .DS_Store
 xcuserdata/
 *.xcuserstate
+*.xcschememanagement.plist
 
 
 
