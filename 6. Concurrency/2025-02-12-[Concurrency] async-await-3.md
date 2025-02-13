@@ -33,9 +33,9 @@ header:
   
   // 원칙적 방법
   Task {
-  		do {
-            let totalString = try await asyncMethod()
-        	print(totalString)
+      do {
+          let totalString = try await asyncMethod()
+          print(totalString)
       } catch {
         	
       }
@@ -69,7 +69,7 @@ header:
   
     ```swift
     func getImages() async -> [UIImage?] {
-      	let image1 = await getImage()
+        let image1 = await getImage()
         let image2 = await getImage()
         let image3 = await getImage()
       	
@@ -88,7 +88,7 @@ header:
   
     ```swift
     func someSyncFunc() {
-    		print("동기적인 작업 시작")
+        print("동기적인 작업 시작")
       	Task {
             try await Task.sleep(for: .seconds(2))
           	print("비동기적인 작업내에서의 작업")
