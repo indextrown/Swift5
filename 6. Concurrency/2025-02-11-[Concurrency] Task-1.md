@@ -226,7 +226,7 @@ header:
   // 에러를 던지지 않는 함수
   Task(priority: <#T##TaskPriority?#>, operation: <#T##() async -> Sendable#>)
   // 에러를 던질 수 있는 함수
-  ask(priority: <#T##TaskPriority?#>, operation: <#T##() async throws -> Sendable#>)
+  Task(priority: <#T##TaskPriority?#>, operation: <#T##() async throws -> Sendable#>)
   ```
 
   
