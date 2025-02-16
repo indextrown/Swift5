@@ -91,9 +91,9 @@ header:
         print("동기적인 작업 시작")
       	Task {
             try await Task.sleep(for: .seconds(2))
-          	print("비동기적인 작업내에서의 작업")
+            print("비동기적인 작업내에서의 작업")
         }
-      	print("동기함수 작업 종료")
+        print("동기함수 작업 종료")
     }
     ```
   
