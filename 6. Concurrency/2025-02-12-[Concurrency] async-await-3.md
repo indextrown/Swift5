@@ -107,17 +107,18 @@ header:
   
     ```swift
     for parentFuncgion() async throws {
-      	// async 함수 내에서 다른 async 함수 호출: 동일한 비동기 컨텍스트 내에서의 실행(작업의 입루)
+        // async 함수 내에서 다른 async 함수 호출: 동일한 비동기 컨텍스트 내에서의 실행(작업의 입루)
         try await asyncFunction()
-      	try await asyncFunction()
-      
-      	// Task를 사용하여 명시적으로 다른 작업(Task) 생성 가능(구조적 동시성은 아니고 따로 작업을 만든다) 병렬 실행
+        try await asyncFunction()
+
+        // Task를 사용하여 명시적으로 다른 작업(Task) 생성 가능(구조적 동시성은 아니고 따로 작업을 만든다) 병렬 실행
         // 자식 작업의 생성 방식은 아니다
-      	Task {
+        Task {
             try await asyncParentFunction()
-          	try await asyncParentFunction()
+            try await asyncParentFunction()
         }
-      	print("비동기 함수 실행의 종료")
+        
+        print("비동기 함수 실행의 종료")
     }
     ```
   
