@@ -73,7 +73,7 @@ header:
         let image2 = await getImage()
         let image3 = await getImage()
       	
-      	return [image1, image2, image3]
+        return [image1, image2, image3]
     }
     
     Task {
