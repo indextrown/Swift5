@@ -105,7 +105,7 @@ header:
   - 비동기 함수 내에서 다른 비동기 함수를 호출을 하는것은 현재의 실행 컨텍스트 내에서 실행을 시키는 것이다(취소 전파도 가능하고, 하위 작업을 만드는 것이 아니다). 
   - 즉 구조적 동시성이 아니다.
   
-    ```swift
+    \```swift
     for parentFuncgion() async throws {
       	// async 함수 내에서 다른 async 함수 호출: 동일한 비동기 컨텍스트 내에서의 실행(작업의 입루)
         try await asyncFunction()
@@ -119,7 +119,7 @@ header:
         }
       	print("비동기 함수 실행의 종료")
     }
-    ```
+    \```
   
     
   
