@@ -106,7 +106,7 @@ header:
   - 즉 구조적 동시성이 아니다.
   
     ```swift
-    for parentFuncgion() async throws {
+    func parentFuncgion() async throws {
         // async 함수 내에서 다른 async 함수 호출: 동일한 비동기 컨텍스트 내에서의 실행(작업의 입루)
         try await asyncFunction()
         try await asyncFunction()
