@@ -40,9 +40,9 @@ header:
       
       // 오래 걸리는 일
       DispatchQueue.global().async {
-            sleep(5)
-        	let image = UIImage(systemName: "heart")
-        	callback(image) // 콜백함수를 호출하여 데이터 전달
+          sleep(5)
+          let image = UIImage(systemName: "heart")
+          callback(image) // 콜백함수를 호출하여 데이터 전달
       }
   }
   ```

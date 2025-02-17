@@ -51,6 +51,14 @@ class ViewController: UIViewController {
             // 데이터 전달
             thirdVC.someString = "세번째 화면"
         }
+        
+        if segue.identifier == "toFourthVC" {
+            let fourthVC = segue.destination as! FourthViewController
+            
+            // 데이터 전달
+            fourthVC.someString = "네번째 화면"
+        }
     }
+    
 }
 
