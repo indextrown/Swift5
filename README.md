@@ -44,16 +44,16 @@
 
 App
 
-| Round |                            Title                             |                         Keyword                          |
-| :---: | :----------------------------------------------------------: | :------------------------------------------------------: |
-|   0   | [UILabel, UIButton 사용법](https://github.com/indextrown/Swift/blob/main/0.%20App/0.%20UIKit/0.%20MyFirstApp/MyFirstApp/ViewController.swift) |                UILabel, UIButton, sender                 |
-|   1   | [주사위 게임](https://github.com/indextrown/Swift/blob/main/0.%20App/0.%20UIKit/1.%20DiceGame/DiceGame/ViewController.swift) |                  UIImage, randomElement                  |
-|   2   | [가위바위보 게임](https://github.com/indextrown/Swift/blob/main/0.%20App/0.%20UIKit/2.%20RPSGame/RPSGame/ViewController.swift) |       UILabel, UIImageView, #imageLiteral, 원시값        |
-|   3   | [업다운 게임](https://github.com/indextrown/Swift/blob/main/0.%20App/0.%20UIKit/3.%20UpDownGame/UpDownGame/ViewController.swift) |                    guard, Int.random                     |
-|   4   | [타이머](https://github.com/indextrown/Swift/blob/main/0.%20App/0.%20UIKit/4.%20TimerApp/FirstNewApp/ViewController.swift) | Timer, UISlider, slider.setValue, slider.value, selector |
-|   5   | [TextField](https://github.com/indextrown/Swift/blob/main/0.%20App/0.%20UIKit/5.%20TextFieldProject/TextFieldProject/ViewController.swift) |                     Delegate pattern                     |
-|   6   | [넷플릭스 로그인 화면](https://github.com/indextrown/Swift/blob/main/0.%20App/0.%20UIKit/7.%20LoginUIProject/LoginUIProject/ViewController.swift) |                     programmatically                     |
-|   7   | [화면이동 4가지 방법](https://github.com/indextrown/Swift/tree/main/0.%20App/0.%20UIKit/8.%20NextVC/NextVC) |                                                          |
+| Round |                            Title                             |                           Keyword                            |
+| :---: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|   0   | [UILabel, UIButton 사용법](https://github.com/indextrown/Swift/blob/main/0.%20App/0.%20UIKit/0.%20MyFirstApp/MyFirstApp/ViewController.swift) |                  UILabel, UIButton, sender                   |
+|   1   | [주사위 게임](https://github.com/indextrown/Swift/blob/main/0.%20App/0.%20UIKit/1.%20DiceGame/DiceGame/ViewController.swift) |                    UIImage, randomElement                    |
+|   2   | [가위바위보 게임](https://github.com/indextrown/Swift/blob/main/0.%20App/0.%20UIKit/2.%20RPSGame/RPSGame/ViewController.swift) |         UILabel, UIImageView, #imageLiteral, 원시값          |
+|   3   | [업다운 게임](https://github.com/indextrown/Swift/blob/main/0.%20App/0.%20UIKit/3.%20UpDownGame/UpDownGame/ViewController.swift) |                      guard, Int.random                       |
+|   4   | [타이머](https://github.com/indextrown/Swift/blob/main/0.%20App/0.%20UIKit/4.%20TimerApp/FirstNewApp/ViewController.swift) |   Timer, UISlider, slider.setValue, slider.value, selector   |
+|   5   | [TextField](https://github.com/indextrown/Swift/blob/main/0.%20App/0.%20UIKit/5.%20TextFieldProject/TextFieldProject/ViewController.swift) |                       Delegate pattern                       |
+|   6   | [넷플릭스 로그인 화면](https://github.com/indextrown/Swift/blob/main/0.%20App/0.%20UIKit/7.%20LoginUIProject/LoginUIProject/ViewController.swift) |                       programmatically                       |
+|   7   | [화면이동 4가지 방법](https://github.com/indextrown/Swift/tree/main/0.%20App/0.%20UIKit/8.%20NextVC/NextVC) | code,<br> storyboard with code,<br/> storyboard with segue, <br/>storyboard with button segue |
 
 
 
