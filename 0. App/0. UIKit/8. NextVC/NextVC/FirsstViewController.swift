@@ -12,7 +12,7 @@ final class FirsstViewController: UIViewController {
     // 클로저의 실행문 레이블
     private let mainLabel: UILabel = {
         let label = UILabel()
-        label.text = "FirstViewController"
+        // label.text = "FirstViewController"
         label.font = UIFont.systemFont(ofSize: 22)
         return label
     }()
@@ -28,6 +28,9 @@ final class FirsstViewController: UIViewController {
         return button
     }()
     
+    // MARK: - 일반적으로 데이터를 전달받을 떄 옵셔널String으로 선언하면 생성자를 만들 필요 없다
+    var someString: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +40,9 @@ final class FirsstViewController: UIViewController {
     
     // 설정
     func setUp() {
+        
+        mainLabel.text = someString
+        
         // 화면에 올리기(가장 밑에깔린 view에 addsubview
         view.addSubview(mainLabel)
         view.addSubview(backButton)

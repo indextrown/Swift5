@@ -17,12 +17,11 @@ class ViewController: UIViewController {
     
     // 1) 코드로 화면 이동 (다음화면이 코드로 작성되어있을때만 가능한 방법)
     @IBAction func codeNextButtonTapped(_ sender: UIButton) {
-
         // 인스턴스를 찍어낸다 = 메모리에 올라간다
         let firstVC = FirsstViewController()
+        firstVC.someString = "이 문장을 전달"
         firstVC.modalPresentationStyle = .fullScreen
         present(firstVC, animated: true, completion: nil)
-        
     }
     
     // 2) 코드로 스토리보드 객체를 생성해서, 화면 이동
