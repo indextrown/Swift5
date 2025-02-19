@@ -9,7 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +33,6 @@ class ViewController: UIViewController {
         present(secondVC, animated: true, completion: nil)
     }
     
-    
     // 3) 스토리보드에서의 화면 이동(간접 세그웨이)
     @IBAction func storyboardWithSegueButtonTapped(_ sender: UIButton) {
         // 세그웨이 활성화
@@ -58,6 +56,12 @@ class ViewController: UIViewController {
             // 데이터 전달
             fourthVC.someString = "네번째 화면"
         }
+    }
+    
+    // should: 무언가를 허락한다/허락하지않는다 -> performSegue를 통해 segue가 실행될지에 대한 조건을 결정할 수 있다
+    // shouldPerformSegue는 segue를 버튼에 직접적으로 연결했을때만 실행된다
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        <#code#>
     }
     
 }
