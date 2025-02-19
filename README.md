@@ -89,5 +89,5 @@ App
 
 | Round |                            Title                             | Keyword |
 | :---: | :----------------------------------------------------------: | :-----: |
-|   0   | [고차함수](https://github.com/indextrown/Swift5/blob/main/9.%20Archive/2025-02-10-%5BSwift%5D고차함수.md) |   Map   |
+|   0   | [고차함수](https://github.com/indextrown/Swift/blob/main/9.%20Archive/2025-02-10-%5BArchive%5D고차함수.md) |   Map   |
 
