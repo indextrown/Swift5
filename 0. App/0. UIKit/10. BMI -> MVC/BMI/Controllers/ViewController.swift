@@ -47,10 +47,10 @@ class ViewController: UIViewController {
 
     @IBAction func calculateButtonTapped(_ sender: UIButton) {
         
-        guard let height = heightTextField.text,
-              let weight = weightTextField.text else { return }
+        // guard let height = heightTextField.text,
+        //       let weight = weightTextField.text else { return }
         
-        bmiManager.calculateBMI(height: height, weight: weight)
+        // bmiManager.calculateBMI(height: height, weight: weight)
     }
 }
 
@@ -114,10 +114,7 @@ extension ViewController {
         if segue.identifier == "toSecondVC" {
             let secondVC = segue.destination as! SecondViewController
             
-            // 계산된 결과값을 다음화면으로 전달
-            secondVC.bmiNumber = bmiManager.getBMIResult()
-            secondVC.bmiColor = bmiManager.getBackgroundColor()
-            secondVC.adviceString = bmiManager.getBMIAdviceString()
+            secondVC.bmi = bmiManager.getBMI(height: heightTextField.text!, weight: weightTextField.text!)
         }
         
         // 다음화면으로 가기전에 텍스트필드 비우기

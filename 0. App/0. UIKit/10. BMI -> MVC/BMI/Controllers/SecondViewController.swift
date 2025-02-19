@@ -12,9 +12,10 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var bmiNumberLabel: UILabel!
     @IBOutlet weak var adviceLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
-    var bmiNumber: Double?
-    var adviceString: String?
-    var bmiColor: UIColor?
+//    var bmiNumber: Double?
+//    var adviceString: String?
+//    var bmiColor: UIColor?
+    var bmi: BMI?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +33,12 @@ class SecondViewController: UIViewController {
         backButton.setTitle("다시 계산하기", for: .normal)
         
         // bmi가 존재하면 텍스트설정, 그렇지않다면 그냥 리턴
-        guard let bmi = bmiNumber else { return }
-        bmiNumberLabel.text = String(bmi)
+         guard let bmi = bmi else { return }
+        bmiNumberLabel.text = "\(bmi.value)"
         
         // 문자열은 벗길 필요 없다 UILabel이 옵셔널 스트링 타입이라서
-        adviceLabel.text = adviceString
-        bmiNumberLabel.backgroundColor = bmiColor
+        adviceLabel.text = bmi.advice
+        bmiNumberLabel.backgroundColor = bmi.matchColor
         
     }
 
