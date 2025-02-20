@@ -74,6 +74,7 @@
 		DF9324CD2D6716ED00BD1915 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DF9324D42D6716ED00BD1915 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -88,7 +89,6 @@
 				DF9324CF2D6716ED00BD1915 /* Assets.xcassets */,
 				DF9324D02D6716ED00BD1915 /* Info.plist */,
 				DF9324D22D6716ED00BD1915 /* LaunchScreen.storyboard */,
-				DF9324D42D6716ED00BD1915 /* Main.storyboard */,
 				DF9324D52D6716ED00BD1915 /* SceneDelegate.swift */,
 			);
 			path = DiceGame;
