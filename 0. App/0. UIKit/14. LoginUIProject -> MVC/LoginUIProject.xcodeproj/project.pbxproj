@@ -42,15 +42,9 @@
 		DFE35BB32D6846F10021AC2F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DFE35BBE2D6846F10021AC2F /* ViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		DFE35BB42D6846F10021AC2F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		DFE35BB52D6846F10021AC2F /* Views */ = {
@@ -64,7 +58,6 @@
 		DFE35BBF2D6846F10021AC2F /* LoginUIProject */ = {
 			isa = PBXGroup;
 			children = (
-				DFE35BB42D6846F10021AC2F /* Models */,
 				DFE35BB52D6846F10021AC2F /* Views */,
 				DFE35BB32D6846F10021AC2F /* Controllers */,
 				DFE35BB62D6846F10021AC2F /* AppDelegate.swift */,
@@ -73,7 +66,6 @@
 				DFE35BBA2D6846F10021AC2F /* LaunchScreen.storyboard */,
 				DFE35BBC2D6846F10021AC2F /* Main.storyboard */,
 				DFE35BBD2D6846F10021AC2F /* SceneDelegate.swift */,
-				DFE35BBE2D6846F10021AC2F /* ViewController.swift */,
 			);
 			path = LoginUIProject;
 			sourceTree = "<group>";
