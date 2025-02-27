@@ -43,10 +43,9 @@ final class FirstViewController: UIViewController, LoginViewControllerDelegate {
         navigationBarAppearance.configureWithOpaqueBackground()                              // 불투명
         navigationBarAppearance.backgroundColor = .white                                     // 네비게이션바 배경 색상
         navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemBlue] // 네비게이션바 텍스트 색상
+        navigationController?.navigationBar.tintColor = .blue
         navigationController?.navigationBar.standardAppearance = navigationBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
-        // navigationController?.navigationBar.tintColor = .blue
-        
         navigationItem.scrollEdgeAppearance = navigationBarAppearance
         navigationItem.standardAppearance = navigationBarAppearance
         navigationItem.compactAppearance = navigationBarAppearance
